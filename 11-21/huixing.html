@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			.d1{
+				width: 204px;
+				height: 204px;
+				
+				animation: name 18s infinite linear;
+				-webkit-transform: rotateX(71deg) rotateY(336deg);
+				border-radius: 50%;
+				transform-style: preserve-3d;
+				position: relative;
+				transform: translate(-50%, -50%) rotatex(75deg);
+			}
+			.d2{
+				width: 200px;
+				height: 200px;
+				border: 3px solid #000000;
+				-webkit-transform: rotatex(65deg) /*rotateY(44deg)  *//*rotateZ(60deg)*/;
+				/*animation: name 18s infinite linear;*/
+				border-radius: 50%;
+				position: absolute;
+				top: 0; left: 0;
+			}
+			.d3{
+				width: 200px;
+				height: 200px;
+				border: 3px solid #ffff00;
+				-webkit-transform: rotatex(65deg) /*rotateY(135deg)*/ rotateZ(60deg);
+				/*animation: name 18s infinite linear;*/
+				border-radius: 50%;
+				position: absolute;
+				top: 0; left: 0;
+			}
+			.d4{
+				width: 200px;
+				height: 200px;
+				border: 3px solid #000000;
+				-webkit-transform: rotatex(65deg) /*rotateY(274deg)*/rotateZ(-60deg);
+				border-radius: 50%;
+				position: absolute;
+				top: 0; left: 0;
+			}
+			@-webkit-keyframes name{
+				0%{
+					-webkit-transform: rotatex(0deg);
+				}
+				100%{
+					-webkit-transform: rotatex(360deg);
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<div class="d1">
+			<div class="d2"></div>
+			<div class="d3"></div>
+			<div class="d4"></div>
+		</div>
+	</body>
+</html>

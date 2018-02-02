@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			*{
+				padding:0;
+				margin:0;
+			}
+			ul,li{
+				list-style:none;
+			}
+			ul{
+				width:300px;
+				background:red;
+				margin:0 auto;
+				border:1px solid #000;
+				border-bottom:none;
+			}
+			li{
+				width:300px;
+				background:#eee;
+				border-bottom:1px solid #000;
+				line-height:50px;
+				text-align:center;
+				overflow:hidden;
+			}
+			div{
+				height:200px;
+				width:100%;
+				background:yellow;
+				transition: all 0.5s;
+				display:none
+			}
+			.db{
+				display:block;
+			}
+		</style>
+	</head>
+	<body>
+		<ul>
+			<li>
+				AAA
+				<div class="db">111</div>
+			</li>
+			<li>
+				BBB
+				<div>222</div>
+			</li>
+			<li>
+				CCC
+				<div>333</div>
+			</li>
+			<li>
+				DDD
+				<div>444</div>
+			</li>
+		</ul>
+		<script>
+			var oLi=document.getElementsByTagName("li");
+			var oDiv=document.getElementsByTagName("div");
+			var oUl=document.getElementsByTagName("ul")[0];
+			for(var i=0;i<oLi.length;i++){
+				var a=oLi[i];
+				a.index=i;
+				oLi[i].onclick=function(){
+					for(var j=0;j<oDiv.length;j++){
+						oDiv[j].style.display="none";
+					}
+					oDiv[this.index].style.display="block";
+				}
+			}
+		</script>
+	</body>
+</html>

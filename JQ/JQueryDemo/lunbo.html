@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+		*{
+			margin: 0;
+			padding:0 ;
+		}
+			div{
+				width: 1366px;
+				height: 373px;
+				/*overflow: hidden;*/
+				position: relative;
+			}
+			ul{
+				width: 8196px;
+				height: 100%;
+				position: absolute;
+				left:0;
+				
+			}
+			ul li{
+				list-style: none;
+				float: left;
+				width: 1366px;
+				height:373px ;
+			}
+			ol{
+				width:180px ;
+				height: 20px;
+				position:absolute ;
+				left:593px;
+				bottom: 20px;
+			}
+			ol  li{
+				list-style: none;
+				float: left;
+				width:20px ;
+				height: 20px;
+				border-radius: 50%;
+				margin: 0 5px;
+				background: black;
+			}
+			ol .active{
+				background: red;
+			}
+			.prev{
+				position: absolute;
+				width: 50px;
+				height:100px ;
+				background: gray;
+				top:136px;
+				opacity:0.5 ;
+			}
+			.next{
+				position: absolute;
+				width: 50px;
+				height:100px ;
+				background: gray;
+				top:136px;
+				right:0 ;
+				opacity:0.5 ;
+			}
+			a{
+				text-decoration: none;
+				font-size: 50px;
+				text-align: center;
+				line-height: 100px;
+				display: none;
+			}
+		</style>
+	</head>
+	<body>
+		<script src="../js/jquery-3.2.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+//			var num=0;
+//			var num1=0;
+//			var timer=null;
+//			timer=setInterval(change,3000)
+//			function change(){
+//				if(num==$("ul li").length-1){
+//					$("ul li").eq(0).css({"position":"relative","left":$('ul li').length*1366})
+//					num=0
+//				}else{
+//					num++;
+//				}
+//				num1++;
+//				$("ul").stop().animate({left:-1336*num1},600,function(){
+//					if(num==0){
+//						$("ul li").eq(0).css("position","");
+//						$("ul").css("left",0);
+//						num1=0;
+//					}
+//				})
+//			}
+
+			var num = 0;
+			var num1 = 0;
+			var timer = null;
+			timer = setInterval(change,3000);
+			function change(){
+				if(num1==$("ul li").length-1){
+					$("ul li").eq(0).css({"position":"relative","left":$('ul li').length*1336})
+					num1=0;
+				}else{
+					num1++;
+				}
+//				console.log(num1);
+				num++;
+				$("ul").animate({left:-1336*num},600,function(){
+					if(num1==0){
+						$("ul li").eq(0).css("position","")
+						$("ul").css("left",0);
+						num=0;
+					}
+				})
+				console.log(num);
+				console.log(num1);
+			}
+		</script>
+		<div class="wrap">
+			<ul>
+				<li><img src="../img/t1.jpg"/></li>
+				<li><img src="../img/t2.jpg"/></li>
+				<li><img src="../img/t3.jpg"/></li>
+				<li><img src="../img/t4.jpg"/></li>
+			</ul>
+			<!--<ol>
+				<li class="active"></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+			</ol>
+			<a href="javascript:;" class="prev"><</a>
+			<a href="javascript:;" class="next">></a>-->
+		</div>
+	</body>
+</html>

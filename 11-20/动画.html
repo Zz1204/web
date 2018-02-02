@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			.d1{
+				width: 100px;
+				height: 50px;
+				background: red;
+				border-radius: 10px;
+				animation: name 5s infinite;
+				position: relative;
+				left: 30px; top: 20px;
+				text-align: center;
+				line-height: 50px;
+				color: #ffffff;
+				font-weight: 800;
+				
+			}
+			@-webkit-keyframes name{
+				0%{
+					width: 100px;
+					height: 50px;
+				}
+				25%{
+					-webkit-transform: rotate(20deg);
+					left: 0;
+				}
+				50%{
+					-webkit-transform: rotate(0);
+					left: 300px;
+					
+				}
+				75%{
+					-webkit-transform: rotate(0);
+					left: 300px;background: blue;
+				}
+				
+				100%{
+					-webkit-transform: rotate(-360deg);
+					left: 0;
+				}
+			}
+			
+		</style>
+	</head>
+	<body>
+		<div class="d1">
+			CSS
+		</div>
+		
+	</body>
+</html>

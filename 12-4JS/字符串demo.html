@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			//统计大小写
+			/*
+			var str="ABCDabcdAbbb#@##";
+			var a=0;
+			var b=0;
+			for(var i=0;i<str.length;i++){
+				//charAt
+				if(str.charAt(i)<="Z"&&str.charAt(i)>="A"){
+					a++;
+				}
+				if(str.charAt(i)<="z"&&str.charAt(i)>="a"){
+					b++;
+				}
+				
+				//charCodeAt
+				if(str.charCodeAt(i)<=90&&str.charCodeAt(i)>=65){
+					a++;
+				}
+				if(str.charCodeAt(i)<=122&&str.charCodeAt(i)>=97){
+					b++;
+				}
+			}
+			alert("大写字母有"+a+"个");
+			alert("小写字母有"+b+"个");
+			*/
+			
+			/*
+			//已知字符串str="I love jiNan",找出love的范围
+			var str="I love jiNan";
+			var str0="love";
+			var star=parseInt(str.indexOf(str0));
+			var end=star+parseInt(str0.length-1);
+			alert("起始位置是"+star+",结束位置是"+end);
+			*/
+			
+			
+//			将字符串str = “When I was young, 
+//			I love a girl in neighbor class.”中,
+//			从young提取到girl。但是不许数
+			
+//			var str="When I was young, I love a girl in neighbor class.";
+//			var str1="young";
+//			var str2="girl";
+//			var star=parseInt(str.indexOf(str1));
+//			var end=parseInt(str.indexOf(str2))+parseInt(str2.length-1);
+//			alert("开始位置是"+star+"，结束位置是"+end);
+			
+			
+			//截取，https://www.baidu.com/s?name=avery&age=20&sex=male&like=aaa 
+//			var str="https://www.baidu.com/s?name=avery&age=20&sex=male&like=aaa";
+//			var str1 = str.split("?");
+//			var str2 = str1[1].split("&");
+////			console.log(str2);
+//			for(var i=0;i<str2.length;i++){
+//				var a = str2[i].split("=");
+//				console.log(a[1]);
+//			}
+
+			//统计出现次数最多的字母，并输出次数
+//			var str="lksajdflkdsjahfhlkj";
+//			var arr=[];
+//			for(var i=0;i<124;i++){
+//				arr[i]=0;
+//			}
+////			console.log(arr);
+//			for(var i=0;i<str.length;i++){
+//				var c=str.charCodeAt(i);
+//				arr[c]++;
+//			}
+//			console.log(c);
+//			var max=0;
+//			var maxIndx=0;
+//			for(var i=0;i<124;i++){
+//				if(max<arr[i]){
+//					max=arr[i];
+//					maxIndx=i;
+//				}
+//			}
+//			var maxA=String.fromCharCode(maxIndx);
+//			alert("字母是"+maxA+"，次数是"+max);
+			
+			
+			
+		</script>
+	</body>
+</html>

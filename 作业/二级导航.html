@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			*{
+				padding:0;
+				margin:0;
+			}
+			ul,li{
+				list-style:none;
+			}
+			div{
+				width: 300px;
+				height: 50px;
+				margin: 50px auto;
+				background: #CCCCCC;
+			}
+			.nav{
+				text-align: center;
+				height: 50px;
+				width: 100px;
+				line-height: 50px;
+				float: left;
+			}
+			.ul2{
+				display: none;
+			}
+		</style>
+	</head>
+	<body>
+		<div>
+			<ul class="ul1">
+				<li class="nav">
+					吃饭
+					<ul class="ul2">
+						<li class="li">吃饭饭</li>
+						<li class="li">吃饭饭</li>
+						<li class="li">吃饭饭</li>
+					</ul>
+				</li>
+				<li class="nav">
+					吃饭
+					<ul class="ul2">
+						<li class="li">吃饭饭</li>
+						<li class="li">吃饭饭</li>
+						<li class="li">吃饭饭</li>
+					</ul>
+				</li>
+				<li class="nav">
+					吃饭
+					<ul class="ul2">
+						<li class="li">吃饭饭</li>
+						<li class="li">吃饭饭</li>
+						<li class="li">吃饭饭</li>
+					</ul>
+				</li>
+				
+			</ul>
+		</div>
+		<script>
+			var one=document.getElementsByClassName("nav");
+			var tow=document.getElementsByClassName("ul2");
+			for (var i=0;i<one.length;i++) {
+				var a=one[i];
+				a.index=i;
+				a.onmouseover=function(){
+					tow[this.index].style.display="block";
+				}
+				a.onmouseout=function(){
+					tow[this.index].style.display="none";
+				}
+			}
+		</script>
+	</body>
+</html>

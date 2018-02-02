@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			*{
+				padding:0;
+				margin:0;
+			}
+			body{
+				position:relative;
+			}
+			.box{
+				width:690px;
+				height:180px;
+				margin:30px auto;
+				
+			}
+			ul,li{
+				list-style:none;
+			}
+			ul{
+				width:690px;
+				height:180px;
+			}
+			li{
+				width:170px;
+				float:left;
+				border:1px solid #eee
+			}
+			.big{
+				width:400px;
+				height:400px;
+				position:absolute;
+				top:0;
+				left:0;
+				background:red;
+				display:none;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box">
+			<ul>
+				<li><img src="image/shirt_1.jpg"/></li>
+				<li><img src="image/shirt_2.jpg"/></li>
+				<li><img src="image/shirt_3.jpg"/></li>
+				<li><img src="image/shirt_4.jpg"/></li>
+			</ul>
+			<div class="big"></div>
+		</div>
+		<script>
+			var li=document.getElementsByTagName("li");
+			var oDiv=document.getElementsByClassName("big")[0];
+			var oD=document.getElementsByClassName("box")[0];
+			var big=["image/shirt_1_big.jpg","image/shirt_2_big.jpg","image/shirt_3_big.jpg","image/shirt_4_big.jpg",];
+			for(var i=0;i<li.length;i++){
+				var a=li[i];
+				li[i].index=i;
+				a.onmouseenter=function(){
+					oDiv.style.display="block";
+				}
+				oD.onmousemove=function(evt){
+					var evt=evt||window.event;
+					oDiv.style.top=evt.clientY+10+"px";
+					oDiv.style.left=evt.clientX+10+"px";
+					console.log(evt.offsetX)
+//					console.log(evt.offsetY)
+				}
+				a.onmousemove=function(){
+					oDiv.style.background="url("+big[this.index]+")";
+				}
+				a.onmouseout=function(){
+					oDiv.style.display="none";
+					
+				}
+			}
+		</script>
+	</body>
+</html>

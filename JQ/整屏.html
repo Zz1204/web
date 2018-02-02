@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			* {margin: 0; padding: 0;}
+			#wrap {overflow: hidden; position: relative;}
+			#content{position: absolute; left: 0; top: 0; width: 100%;}
+			.colorBlock{background: gray;}
+		</style>
+	</head>
+	<body>
+		<div id="wrap">
+		  <div id="content">
+		    <div class="colorBlock">第一屏</div>
+		    <div class="colorBlock" style="background:#c0faff">第二屏</div>
+		    <div class="colorBlock" style="background:#d6ffc0">第三屏</div>
+		    <div class="colorBlock" style="background:#ffcfe3">第四屏</div>
+		  </div>
+		</div>
+		<script src="js/jquery-3.1.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$("#wrap").css("height",$(window).height());
+			$(".colorBlock").css("height",$(window).height());
+			$(window).resize(function(){
+				$("#wrap").css("height",$(window).height());
+				$(".colorBlock").css("height",$(window).height());
+			})
+			
+			window.onmousewheel=document.onmousewheel=scrollFn;
+			window.addEventListener("DOMMouseScroll",scrollFn);
+			function scrollFn(e){
+				var b=true;
+				var e=e||window.event;
+				if(e.wheelDelta){
+					//往下滚-120  往上滚  120
+					b=e.wheelDelta>0?false:true;
+				}else if(e.detail){
+					//往下是3，往上是-3
+					b=e.detail>0?true:false;
+				}
+				if(b==true){
+//					console.log("往下滚");
+					scrollUp();
+				}else{
+					scrollDown();
+				}
+			}
+			
+			var num=0;
+			var flang=false;
+			var index=0;
+			var timer=null;
+			function scrollUp(){
+				if(index<1){
+					clearTimeout(timer)
+					timer = setTimeout(function(){
+						index++;
+					},100)
+					
+				}else if(!flang){
+					flang=true;
+					num++;
+					if(num>3){
+						num=3;
+					}
+					change(num)
+				}	
+			}
+			function scrollDown(){
+				console.log(!flang);
+				if(index<1){
+					clearTimeout(timer)
+					timer = setTimeout(function(){
+						index++;
+					},100)
+					
+				}else if(!flang){
+					flang=true;
+					num--;
+					if(num<0){
+						num=0;
+					}
+					change(num);
+				}	
+			}
+			function change(num){
+				$("#content").animate({"top":-num*$(window).height()},500,function(){
+					flang=false;
+					index=0;
+				})
+			}
+		</script>
+	</body>
+</html>

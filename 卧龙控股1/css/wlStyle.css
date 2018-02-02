@@ -1,0 +1,211 @@
+/*----清格式----*/
+*{
+	margin: 0; padding: 0;
+	font-family: "微软雅黑"; font-size: 14px; color: #909090;
+}
+ul,li,ol{
+	list-style: none;
+}
+a{
+	text-decoration: none;
+	color: #909090;
+}
+img{
+	border: none;
+}
+
+
+/*-----header----*/
+#header{
+	width: 960px;
+	margin: 37px auto;
+	overflow: hidden;
+}
+#header h1{
+	float: left;
+}
+.header_ul{
+	float: right;
+}
+.header_ul li{
+	float: left;
+	padding: 0 15px;
+	line-height: 28px;
+	border-right: 1px solid #DDDDDD;
+}
+.header_ul .none{
+	padding: 0; border: none;
+}
+.header_ul input{
+	width: 228px; height: 28px;
+	background: #F1F1F1;
+	border: 1px solid #E5E5E5;
+	outline: none;
+	overflow: hidden;
+}
+.header_ul .input_text{
+	width: 198px; height: 28px;
+	border-right: none;
+}
+.header_ul .input_button{
+	width: 30px; height:30px;
+	background: #F1F1F1 url(../img/2017-10-26_203010.png) no-repeat center center;
+	border-left: none;float: right;
+}
+
+
+
+/*----nav----*/
+#nav{
+	width: 100%; height: 60px;
+	background: #2E2E2E;
+}
+#nav .nav_ul{
+	width: 960px; height: 60px;
+	margin: 0 auto;
+}
+#nav .nav_ul li{
+	width: 119px; height: 60px; line-height: 60px;float: left;
+	border-right: 1px solid #4A4A4A; text-align: center;
+}
+#nav .nav_ul li a{
+	font-size: 16px; color: #FFF;
+}
+
+
+
+/*----banner----*/
+#banner,#banner img{
+	width: 100%;
+	height: 400px;
+}
+
+
+
+/*----content----*/
+#content{
+	width: 960px;
+	margin: 0 auto;
+	overflow: hidden;
+}
+.content_top{
+	width: 960px;height: 240px;
+}
+.top_left{
+	width: 478px;float: left;
+}
+.top_left h3,.top_center h3,.top_right h3{
+	font-size: 16px;
+	height: 80px;
+	line-height: 80px;
+	color: #000;
+}
+.top_left h3 img{
+	float: right;
+	margin-top: 20px;
+}
+.top_left_ul li{
+	line-height: 25px;
+}
+.top_left_ul li a{
+	font-size: 12px; color: #505050; overflow: hidden;
+}
+.top_left_ul li span{
+	font-size: 12px; float: right;
+}
+.top_center,.top_right{
+	width: 200px; height: 240px;
+	float: left;
+}
+.top_center{
+	background: #F1F1F1;
+	padding: 0 15px;margin-left:5px ;
+}
+.top_center .top_center_p1{
+	padding: 12px 0; color: #4C4C4C;
+}
+.top_center .top_center_p1 span{
+	display: block; color: #4A4A4A;font-size: 10px;margin-top: 10px;
+}
+.top_center .top_center_p2{
+	font-size:12px;color: #929292;line-height:30px;margin-top: 15px;
+}
+.top_right{
+	background: #FBFBFB url(../img/2017-10-26_222440.png) no-repeat right bottom;padding: 0 15px;
+	margin-right: 5px;
+}
+.top_right_p1{
+	font-size: 12px;width: 181px;
+	line-height: 25px;color: #575757;
+}
+.top_right a{
+	font-size: 12px;color: #FFF;
+	display: block;width: 66px;height: 18px;
+	border-radius: 3px;background: #B1B1B1;text-align: center;
+	margin-top: 60px;
+}
+.content_bottom{
+	width:960px; height: 280px;
+}
+.content_bottom h3{
+	font-size: 16px;
+	height: 80px;
+	line-height: 80px;
+	color: #000;overflow: hidden;
+}
+.content_bottom span{
+	margin-top: 15px;
+	float: right;
+}
+.content_bottom dl{
+	width: 212px; height: 120px;
+	float: left;margin-right: 37px;
+}
+.content_bottom dd{
+	font-size: 12px; color: #434343; padding-top: 16px; line-height: 20px;
+}
+
+
+/*----footer----*/
+#footer{
+	width: 100%;  height: 250px;margin-top: 50px;background: #E5E5E5;
+}
+.footer_body{
+	width: 962px; height: 250px; margin: 0 auto; overflow: hidden;
+}
+.footer_left{
+	width: 453px; float: left; padding-right: 48px;
+}
+.footer_left p,.footer_center p,.footer_right p{
+	font-size: 16px; line-height: 30px;margin-top: 10px; padding-left: 10px;  color: #616161;
+}
+.footer_left ul,.footer_center ul{
+	list-style: url(../img/2017-10-25_093456.png); float: left;padding: 10px 20px;
+}
+.footer_left ul li,.footer_center ul li{
+	list-style: url(../img/2017-10-25_093456.png);font-size: 14px; color: #616161; line-height: 30px;
+}
+.footer_center{
+	width: 154px; float: left; padding-right: 48px;
+}
+.footer_right{
+	width: 258px; float: left;
+}
+.footer_img{
+	text-align: center;
+}
+.footer_bottom{
+	width: 960px; margin: 0 auto; padding: 30px 0; overflow: hidden;
+}
+.footer_bottom_u1 li{
+	 padding: 0 10px; border-right: 1px solid #777777;
+}
+.footer_bottom_u2 li{
+	padding: 0 2px;
+}
+.footer_bottom_u1 li,.footer_bottom_u2 li{
+	float: left; font-size: 12px; color: #909090;
+}
+.footer_bottom_u2{
+	float: right; overflow: hidden;
+}

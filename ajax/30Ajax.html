@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script src="js/ajax.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			//HTTP协议（数据如何在万维网中通讯的协议）中的两种发送请求的方法。get 和 post
+			//get和post的区别
+			
+//			http:/localhost:63342/ajax/1.txt?userName=1&pass=1
+//			<!--默认是get方式进行发送 -->
+//	        <!--1.数据通过地址栏进行传输  如果有多条数据通过&的符号进行连接-->
+//	        <!--2.get方式 发送的数据是有大小限制的 -->
+//	        <!--如果超出地址栏的的最大长度，会进行截取操作-->
+//	        <!--3.get方式相对于post来说安全性比较低一些-->
+//	        <!--form表单中传输的数据通过name属性进行传输-->
+//			
+//			http:/localhost:63342/ajax/1.txt
+			
+//			<!--1.post传输数据通过请求头方式进行数据的传输-->
+//		    <!--2.post传输数据的大小理论上是没有限制的-->
+//		    <!--3.post相对get方式安全性能更高些-->
+		    
+		    
+			//ajax    Asynchronous JavaScript and XML（异步的 JavaScript 和 XML）
+//			最大的优点是在不重新加载整个页面的情况下，可以与服务器交换数据并更新部分网页内容
+			
+			//同步和异步
+			
+			//创建 XMLHttpRequest 对象
+//			var xhr=new XMLHttpRequest();
+//			var xhr2=new ActiveXObject("Microsoft.XMLHTTP");//(ie5,6);
+//			var xhr;
+//			try{
+//				xhr=new XMLHttpRequest();
+//			}catch(e){
+//				xhr=new ActiveXObject("Microsoft.XMLHTTP");
+//			}
+
+			//向服务器发送请求请求
+			//使用 XMLHttpRequest 对象的 open() 和 send() 方法
+			//open(method,url,async)规定请求的类型、URL 以及是否异步(true,false)处理请求。
+			//send();将请求发送到服务器。
+//			xhr.open("get","json/1.txt",true);
+//			xhr.send();
+			
+			//onreadystatechange 事件  请求被发送到服务器时，我们需要执行一些基于响应的任务
+//			readyState	存有 XMLHttpRequest 的状态。从 0 到 4 发生变化。
+//			0: 请求未初始化
+//			1: 服务器连接已建立
+//			2: 请求已接收
+//			3: 请求处理中
+//			4: 请求已完成，且响应已就绪
+//			status	200: "OK"
+//			404: 未找到页面
+//			xhr.onreadystatechange=function(){
+//				if(xhr.readyState==4&&xhr.status==200){
+//					alert(xhr.responseText)
+//				}
+//			}			
+			//服务器 响应
+//			responseText	获得字符串形式的响应数据。
+
+			
+		</script>
+	</body>
+</html>

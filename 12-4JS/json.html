@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		json  轻量级数据交换
+		<div></div>
+		<script type="text/javascript">
+//			简单方式
+//			var list={
+//				"name":"张三",
+//				"age":"18",
+//			}
+			var oDiv=document.getElementsByTagName("div")[0];
+//			oDiv.innerHTML=list.name;
+
+			//复杂方式
+			var list={
+				"pinzhong":"renlei",
+				"xinxi":[
+					{"name":"zhangsan","age":"18"},
+					{"name":"lisi","age":"17"},
+					{"name":"zhou","age":"16"},
+					{"name":"wu","age":"15"},
+					{"name":"zheng","age":"14"},
+				]
+			}
+			oDiv.innerHTML=list.xinxi[2].age;
+		</script>
+	</body>
+</html>

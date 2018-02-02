@@ -1,0 +1,194 @@
+/*----清格式----*/
+*{
+	padding: 0; margin: 0; font-family: "微软雅黑";
+	font-size: 16px; color: #000;
+}
+ul,li,ol{
+	list-style: none;
+}
+a{
+	text-decoration: none; color: #000;
+}
+img{
+	border: none;
+}
+
+
+/*----header----*/
+#header .header_top{
+	width: 100%; background:#E4E4E4;
+}
+.header_top_body{
+	width: 1000px; height: 35px;margin: 0 auto;
+}
+.body_u1 li{
+	height: 35px; line-height: 35px;float: left;
+}
+.body_u1 li a{
+	font-size: 12px; color: #696969;
+	padding: 0 10px; border-right: 1px solid #D6D5D5;border-left: 1px solid #FFFFFF;
+}
+.body_u2{
+	float: right;
+}
+.body_u2 li{
+	float: left; height: 35px; line-height: 35px;
+}
+.body_u2 li a{
+	font-size: 12px; color: #696969; padding: 0 10px;
+}
+.body_u2_button{
+	width: 23px; height: 20px;
+	background: url(../img/2017-10-30_095711.png) no-repeat center center;
+	border: none; margin-top: 10px; outline: none;
+}
+.header_bottom{
+	width: 1000px; margin: 12px auto; overflow: hidden; margin-bottom: 0px;
+}
+.logo1{
+	float: left;
+}
+.logo2{
+	float: right;
+}
+
+/*----nav----*/
+#nav{ 
+	width: 100%; height:44px; background: #D92B34;
+}
+#nav ul{
+	width: 1000px; margin: 0 auto; overflow: hidden; background: #C8141E;
+}
+#nav ul li{
+	float: left; height: 44px; line-height: 44px; width: 100px; text-align: center;
+}
+#nav ul li a{
+	color: #FFF; 
+}
+
+
+/*----banner----*/
+#banner{
+	width: 100%; background: #E6E6E6;
+}
+.banner_body{
+	width: 1000px; margin: 0 auto; overflow: hidden;
+}
+.banner_img{
+	width: 668px; height: 327px; float: left;
+}
+.banner_ul{
+	width: 332px; height: 324px;
+	float: right; border-bottom: 3px solid #C8141E; background:#EEEEEE;
+}
+.banner_ul ul{
+	width: 254px; height: 277px; margin: 0 auto; padding-top: 20px;
+}
+.banner_ul ul li{
+	height: 54px; border-bottom: 1px dashed #CCCCCC; line-height: 28px;
+}
+.ul_li1{
+	font-weight: 900;
+}
+.ul_li2{
+	color: #E30000;
+}
+.ul_li3,.ul_li4,.ul_li5{
+	color: #444444;
+}
+span{
+	color: #787878; font-size: 14px;
+}
+.banner_ul li a{
+	font-size: 14px;
+}
+.ul_img{
+	float: right; padding: 2px 40px;
+}
+
+
+/*----content----*/
+#content{
+	width: 1000px; margin: 0 auto; margin-top: 50px;
+}
+.content_left{
+	width: 730px; overflow: hidden;
+}
+.left_left{
+	width: 270px; float: left;
+}
+.top_ul,.bottom_ul{
+	overflow: hidden; border-bottom: 1px solid #CCCCCC;
+}
+.top_ul li{
+	float: left; font-size: 20px; margin-right: 20px;height: 35px;
+}
+.top_dl{
+	margin-top: 20px;
+}
+.top_dl dd{
+	font-size: 14px;text-align: center;
+}
+.bottom_ul,.right_bottom{
+	margin-top: 80px;
+}
+.bottom_ul li{
+	float: left; font-size: 18px; margin-right: 15px;height: 35px;
+}
+.left_bottom dl{
+	width: 270px; height: 60px; margin-top: 30px;overflow: hidden;
+}
+.left_bottom dl dt{
+	width: 57px; height: 60px; text-align: center;
+	float: left; font-size: 20px; border-right: 1px dashed #CCCCCC;padding-right: 10px;
+}
+.left_bottom dl dd{
+	float: left; margin-left: 20px; height: 22px;
+}
+.jiacu{
+	font-size: 12px; font-weight: 800; color: #666666;
+}
+.huise{
+	font-size: 12px; color: #666666;
+}
+.qianhui{
+	font-size: 12px; color: #999999;
+}
+.left_right{
+	width: 422px; float: left; margin-left: 35px; overflow: hidden;
+}
+.right_top ul ,.right_bottom ul{
+	border-bottom: 1px solid #CCCCCC; overflow: hidden;
+}
+.right_top_ul li,.right_bottom li{
+	float: left; font-size: 20px; margin-right: 20px;height: 35px; 
+}
+.right_top dl{
+	widows: 422px; height: 62px; margin-top: 20px;
+}
+.right_top dl dt{
+	float: left; width: 62px; height: 62px; background: #C8141E; color: #FFF; font-size: 24px;
+	font-weight: 900; text-align: center;
+}
+.right_top dl dt span{
+	font-size: 14px; color: #FFF; font-weight: 100; display: block;
+}
+.right_top dl dd{
+	width: 337px; line-height: 18px;
+	margin-left: 20px; float: right;
+}
+.right_top dl .right_top_dd1{
+	font-size: 16px; 
+}
+.right_top dl .right_top_dd2{
+	font-size: 12px;
+}
+.right_body{
+	width: 422px; margin-top: 30px; height: 200px;
+}
+.right_body li{
+	font-size: 12px; overflow: hidden; line-height: 30px; height: 30px;width:422px;
+}
+.right_bottom .right_body span{
+	float: right; font-size: 12px;
+}

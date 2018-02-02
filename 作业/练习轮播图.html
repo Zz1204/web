@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			div{
+				width:300px;
+				height:200px;
+				/*background:red;*/
+				position:relative;
+				margin:0 auto;
+			}
+			span{
+				display:block;
+				width:30px;
+				height:30px;
+				background:yellow;
+				position:absolute;
+				line-height:30px;
+				text-align:center;
+			}
+			.s1{
+				top:85px;
+				left:-50px;
+			}
+			.s2{
+				top:85px;
+				right:-50px;
+			}
+		</style>
+	</head>
+	<body>
+		<div>
+			<span class="s1"></span>
+			<span class="s2"></span>
+		</div>
+		<script>
+			var oDiv=document.getElementsByTagName("div")[0];
+			var s1=document.getElementsByTagName("span")[0];
+			var s2=document.getElementsByTagName("span")[1];
+			var col=["red","blue","yellow","pink","green"];
+			var a=0;
+			oDiv.style.background=col[0+a];
+			s2.onclick=function(){
+				a++;
+				oDiv.style.background=col[a%col.length];
+				console.log(a);
+			}	
+			s1.onclick=function(){
+				if(a==0){
+					a=col.length;
+					oDiv.style.background=col[a%col.length];
+				}
+				a--;
+				oDiv.style.background=col[a%col.length]
+				console.log(a);
+			}
+		</script>
+	</body>
+</html>

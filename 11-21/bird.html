@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			body{
+				background: #27283B;
+			}
+			.bird{
+				width: 200px;
+				height: 200px;
+				margin: 80px auto;
+				background: #27283B;
+				position: relative;
+			}
+			.da{
+				position: absolute;
+				top: 0; left: 0;
+				width: 0;
+				height: 0;
+				border-style: solid;
+				border-width: 100px;
+				border-radius: 50%;
+				border-color: transparent transparent #D72928 #DB3E3D;
+				-webkit-transform: rotate(45deg);
+				transition: 0.5s;
+			}
+			.zhong{
+				width: 0;
+				height: 0;
+				position: absolute;
+				top: 10%; left: 10%;
+				border-style: solid;
+				border-width: 80px;
+				border-color: #F8D245 transparent #F2F2F2 #FFF;
+				border-radius: 50%;
+				-webkit-transform: rotate(45deg);
+				transition: 0.5s;
+			}
+			.xiao{
+				width: 0;
+				height: 0;
+				position: absolute;
+				top: 30%; left: 30%;
+				border-style: solid;
+				border-width: 40px;
+				border-color: transparent #F7A703 transparent transparent;
+				border-radius: 50%;
+				-webkit-transform: rotate(45deg);
+				transition: 0.5s;
+			}
+			.xiao:before{
+				content: "";
+				width: 20px;
+				height: 20px;
+				border-radius: 50%;
+				background: black;
+				position: absolute;
+				top: -10px; left: -54px;
+				transition: 0.5s;
+			}
+			.bird:hover .da{
+				-webkit-transform: rotate(225deg);
+				border-color: transparent transparent #1fe8b6 #16d7a7;
+			}
+			.bird:hover .zhong{
+				-webkit-transform: rotate(-135deg);
+				border-color: transparent #f8d245 #fff #f2f2f2;
+			}
+			.bird:hover .xiao{
+				-webkit-transform: rotate(135deg);
+				border-color: transparent #f7a703 transparent transparent;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="bird">
+				<div class="da"></div>
+				<div class="zhong"></div>
+				<div class="xiao"></div>
+		</div>
+	</body>
+</html>

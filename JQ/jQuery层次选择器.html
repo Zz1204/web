@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>层次选择器</title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			.box{
+				width: 300px;
+				height: 300px;
+				background: #CCCCCC;
+				border: 3px solid #333;
+				float: left;
+				margin-left: 8px;
+			}
+			.min_one,.min_two{
+				width: 100px;
+				height: 100px;
+				border: 3px solid #333333;
+				background: #fff;
+				float: left;
+				margin: 5px;
+			}
+			.mini{
+				width: 10px;
+				height: 10px;
+				background: #999;
+				margin: 10px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box">
+			<div class="min_one">
+				<div class="mini min_one"></div>
+			</div>
+			<div class="min_two"></div>
+		</div>
+		<div class="box">
+			<div class="min_one"></div>
+			<div class="min_two"></div>
+			<div class="min_two"></div>
+			
+		</div>
+		<div class="box">
+			<div class="min_one"></div>
+			<div class="min_two"></div>
+		</div>
+		<div class="box">
+			<div class="min_one"></div>
+			<div class="min_two"></div>
+		</div>
+		<script src="js/jquery-3.2.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			//层次选择器
+			
+			//包含选择器
+//			$(".box .min_one").css("background","yellow");
+			
+			//子元素选择器
+			$(".box>.min_one").css("background","yellow");
+			
+			//相邻兄弟选择器，只选相邻
+			$(".min_one+.min_two").css("background","red");
+			
+			//兄弟选择器，所有兄弟
+			$(".min_one~.min_two").css("background","red");
+		</script>
+	</body>
+</html>

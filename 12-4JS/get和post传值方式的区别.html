@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		
+		<form action="1.txt" method="get">
+			<!--默认是get方式进行发送-->
+			<!--1.数据通过地址栏进行传输，如果有多条数据通过&的符号进行连接-->
+			<!--2.get方式发送的数据是有大小限制的-->
+			<!--3.如果超出地址栏的最大长度，会进行截取操作-->
+			<!--4.get方式相对于post来说安全性比较低一些-->
+			用户名：<input type="text" name="userName" id="" value="" />
+			密码：<input type="password" name="pass" id="" value="" />
+			<input type="submit" name="tij" id="" value="提交" />
+		</form>
+		
+		<form action="1.txt" method="post">
+			<!--1.post传输数据通过请求头方式进行数据传输-->
+			<!--2.post传输数据的大小理论上是没有限制的-->
+			<!--3.post相对于get安全性更高一些-->
+			用户名：<input type="text" name="userName" id="" value="" />
+			密码：<input type="password" name="pass" id="" value="" />
+			<input type="submit" name="tij" id="" value="提交" />
+		</form>
+	</body>
+</html>

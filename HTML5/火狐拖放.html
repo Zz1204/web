@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			li{
+				width: 200px;
+				height: 100px;
+				background: yellow;
+				margin: 50px;
+				list-style: none;
+			}
+			div{
+				width: 300px;
+				height: 300px;
+				background: red;
+				position: absolute;
+				right:150px;
+				top: 50px;
+			}
+		</style>
+	</head>
+	<body>
+		<ul>
+			<li draggable="true"></li>
+			<li draggable="true"></li>
+			<li draggable="true"></li>
+		</ul>
+		<div></div>
+		<img src="img/shirt_1_big.jpg"/>
+	</body>
+	<script type="text/javascript">
+		var ali=document.querySelectorAll("li");
+		var odiv=document.querySelector("div");
+		for (var i=0;i<ali.length;i++) {
+			ali[i].ondragstart=function(ev){
+				var ev=ev||window.event;
+				//火狐下面需要设置    数据		key键名    value键值
+//				json={name:"aaaa"}
+				ev.dataTransfer.setData("name","syx");
+				this.style.background="red";
+			}
+		}
+		odiv.ondragover=function(ev){
+			var ev=ev||window.event;
+			ev.preventDefault();
+		}
+		odiv.ondrop=function(ev){
+			var ev=ev||window.event;
+			alert(ev.dataTransfer.getData("name"));
+		}
+	</script>
+</html>

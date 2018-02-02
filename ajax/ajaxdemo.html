@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			*{
+				padding:0;
+				margin:0;
+			}
+			dl,dt,dd{
+				list-style:none;
+			}
+			dl{
+				width:200px;
+				height:230px;
+				float:left;
+				border:2px solid red;
+				margin-left:50px;
+				margin-top:50px;
+			}
+			dt{
+				width:200px;
+				height:200px;
+			}
+			dd{
+				text-align:center;
+			}
+		</style>
+	</head>
+	<body>
+		<div>
+			<dl>
+				<dt></dt>
+				<dd></dd>
+			</dl>
+			<dl>
+				<dt></dt>
+				<dd></dd>
+			</dl>
+			<dl>
+				<dt></dt>
+				<dd></dd>
+			</dl>
+		</div>
+		<script src="js/ajax.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			var oDt=document.getElementsByTagName("dt");
+			var oDd=document.getElementsByTagName("dd");
+			var url="lpjson.json";
+			ajax.get(url,function(str){
+//				var obj=eval("("+str+")");     //不管对错直接解析
+				var obj=JSON.parse(str);		//错误的数据会报错，但不会解析
+				for(var i=0;i<oDt.length;i++){
+					var img=document.createElement("img");
+					img.src=obj.list[i].img;
+					oDt[i].appendChild(img);
+					oDd[i].innerHTML=obj.list[i].name;
+				}
+			})
+		</script>
+	</body>
+</html>

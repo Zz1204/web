@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<button>按钮</button>
+		<div></div>
+		<script src="js/jquery-3.2.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$("button").click(function(){
+				$.ajax({
+					type:"get",				//传值方式
+					url:"1.json",			//json文件的路径
+					async:true,				//同步还是异步，同步为false
+					dataType:"json",		//数据类型
+					success:function(data){			//数据传回后执行什么
+						$("div").html(data.one)
+					}
+				})
+			})
+		</script>
+	</body>
+</html>

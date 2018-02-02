@@ -1,0 +1,102 @@
+#dongtai-body{
+	min-height: 500px;
+	padding-top: 120px;
+	width: 1100px;
+}
+.title1{
+	font-size: 54px;
+	line-height: 60px;
+	color: #311759;
+}
+.title2{
+	font-size: 18px;
+	color: #311759;
+	letter-spacing: 6px;
+	margin-bottom: 15px;
+}
+.title3{
+	color: #311759;
+	font-size: 30px;
+	height: 60px;
+	background: url(../img/pen_line_long.png) no-repeat 0 58px;
+}
+.title3>.pen{
+	width: 61px;
+	height: 58px;
+	right: 0;
+	top: 7px;
+	background: url(../img/pen_list.png) no-repeat;
+	cursor: pointer;
+}
+.title3>.pen:hover{
+	background-position-x:-61px;
+}
+
+
+.dongtai-wrap{
+	padding-top: 40px;
+}
+
+.dongtai-wrap>ul:after{
+	content: "";
+	display: block;
+	clear: both;
+}
+.dongtai-wrap>ul>li{
+	width: 513px;
+	height: 202px;
+	background: #fff;
+	border: 1px solid #fff;
+	padding: 36px 0 0 20px;
+	cursor: pointer;
+	margin: 0 30px 30px 0;
+}
+.dongtai-wrap>ul>li>.li-left{
+	width: 260px;
+	height: 168px;
+	margin-right: 17px;
+}
+.dongtai-wrap>ul>li>.li-right{
+	width: 221px;
+}
+.dongtai-wrap>ul>li>.li-right>.right-tit{
+	font-size: 20px;
+	color: #454548;
+	line-height: 26px;
+	padding-top: 15px;
+}
+.dongtai-wrap>ul>li>.li-right>.right-date{
+	color: #6b6a6f;
+	font-size: 12px;
+}
+.dongtai-wrap>ul>li>.li-right>.right-txt{
+	padding-top: 8px;
+	color: #47464a;
+	line-height: 26px;
+}
+.dongtai-wrap>ul>li>.move-img{
+	left: 0;
+	transition: all 0.5s;
+}
+.dongtai-wrap>ul>li:hover{
+	border-color: #86759e;
+	transform: translateY(-6px);
+	transition: all 0.5s;
+}
+.dongtai-wrap>ul>li:hover .move-img{
+	left: 55px;
+}
+.dongtai-wrap>img{
+	margin-top: 30px;
+}
+.dongtai-wrap>.list-btn{
+	width: 58px;
+	height: 58px;
+	background: url(../img/lis_more_btn_bg.png) no-repeat 0 -58px;
+	margin: 15px auto 130px;
+	cursor: pointer;
+	transition: all 0.3s;
+}
+.dongtai-wrap>.list-btn:hover{
+	background-position-y: 0;
+}

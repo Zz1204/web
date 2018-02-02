@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			body{
+				height:10000px;
+			}
+			div{
+				width:100px;
+				height:100px;
+				background: red;
+				position:absolute;
+				right:30px;
+				top:500px;
+			}
+		</style>
+	</head>
+	<body>
+		<div></div>
+		<script>
+			//窗口改变
+//			window.onresize=function(){
+//				console.log("窗口改变");
+//			}
+
+
+			//滚动条
+			var oDiv=document.getElementsByTagName("div")[0];
+			window.onscroll=function(){
+				var top0=document.documentElement.scrollTop|| document.body.scrollTop;
+				//考虑兼容性
+				setTimeout(function(){				//延时器
+					oDiv.style.top=top0+500+"px";
+				},500)
+			}
+		</script>
+	</body>
+</html>

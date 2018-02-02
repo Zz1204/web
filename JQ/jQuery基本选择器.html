@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>基本选择器</title>
+		<style type="text/css">
+			*{
+				padding: 0;
+				margin: 0;
+			}
+			div,p,span{
+				display: block;
+				height: 100px;
+				width: 100px;
+				background: #ccc;
+				border: 2px solid #333;
+				float: left;
+				margin: 5px;
+			}
+		</style>
+		
+	</head>
+	<body>
+		<div id="box">id:box</div>
+		<div class="box">class:box</div>
+		<p>p</p>
+		<span>span</span>
+		<script src="js/jquery-3.2.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			//基本选择器
+			
+			//元素选择器
+			$("p").css("background","red");
+			
+			//id选择器
+			$("#box").css("background","yellow");
+			
+			//class选择器
+			$(".box").css("background","blue");
+			
+			//通配符*
+			$("*").css("border-color","orange");
+			
+			//群组选择器
+			$("p,span").css("color","blue");
+			
+		</script>
+	</body>
+</html>

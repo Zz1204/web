@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			div{
+				width:100px;
+				height:100px;
+				background:red;
+				position:absolute;
+				top:0;
+				left:0;
+				cursor:move;
+			}
+		</style>
+	</head>
+	<body>
+		<div></div>
+		<script>
+			var oDiv=document.getElementsByTagName("div")[0];
+			oDiv.onmousedown=function(evt){
+				var evt=evt||window.event;
+				var xx=evt.offsetX;
+				var yy=evt.offsetY;
+				document.onmousemove=function(evt){
+					var evt=evt||window.event;
+					var x=evt.clientX;
+					var y=evt.clientY;
+					oDiv.style.left=x-xx+"px";
+					oDiv.style.top=y-yy+"px";
+				}
+				document.onmouseup=function(){
+					document.onmousemove=null;
+					oDiv.onmouseup=null;
+				}
+			}
+		</script>
+	</body>
+</html>

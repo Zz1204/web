@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			div{
+				width:100px;
+				height:100px;
+				background:red;
+			}
+		</style>
+	</head>
+	<body>
+		<button>按钮</button>
+		<div></div>
+		
+		<script>
+			
+//			function sum(arr){
+//				var he=0;
+//				for(var i=0;i<arr.length;i++){
+//					he+=arr[i];
+//				}
+//				document.write(he);
+//			}
+//			var a=[1,2,3,4,5,6,6,6,6,6,66];
+//			sum(a);
+			
+			//求费波那契数列
+			
+//			function sum(x){
+//				if(x==1||x==2){
+//					return 1;
+//				}
+//				return sum(x-1)+sum(x-2);
+//				
+//			}
+//			var a=prompt("请输入一个数");
+//			alert(sum(a));
+			
+			var btn=document.getElementsByTagName("button")[0];
+			var oDiv=document.getElementsByTagName("div")[0];
+			var flang=true;
+			btn.onclick=function(){
+				if(flang==true){
+					oDiv.style.display="none";
+				}else{
+					oDiv.style.display="block";
+				}
+				flang=!flang;
+			}
+		</script>
+	</body>
+</html>

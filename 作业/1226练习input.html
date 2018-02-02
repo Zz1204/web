@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		姓名:<input type="text" name="" id="" value="" />
+		年龄:<input type="text" name="" id="" value="" />
+		性别:<input type="text" name="" id="" value="" />
+		微信:<input type="text" name="" id="" value="" />
+		<button>提交</button>
+		<script>
+			var ipt=document.getElementsByTagName("input");
+			var btn=document.getElementsByTagName("button")[0];
+			var conca=["姓名:","年龄:","性别:","微信:"];
+			var str="";
+			btn.onclick=function click(){
+				for(var i=0;i<ipt.length;i++){
+					str+=conca[i]+ipt[i].value+",";
+				}
+				alert(str);
+			}
+		</script>
+	</body>
+</html>

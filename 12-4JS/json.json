@@ -1,0 +1,8 @@
+{
+	"pinzhong":"renlei",
+	"xinxi":[
+		{"name":"张三","age":"18"},
+		{"name":"李四","age":"17"},
+		{"name":"哈哈","age":"20"}
+	]
+}

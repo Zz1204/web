@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>argument</title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			var a=0;
+//			function sum(){
+//				console.log(arguments)
+//				for(var i=0;i<arguments.length;i++){
+//					a+=arguments[i];
+//				}
+//				return a;
+//			}
+//			var result = sum(1,2,3,4,5);
+//			alert(result);
+
+//			function sum(){
+//				var a=0;
+//				var b=3;
+//				console.log(arguments.callee);
+//			}
+//			sum();
+
+//			10!
+			function sum(num){
+				if(num==1){
+					return 1;
+				}
+				return num*arguments.callee(num-1);
+			}
+			alert(sum(10));
+
+
+			function sum(dianhuahaoma){
+				dianhuahaoma();
+				console.log("主函数")
+			}
+			function b(){
+				console.log("我是回调函数")
+			}
+			sum(b);
+
+		</script>
+	</body>
+</html>

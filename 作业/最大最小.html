@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			var arr=[2,3,1,4,8,6,7,5];
+			var max=arr[0];
+			var maxIndex=0;
+			var min=arr[0];
+			var minIndex=0;
+			for (var i=0;i<arr.length;i++) {
+				if(max<arr[i]){
+					maxIndex=i;
+					max=arr[i];
+				}
+				if(min>arr[i]){
+					minIndex=i;
+					min=arr[i];
+				}
+			}
+			alert("最大数是"+max+","+"他的位置是"+maxIndex+","+"最小数是"+min+","+"他的位置是"+minIndex)
+		</script>
+	</body>
+</html>

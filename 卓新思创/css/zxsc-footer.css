@@ -1,0 +1,104 @@
+#footer{
+	width: 100%;
+	height:348px;
+	background: url(../img/yinyue_bg.jpg);
+}
+.dibu{
+	width: 100%;
+	height: 33px;
+	left: 0;
+	top: -33px;
+	
+	background:url(../img/map_bottomimg.png) no-repeat center center;
+}
+#footer>.ma{
+	width: 1100px;
+}
+#footer>.ma>.footer-top{
+	width: 555px;
+	margin: 0 auto;
+	height: 57px;
+	padding: 115px 0 90px 0;
+}
+#footer>.ma>.footer-top>div{
+	width: 57px;
+	height: 57px;
+	margin-right: 26px;
+	border-radius:50%;
+}
+#footer>.ma>.footer-top>div:last-child{
+	margin-right: 0;
+}
+#footer>.ma>.footer-top>div:hover{
+	animation:1s linear 0s normal none 1 running tan;
+	background-position-y:-57px;
+}
+.duo{
+	background: url(../img/yinyue_duo.png) no-repeat;
+}
+.lai{
+	background: url(../img/yinyue_lai.png) no-repeat;
+}
+.mi{
+	background: url(../img/yinyue_mi.png) no-repeat;
+}
+.fa{
+	background: url(../img/yinyue_fa.png) no-repeat;
+}
+.suo{
+	background: url(../img/yinyue_suo.png) no-repeat;
+}
+.la{
+	background: url(../img/yinyue_la.png) no-repeat;
+}
+.xi{
+	background: url(../img/yinyue_xi.png) no-repeat;
+}
+#footer>.ma>.footer-bottom{
+	width: 1100px;
+	border-top: 2px dashed #9890a2;
+	padding-top: 25px;
+	text-align:center;
+}
+#footer>.ma>.footer-bottom>a{
+	color: #fff;
+}
+#footer>.ma>.footer-bottom>a:hover{
+	color: #6CF;
+}
+
+
+
+.guding{
+	width: 87px;
+	height: 161px;
+	bottom: 160px;
+	right: 40px;
+	z-index: 9999;
+	display: none;
+}
+.guding>.guding-top{
+	width: 50px;
+	height: 50px;
+	background: url(../img/scroll_top_bg.png) no-repeat;
+	margin:0 auto;
+	margin-bottom: 24px;
+	transition: background-position 0.3s;
+	cursor: pointer;
+}
+.guding>.guding-top:hover{
+	background-position-y: bottom;
+}
+.guding>.guding-bottom{
+	width: 87px;
+	height: 87px;
+	background: url(../img/fixed_contactus.png) no-repeat right;
+	position: absolute;
+	right: 0;
+	top:75px;
+	transition: width 0.3s;
+}
+.guding>.guding-bottom:hover{
+	width: 235px;
+	animation:1s linear 0s normal none 1 running tan;
+}

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			div{
+				width:100px;
+				height:100px;
+				float:left;
+				margin:10px;
+				background:red;
+			}
+			
+			/*.boss{
+				display:none;
+			}*/
+		</style>
+	</head>
+	<body>
+		<div class="box" id="hhh"></div>
+		<div class="boss" id="haha"></div>
+		<div class="bosss"></div>
+		<script src="js/jquery-3.2.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<script>
+			//可见性过滤选择器
+//			$("div:visible").css("background","yellow");
+			
+			//不可见过滤
+//			$("div:hidden").css("background","red");
+//			$(".boss").css("display","block");
+
+			//属性过滤选择器
+			$("div[id=hhh]").css("background","yellow")
+		</script>
+	</body>
+</html>

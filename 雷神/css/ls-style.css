@@ -1,0 +1,245 @@
+/*清格式*/
+body,div,p,span,a,dl,dt,dd,ul,ol,li,img,input,button,h1,h2,h3,h4,h5,h6{
+	padding: 0;
+	margin: 0;
+}
+body{
+	font-family: "微软雅黑";
+	font-size: 16px;
+	color: #000;
+}
+img{
+	border: none;
+	vertical-align: middle;
+}
+dl,dt,dd,ul,ol,li{
+	list-style: none;
+}
+a{
+	text-decoration: none;
+}
+.fl{
+	float: left;
+}
+.fr{
+	float: right;
+}
+.ma{
+	margin-left:auto;
+	margin-right:auto
+}
+.tc{
+	text-align: center;
+}
+.pr{
+	position: relative;
+}
+.pa{
+	position: absolute;
+}
+.pf{
+	position: fixed;
+}
+.hw:hover{
+	color: #fff;
+}
+
+
+/*html*/
+#top{
+	width: 100%;
+	height: 40px;
+	background: #333333;
+}
+#top .ma{
+	width: 1226px;
+	height: 40px;
+}
+#top .ma .fl,#top .ma .fr{
+	line-height: 40px;
+	height: 40px;
+}
+.fl a,.fr a,.yc{
+	font-size: 12px;
+	color: #B0B0B0;
+}
+.fl .cw{
+	color: #fff;
+}
+.fg{
+	padding: 0 5px;
+	color: #424242;
+}
+.fl .ht span{
+	display: none;
+	left: 55px;
+	top: 0;
+}
+.ht:hover span{
+	display: block;
+}
+.fr{
+	z-index: 999;
+}
+.gwc{
+	width: 125px;
+	height: 40px;
+	margin-left: 15px;
+	background: #424242;
+}
+.gwc span{
+	display: inline-block;
+	width: 19px;
+	height: 14px;
+	vertical-align: middle;
+	background: url(../img/gwc.fw.png) no-repeat;
+	padding: 0;
+	margin: 0;
+}
+.yc{
+	line-height: 100px;
+	width: 316px;
+	height: 0px;
+	right: 0;
+	background: #fff;
+	overflow: hidden;
+	transition: height 0.5s;
+	box-shadow: 0 2px 10px rgba(0,0,0,0.15);
+	z-index: -1;
+}
+.gwc:hover{
+	color: #B9000F;
+	background: #fff;
+}
+.gwc:hover span{
+	background: url(../img/bg.png) no-repeat;
+}
+.gwc:hover .yc{
+	height: 100px;
+}
+
+
+
+
+
+#header{
+	width: 100%;
+	height: 112px;
+}
+#header .ma{
+	width: 1226px;
+	height: 112px;
+	line-height: 112px;
+}
+.logo{
+	width: 234px;
+	height: 70px;
+	margin-top: 22px;
+}
+.logo a{
+	display: inline-block;
+	width: 100%;
+	height: 100%;
+}
+.logo-1{
+	background: url(../img/logozui.jpg) no-repeat;
+}
+.logo-2{
+	background: url(../img/gif.gif) no-repeat;
+}
+.sousuo{
+	width: 474px;
+	height: 42px;
+	margin-top: 40px;
+}
+.text{
+	width: 420px;
+	height: 40px;
+	border: 1px solid #E0E0E0;
+	transition: border-color 1s;
+}
+.button{
+	width: 52px;
+	height: 42px;
+	background: url(../img/fangdajing.png) no-repeat;
+	border: 1px solid #E0E0E0;
+	transition: border-color 1s;
+}
+.sousuo:hover .button{
+	border: 1px solid #B0B0B0;
+}
+.sousuo:hover .text{
+	border: 1px solid #B0B0B0;
+}
+.button:hover{
+	background: url(../img/fdj.png) no-repeat;
+}
+
+
+
+
+#nav{
+	width: 100%;
+	height: 38px;
+	border-bottom: 1px solid #C01734;
+	background: yellow;
+}
+#nav .ma{
+	width: 1226px;
+	height: 38px;
+	background: brown;
+}
+.nav-left{
+	width: 234px;
+	height: 38px;
+	line-height: 38px;
+	background: #C01734;
+	color: #fff;
+	text-align: center;
+	font-size: 14px;
+}
+.nav-left span{
+	display: inline-block;
+	width: 15px;
+	height: 9px;
+	vertical-align: middle;
+	background: url(../img/fen.png) no-repeat;
+	background-size: cover;
+	margin-left: 113px;
+}
+
+
+
+
+
+#banner{
+	width: 100%;
+	height: 460px;
+	background: blue;
+}
+
+
+
+
+#content{
+	width: 100%;
+	height: 4158px;
+	background: palegreen;
+}
+#content .ma{
+	width: 1226px;
+	height: 4158px;
+	background: mediumspringgreen;
+}
+
+
+#footer{
+	width: 100%;
+	height: 352px;
+	background: brown;
+}
+#footer .ma{
+	width: 1226px;
+	height: 352px;
+	background: gold;
+}

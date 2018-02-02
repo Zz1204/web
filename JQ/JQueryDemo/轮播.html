@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			ul,li{
+				list-style: none;
+			}
+			div{
+				width: 810px;
+				height: 320px;
+				margin: 50px auto;
+				padding: 10px;
+				background: red;
+				position: relative;
+			}
+			ul{
+				width: 3240px;
+				height: 100%;
+				position: absolute;
+			}
+			li{
+				float: left;
+			}
+		</style>
+	</head>
+	<body>
+		<div>
+			<ul>
+				<li><img src="../img/t1.jpg" alt="" /></li>
+				<li><img src="../img/t2.jpg" alt="" /></li>
+				<li><img src="../img/t3.jpg" alt="" /></li>
+				<li><img src="../img/t4.jpg" alt="" /></li>
+			</ul>
+		</div>
+		<script src="../js/jquery-3.2.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<script>
+			var num=0;
+			var num1=0;
+			var timer=null;
+			timer=setInterval(chang,2000);
+			function chang(x,y){
+				if(num1==$("ul li").length-1){
+					//当运行到最后一张图片的时候，让第一张图片定位到最后一张的后面
+					$("ul li").eq(0).css({"position":"relative","left":$("ul li").length*810});
+					num1=0;
+				}else{
+					num1++;
+				}
+				
+				num++;
+				$("ul").animate({left:-810*num},500,function(){
+					if(num==$("ul li").length){
+						//当运行到最后一张图片的下一张的时候，让li的定位清空，让ul的left归零
+						$("ul li").css("position","");
+						$("ul").css("left","0");
+						num=0;
+					}
+				})
+				console.log(num);
+				console.log(num1)
+			}
+//			console.log(("ul li").length*810);
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+		</script>
+	</body>
+</html>

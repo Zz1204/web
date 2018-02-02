@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			.box{
+				width: 300px;
+				height: 300px;
+				background: #CCCCCC;
+				border: 3px solid #333;
+				float: left;
+				margin-left: 8px;
+			}
+			.min_one,.min_two{
+				width: 100px;
+				height: 100px;
+				border: 3px solid #333333;
+				background: #fff;
+				float: left;
+				margin: 5px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box">
+			
+			<div class="min_two">1</div>
+			<div class="min_two">1</div>
+		</div>
+		<div class="box">
+			<div class="min_one">1</div>
+			<div class="min_two">1</div>
+			<div class="min_two">1</div>
+		</div>
+		<div class="box">
+			<div class="min_one">1</div>
+			<div class="min_two">1</div>
+			<div class="min_two">1</div>
+		</div>
+		<div class="box">
+			<div class="min_one"></div>
+			<div class="min_two"></div>
+			<div class="min_two"></div>
+		</div>
+		<div class="box">
+			<div class="min_one"></div>
+		</div>
+		<script src="js/jquery-3.2.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			//基本过滤选择器
+			
+			//first   第一个
+//			$(".box:first").css("background","red");
+//			$(".box").first().css("background","red");
+			
+			//last    最后一个
+//			$(".box:last").css("background","yellow");
+//			$(".box").last().css("background","yellow");
+			
+			//not     除了他之外的
+//			$("div:not(.box)").css("background","red");
+//			$("div").not(".box").css("background","red");
+
+			//:ep()     第几个
+//			$(".min_one:eq(0)").css("background","yellow");
+//			$(".min_one").eq(2).css("background","red");
+			
+			//:even    偶数索引
+//			$(".min_two:even").css("background","yellow");
+
+			//:odd      奇数索引
+//			$(".min_two:odd").css("background","yellow");
+
+			//gt(index)    大于index的
+//			$(".min_two:gt(2)").css("background","red");
+			
+			//lt(index)     小于index的
+//			$(".min_two:lt(5)").css("background","red");
+			
+			
+			//内容过滤选择器
+			
+			//empty  没有任何子元素包括文本元素      放在外面会清空内容
+//			$("div:empty").css("background","red");
+			
+			//parent  有任意子元素的
+//			$("div:parent").css("background","red");
+
+			//has    含有某个元素的元素
+//			$("div:has(.min_one)").css("background","red");
+
+			//选取box的第一个孩子,可选奇数和偶数
+//			$(".box :nth-child(odd)").css("background","red")
+			
+			//第一个孩子
+//			$(".box :first-child").css("background","red");
+			
+			//最后一个孩子
+//			$(".box :last-child").css("background","blue")
+			
+			//只有一个孩子的时候
+//			$(".box :only-child").css("background","red")
+		</script>
+	</body>
+</html>

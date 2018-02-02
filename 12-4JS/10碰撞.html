@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{margin: 0;padding: 0;}
+			ul,li{list-style: none;}
+			/*.box{
+				width: 300px;
+				height: 400px;
+				margin: 100px auto;
+				position: relative;
+				border: 2px solid #FF0000;
+				background: #ccc;
+			}
+			.little{
+				width: 20px;
+				height: 20px;
+				background: blue;
+			}*/
+			.box{
+				width: 300px;
+				height: 30px;
+				border: 2px solid #ccc;
+				margin: 30px auto;
+			}
+			.one{
+				width: 99px;
+				height: 30px;
+				border-right: 1px solid #ccc;
+				line-height: 30px;
+				text-align: center;
+				float: left;
+			}
+			.change{
+				width: 98px;
+				height: 90px;
+				border: 1px solid #ccc;
+				display: none;
+			}
+			.change li{
+				width: 98px;
+				height: 29px;
+				border-bottom: 1px solid #ccc;
+			}
+		</style>
+	</head>
+	<body>
+		<ul class="box">
+			<li class="one">
+				吃饭
+				<ul class="change">
+					<li>吃饭饭</li>
+					<li>吃饭饭</li>
+					<li>吃饭饭</li>
+				</ul>
+			</li>
+			<li class="one">
+				睡觉
+				<ul class="change">
+					<li>睡觉觉</li>
+					<li>睡觉觉</li>
+					<li>睡觉觉</li>
+				</ul>
+			</li>
+			<li class="one">
+				打豆豆
+				<ul class="change">
+					<li>打豆豆</li>
+					<li>打豆豆</li>
+					<li>打豆豆</li>
+				</ul>
+			</li>
+		</ul>
+		<!--<div class="box">
+			<div class="little" style="position: absolute;left: 0;top: 0;"></div>
+		</div>-->
+		<script type="text/javascript">
+			var one=document.getElementsByClassName("one");
+			var chan=document.getElementsByClassName("change");
+			for(var i=0;i<one.length;i++){
+				var a=one[i];
+				a.index=i;
+				a.onmouseover=function(){
+					chan[this.index].style.display="block";
+				}
+				a.onmouseout=function(){
+					chan[this.index].style.display="none";
+				}
+			}
+//			var lt=document.getElementsByClassName("little")[0];
+//			var oLeft=1;
+//			var oTop=1;
+//			setInterval(function(){
+////				console.log(lt.style.left)
+//				if(lt.style.left=="280px"){
+//					oLeft=-1;
+//				}
+//				if(lt.style.left=="0px"){
+//					oLeft=1;
+//				}
+//				if(lt.style.top=="380px"){
+//					oTop=-1;
+//				}
+//				if(lt.style.top=="0px"){
+//					oTop=1;
+//				}
+//				lt.style.left=parseInt(lt.style.left)+oLeft+"px"
+//				lt.style.top=parseInt(lt.style.top)+oTop+"px"
+//			},5)
+		</script>
+	</body>
+</html>

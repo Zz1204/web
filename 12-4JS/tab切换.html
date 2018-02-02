@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			*{
+				margin:0;
+				padding:0;
+			}
+			.ma{
+				margin:0 auto;
+			}
+			ul,li{
+				list-style:none;
+			}
+			.nav{
+				width:400px;
+				height:50px;
+				background:red;
+				margin-bottom:5px;
+			}
+			.nav li{
+				float:left;
+				width:200px;
+				height:50px;
+				line-height:50px;
+				cursor:pointer;
+			}
+			.body1{
+				width:400px;
+			}
+			.body{
+				width:400px;
+				height:400px;
+				line-height:400px;
+				font-size:30px;
+			}
+			.tc{
+				text-align:center;
+			}
+			.yellow{
+				background:yellow;
+			}
+			.red{
+				background:red;
+			}
+			.none{
+				display:none;
+			}
+		</style>
+	</head>
+	<body>
+		<ul class="nav ma">
+			<li class="nav1 tc yellow">第一个</li>
+			<li class="nav2 tc red">第二个</li>
+		</ul>
+		<ul class="body1 ma">
+			<li class="body tc yellow">我是第一个</li>
+			<li class="body tc red none">我是第二个</li>
+		</ul>
+		<script>
+			var li1=document.getElementsByClassName("nav1")[0];
+			var li2=document.getElementsByClassName("nav2")[0];
+			var li3=document.getElementsByClassName("body")[0];
+			var li4=document.getElementsByClassName("body")[1];
+			li1.onclick=function(){
+				li4.style.display="none";
+				li3.style.display="block";
+			}
+			li2.onclick=function(){
+				li3.style.display="none";
+				li4.style.display="block";
+			}
+		</script>
+	</body>
+</html>

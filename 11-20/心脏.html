@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			body{
+				height: 1500px;
+				background: linear-gradient(#FFA6A6,#FFD2D2);
+			}
+			.box{
+				margin: 84px auto;
+				width: 390px;
+				height: 390px;
+				position: relative;
+			}
+			.box div{
+				width: 220px;
+				height: 220px;
+				position: absolute;
+				box-shadow: 0 0 40px #d5083b;/*盒阴影*/
+				-webkit-transform: rotate(45deg);/*2D旋转*/
+			}
+			.left,.right,.bottom{
+				animation: tiaodong 0.8s infinite;
+				text-align: center;
+				line-height: 220px;
+			}
+			.left,.right{
+				border-radius: 50%;
+			}
+			.left{
+				background: linear-gradient(to right,#ee0a44 0%,#d5083b 30%);
+				z-index: 2222;
+			}
+			.right{
+				top: 0; right: 0;
+				background: linear-gradient(to right,#ee0a44 0%,#d5083b 30%);
+				z-index: 1111;
+			}
+			.bottom{
+				background: #d5083b;
+				bottom: 85px; left: 85px;
+				z-index: 11;
+				border-radius: 0px 53px 0px 6px/0px 6px 0px 53px;
+			}
+			@-webkit-keyframes tiaodong{
+				0%{
+					-webkit-transform: scale(1) rotate(45deg);/*scale 缩放*/
+					box-shadow: 0 0 40px #d5083b;
+				}
+				50%{
+					-webkit-transform: scale(1.22) rotate(45deg);
+					box-shadow: 0 0 60px #d5083b;
+				}
+				100%{
+					-webkit-transform: scale(1) rotate(45deg);
+					box-shadow: 0 0 40px #d5083b;
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box">
+			<div class="left"></div>
+			<div class="right"></div>
+			<div class="bottom"></div>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<p class="one" title="love"><strong>选出你最喜欢的水果 </strong></p>
+		<ul>
+			<li>苹果</li>
+			<li>橘子</li>
+			<li class="a">香蕉</li>
+			<li class="a">樱桃</li>
+		</ul>
+		<script src="js/jquery-3.2.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<script>
+			//遍历
+			//获取子节点
+			var $li=$("ul").children();
+//			console.log($li);
+			var $li2=$li.eq(1);
+//			console.log($li2);
+			
+			//next();获取元素后面的同辈元素
+//			console.log($li2.next());
+			
+			//prev();获取元素前面的同辈元素
+//			console.log($li2.prev());
+			
+			//siblings();获取除他之外的前后所有的同辈元素
+//			console.log($li2.siblings());
+
+			//closest();获取最近的匹配元素,逐级往上，匹配不到则返回空对象
+//			console.log($li2.closest("body"));
+
+			//parent();获取他的父级元素
+//			console.log($li2.parent());
+			
+			//parents();获取他所有的祖先元素
+//			console.log($li2.parents());
+
+
+			//css
+//			$("p").css({"color":"red","background":"yellow"});
+//			$("p").width(300);
+//			$("p").height(50);
+			$("p").width(300).height(50).css({"color":"red","background":"yellow"}).parent().css("border","1px solid #000");
+		</script>
+	</body>
+</html>

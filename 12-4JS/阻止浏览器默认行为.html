@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		
+		<script type="text/javascript">
+			window.onload=function(){
+				var a=document.getElementById("a");
+				a.onclick=function(evt){
+					var e=evt||window.event;
+					//e.preventDefault();		//谷歌阻止默认浏览器行为
+					
+					if(e.preventDefault){
+						e.preventDefault();
+					}else{
+						e.returnValue=false;	//IE阻止
+					}
+					
+//					return false;				//谷歌IE全阻止
+				}
+			}
+		</script>
+		<a href="http://www.baidu.com" id="a">百度一下</a>
+	</body>
+</html>

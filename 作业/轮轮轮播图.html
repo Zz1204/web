@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			*{
+				padding:0;
+				margin:0;
+			}
+			ul,li{
+				list-style:none;
+			}
+			div{
+				width:810px;
+				height:320px;
+				margin:50px auto;
+				/*overflow:hidden;*/
+				position:relative;
+			}
+			ul{
+				width:3240px;
+				height:320px;
+				position:absolute;
+				top:0;
+				left:0;
+			}
+			li{
+				width:810px;
+				height:320px;
+				float:left;
+			}
+			li img{
+				float:left;
+			}
+		</style>
+	</head>
+	<body>
+		<div>
+			<ul>
+				<li><img src="img/t1.jpg"/></li>
+				<li><img src="img/t2.jpg"/></li>
+				<li><img src="img/t3.jpg"/></li>
+				<li><img src="img/t4.jpg"/></li>
+			</ul>
+		</div>
+		<script src="js/startMove.js" type="text/javascript" charset="utf-8"></script>
+		<script>
+			var oUl=document.getElementsByTagName("ul")[0];
+			var a=parseInt(getStyle(oUl,"left"));
+			var timer=setInterval(function(){
+				a-=810;
+				startMove(oUl,{left:a},function(){
+				
+				});
+			},2000)
+		</script>
+	</body>
+</html>

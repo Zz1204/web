@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<span style="font-size:16px;">一闪一闪亮晶晶</span>
+		<script>
+			var span=document.getElementsByTagName("span")[0];
+			var clr=["red","yellow","blue","green"];
+			var si=6;
+			var co=0;
+			var timer=setInterval(function(){
+				co++;
+				span.style.color=clr[co%clr.length];
+				span.style.fontSize=parseInt(span.style.fontSize)+si+"px";
+				if(co==6){
+					co=0;
+					si=-si;
+				}
+			},100)
+		</script>
+	</body>
+</html>

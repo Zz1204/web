@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			div{
+				width:500px;
+				height:500px;
+				margin:0 auto;
+				line-height:500px;
+				text-align:center;
+				font-size:50px;
+			}
+		</style>
+	</head>
+	<body>
+		<div></div>
+		<script>
+			var oDiv=document.getElementsByTagName("div")[0];
+			oDiv.onmouseover=function(){
+				oDiv.innerHTML="亲爱的，我爱你";
+			}
+			oDiv.onmouseout=function(){
+				oDiv.innerHTML="对不起，开个玩笑";
+				oDiv.style.background="rgb(255,255,255)";
+			}
+			oDiv.onmousemove=function(){
+				var a=parseInt(Math.random()*255);
+				var b=parseInt(Math.random()*255);
+				var c=parseInt(Math.random()*255);
+				oDiv.style.background="rgb("+a+","+b+","+c+")";	
+			}
+		</script>
+	</body>
+</html>

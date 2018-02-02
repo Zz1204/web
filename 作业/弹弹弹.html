@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			*{
+				margin:0;
+				padding:0;
+			}
+			div{
+				width:300px;
+				height:500px;
+				border:3px solid #333;
+				margin:0 auto;
+				background:#000;
+				
+				position:relative;
+			}
+			p{
+				width:30px;
+				height:30px;
+				background:url(img/u=1936838390,1639008187&fm=27&gp=0.jpg) no-repeat center center;
+				background-size:cover;
+				border-radius:50%;
+			}
+		</style>
+	</head>
+	<body>
+		<div>
+			<p style="position:absolute;top:0px;left:0px;"></p>
+		</div>
+		<script>
+			var p=document.getElementsByTagName("p")[0];
+			var t=0;
+			var i=0;
+			var b=1;
+			var l=0;
+			var j=0;
+			var s=1;
+			var timer=setInterval(function(){
+				t+=b;
+				i++;
+				p.style.top=t+"px";
+				if(i==470){
+					i=0;
+					b=-b;
+				}
+				
+				l+=s;
+				j++;
+				p.style.left=l+"px";
+				if(j==270){
+					j=0;
+					s=-s;
+				}
+			},10)
+		</script>
+	</body>
+</html>

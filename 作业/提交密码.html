@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<input type="text" name="" id="" value="" placeholder="用户名"/>
+		<input type="password" name="" id="" value="" placeholder="密码"/>
+		<button>提交</button>
+		<script>
+			var ipt1=document.getElementsByTagName("input")[0];
+			var ipt2=document.getElementsByTagName("input")[1];
+			var btn=document.getElementsByTagName("button")[0];
+			btn.onclick=function(){
+				alert("用户名："+ipt1.value+",密码:"+ipt2.value);
+			}
+		</script>
+	</body>
+</html>

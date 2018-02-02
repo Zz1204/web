@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			div{
+				width: 100px;
+				height: 100px;
+				background: red;
+			}
+		</style>
+	</head>
+	<body>
+		<button>按钮</button>
+		<div></div>
+		<script type="text/javascript">
+			var btn=document.getElementsByTagName("button")[0];
+			var oDiv=document.getElementsByTagName("div")[0];
+			var flang=true;
+			btn.onclick=function(){
+				if(flang==true){
+					oDiv.style.display="none";
+				}else{
+					oDiv.style.display="block";
+				}
+				flang=!flang;
+			}
+			
+		</script>
+	</body>
+</html>

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+	</head>
+	<body>
+		<button>换一个</button>
+		<div></div>
+		<script type="text/javascript">
+			var oDiv=document.getElementsByTagName("div")[0];
+			oDiv.innerHTML=parseInt(Math.random()*10)+""+parseInt(Math.random()*10)+""+parseInt(Math.random()*10)+""+parseInt(Math.random()*10);
+			var btn=document.getElementsByTagName("button")[0];
+			btn.onclick=function(){
+				oDiv.innerHTML=parseInt(Math.random()*10)+""+parseInt(Math.random()*10)+""+parseInt(Math.random()*10)+""+parseInt(Math.random()*10);	
+			}
+		</script>
+	</body>
+</html>

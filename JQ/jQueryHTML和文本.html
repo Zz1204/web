@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<p class="one" title="love"><strong>选出你最喜欢的水果 </strong></p>
+		<ul>
+			<li>苹果</li>
+			<li>橘子</li>
+			<li class="a">香蕉</li>
+			<li class="a">樱桃</li>
+		</ul>
+		<p>
+			<input type="text" name="" id="address" value="" placeholder="请输入邮箱地址"/>
+		</p>
+		
+		<script src="js/jquery-3.2.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<script>
+			//获取innerHTML
+//			var $p=$("p").html();
+//			alert($p);
+			//设置innerHTML
+//			$("p").html("<i>选出你最不喜欢的水果 </i>");
+
+			//获取innerText
+//			var $p=$("p").text();
+//			alert($p);
+			//设置innerText
+//			$("p").text("选出你最不喜欢的水果");
+
+			//获取value
+			
+			$("input").bind("blur",function(){
+				var a=$("input").val("1234");
+			});	
+			
+			//设置value
+			$("input").val("1234");
+		</script>
+	</body>
+</html>

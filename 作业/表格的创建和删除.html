@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			td{
+				text-align:center;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="reginfo">
+			ID: <input type="text" />
+			姓名:<input type="text" />
+			电话:<input type="text" />  
+			<button id="saveBtn">保存</button>
+		</div>
+		<br>
+		<table id="tab" border="1">
+			<tr>
+				<th>Id</th>
+				<th>Name</th>
+				<th>Tel</th>
+				<th>操作</th>
+			</tr>
+		</table>
+		<script>
+			var ipt=document.getElementsByTagName("input");
+			var btn=document.getElementsByTagName("button")[0];
+			var tab=document.getElementById("tab");
+			btn.onclick=function(){
+				//点击后创建4个td
+				var td0=document.createElement("td");
+				var td1=document.createElement("td");
+				var td2=document.createElement("td");
+				var td3=document.createElement("td");
+				//给td赋值
+				td0.innerHTML=ipt[0].value;
+				td1.innerHTML=ipt[1].value;
+				td2.innerHTML=ipt[2].value;
+				td3.innerHTML="<a href='#' style='color:red;'>删除</a>";
+				//创建tr储存td
+				var tr0=document.createElement("tr");
+				//将td放入tr
+				tr0.appendChild(td0);
+				tr0.appendChild(td1);
+				tr0.appendChild(td2);
+				tr0.appendChild(td3);
+				//将tr放入table
+				tab.appendChild(tr0);
+				//放完后清空input里面的内容
+				ipt[0].value="";
+				ipt[1].value="";
+				ipt[2].value="";
+				//点击删除将删除此行
+				var a=tr0.lastChild.lastChild;
+				console.log(a);
+				a.onclick=function(){
+					tr0.parentNode.removeChild(tr0);
+				}
+			}
+		</script>
+	</body>
+</html>

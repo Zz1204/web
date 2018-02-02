@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div id="reginfo">
+			ID: <input type="text" />
+			姓名:<input type="text" />
+			电话:<input type="text" />  
+			<button id="saveBtn">保存</button>
+		</div>
+		<br>
+		<table id="tab" border="1">
+			<tr>
+				<th>Id</th>
+				<th>Name</th>
+				<th>Tel</th>
+				<th>操作</th>
+			</tr>
+			
+		</table>
+		<script type="text/javascript">
+			var inp0=document.getElementsByTagName("input")[0];
+			var inp1=document.getElementsByTagName("input")[1];
+			var inp2=document.getElementsByTagName("input")[2];
+			var btn=document.getElementsByTagName("button")[0];
+//			var btn1=document.getElementsByTagName("button")[1];
+			var tab=document.getElementById("tab");
+			btn.onclick=function(){
+				//点击保存，创建4个td；
+				var td0=document.createElement("td");
+				var td1=document.createElement("td");
+				var td2=document.createElement("td");
+				var td3=document.createElement("td");
+//				将input里面的内容放入创建的td标签中
+				td0.innerHTML=inp0.value;
+				td1.innerHTML=inp1.value;
+				td2.innerHTML=inp2.value;
+				td3.innerHTML="<a href='#'>删除</a>";
+//				创建一个tr标签,盛放td
+				var tr0=document.createElement("tr");
+//				将td标签放入tr中
+				tr0.appendChild(td0);
+				tr0.appendChild(td1);
+				tr0.appendChild(td2);
+				tr0.appendChild(td3);
+//				将tr标签放入table
+				tab.appendChild(tr0);
+//				每次放入完毕,清空input标签内部的值
+				inp0.value="";
+				inp1.value="";
+				inp2.value="";
+				var a=tr0.lastChild.lastChild;
+				console.log(a);
+				a.onclick=function(){
+					tab.removeChild(this.parentNode.parentNode);
+				}
+			}
+			
+			
+		</script>
+	</body>
+</html>

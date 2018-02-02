@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			.box{
+				width: 200px;
+				height: 30px;
+				border: 2px solid #ccc;
+			}
+			.box0{
+				width: 0px;
+				height: 30px;
+				background: red;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box">
+			<div class="box0"></div>
+		</div>
+		<span>0</span>%
+		<script type="text/javascript">
+			var oDiv0=document.getElementsByClassName("box0")[0];
+			var span0=document.getElementsByTagName("span")[0];
+			var i=0;
+			var timer=setInterval(function(){
+				i++;
+				oDiv0.style.width=i*2+"px";
+				span0.innerHTML=i;
+				if(i<33){
+					oDiv0.style.background="red";
+				}
+				if(i>33&&i<66){
+					oDiv0.style.background="yellow";
+				}
+				if(i>66&&i<100){
+					oDiv0.style.background="green";
+				}
+				if(i==100){
+					clearInterval(timer);
+				}
+			},100)
+			
+		</script>
+	</body>
+</html>

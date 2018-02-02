@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			//			输出从M至N所有自然数奇数和以及偶数和,并统计奇数以及偶数的数量
+			var a=parseInt(prompt("请输入第一个数"));
+			var b=parseInt(prompt("请输入第二个数"));
+			var j=0;//偶数
+			var p=0;//奇数
+			var o=0;//偶数和
+			var u=0;//奇数和
+			if(a>b){
+				var num=0;
+				num=a;
+				a=b;
+				b=num;
+			}
+			for(var i=a;i<=b;i++){
+				if(i%2==0){
+					j++;
+					o+=i;
+				}else{
+					p++;
+					u+=i;
+				}
+			}
+			alert('偶数个数'+j);
+			alert('奇数个数'+p);
+			alert('偶数和'+o);
+			alert('奇数和'+u);
+		</script>
+	</body>
+</html>

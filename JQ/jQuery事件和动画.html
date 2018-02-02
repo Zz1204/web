@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			ul{
+				width:200px;
+				height:100px;
+				border:1px solid #ccc;
+				position:absolute;
+			}
+		</style>
+	</head>
+	<body>
+		<p class="one" title="love"><strong>选出你最喜欢的水果 </strong></p>
+		<button>按钮</button>
+		<ul>
+			<li>苹果</li>
+			<li>橘子</li>
+			<li class="a">香蕉</li>
+			<li class="a">樱桃</li>
+		</ul>
+		<script src="js/jquery-3.2.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<script>
+//			$("button").bind("click",function(){
+//				$("ul").slideUp(1000);
+//			})
+//			$("button").bind("click",function(){
+//				$("ul").slideDown(1000);
+//			})
+//			$("button").bind("click",function(){
+//				$("ul").slideToggle(1000);
+//			})
+			$("button").hover(function(){
+				$("ul").slideUp(1000);
+			},function(){
+				$("ul").slideDown(1000);
+			})
+		</script>
+	</body>
+</html>

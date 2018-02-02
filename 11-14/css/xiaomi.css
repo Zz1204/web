@@ -1,0 +1,283 @@
+*{
+	padding: 0;
+	margin: 0;
+	font-family: "微软雅黑";
+	font-size: 16px;
+	color: black;
+}
+a{
+	text-decoration: none;
+	color: black;
+}
+ul,li,ol{
+	list-style: none;
+}
+img{
+	border: none;
+}
+
+
+/*header_top*/
+.header{
+	width: 100%;
+	height: 40px;
+	background: #333;
+}
+.header_body{
+	width: 1226px;
+	height: 40px;
+	margin: 0 auto;
+}
+.body_left{
+	float: left;
+	height: 40px;
+}
+.body_left a, .right_left a{
+	font-size: 12px;
+	color: #b0b0b0;
+	line-height: 40px;
+}
+.body_left a:hover,.right_left a:hover{
+	color: #FFF;
+}
+.body_left span,.right_left span{
+	color: #424242;
+}
+.body_right{
+	float: right;
+}
+.body_right a{
+	padding: 0 2px;
+}
+.right_left{
+	float: left;
+}
+.right_right{
+	float: left;
+	width:120px;
+	margin-left: 15px;
+	background: #424242;
+}
+.right_right:hover{
+	background: #FFF;
+}
+.right_right a{
+	display: block;
+	width: 78px;
+	height: 40px;
+	line-height: 40px;
+	color: #B0B0B0;
+	font-size: 12px;
+	padding-left: 40px;
+	background: url(../img/gouwuche.png) no-repeat 10px center;
+}
+.right_right a:hover{
+	color: #FF6700;
+	background: url(../img/gouwuche1.png) no-repeat 10px center;
+}
+
+
+
+/*header_bottom*/
+.header_bottom{
+	height: 100px;
+	width: 100%;
+}
+.header_bottom_body{
+	width: 1226px;
+	height: 100px;
+	margin: 0 auto;
+	overflow: hidden;
+}
+.header_bottom_body .left a{
+	display: block;
+	width: 55px;
+	height: 55px;
+	float: left;
+	margin: 22px 10px 0 0;
+	background: url(../img/logo.png) no-repeat;
+}
+.header_bottom_body .middle{
+	float: left;
+	width: 596px;
+	margin-left: 189px;
+	height: 100px;
+}
+.header_bottom_body .middle li{
+	float: left;
+	line-height: 100px;
+	font-size: 16px;
+	color: #333333;
+	padding: 0 10px;
+}
+.header_bottom_body .middle li a:hover{
+	color: #FF6700;
+}
+.right{
+	float: right;
+	line-height: 48px;
+	border: 1px solid #e0e0e0;
+	margin-top: 25px;
+}
+.right .text{
+	width: 235px;
+	line-height: 48px;
+	border:none;
+	float: left;
+	border-right: 1px solid #E0E0E0;
+}
+.right .button{
+	width: 52px;
+	height: 48px;
+	border: none;
+	background: url(../img/sousuo.png) no-repeat center center;
+}
+.right:hover{
+	border-color: #B0B0B0;
+	
+}
+.right .text:hover{
+	border-color: #B0B0B0;
+	
+}
+.right .button:hover{
+	background: url(../img/hover.png) no-repeat;
+}
+
+
+
+/*banner*/
+.banner{
+	width: 1226px;
+	height: 664px;
+	margin: 0 auto;
+	position: relative;
+}
+.banner_body{
+	position: relative;
+	overflow: hidden;
+	height: 460px;
+}
+#img1,#img2{
+	position: relative;overflow: hidden;
+}
+.img .image{
+	display: block;
+	height: 460px;overflow: hidden;
+}
+.nav{
+	width: 234px;
+	background: rgba(0,0,0,0.6);
+	filter: none;
+	position: absolute;
+	left: 0; top: 0;
+}
+.nav ul{
+	padding: 20px 0;
+	height: 420px;
+}
+.nav ul li a,.nav ul li a span{
+	font-size: 14px;
+	color: #FFFFFF;
+	line-height: 42px;
+}
+.nav ul li a{
+	display: block;
+	height: 42px;
+	
+	padding-left: 30px;
+}
+.nav ul li a span{
+	float: right;
+	margin-right: 20px;
+}
+.nav ul li a:hover{
+	background: orangered;
+}
+
+
+.banner_bottom{
+	width: 1226px;
+	margin: 14px auto;
+}
+.banner_bottom .bottom_left{
+	width: 234px;
+	height: 170px;
+	background: #5F5750;
+	float: left;
+}
+.banner_bottom .bottom_left ul{
+	width: 228px;
+	height: 164px;
+	padding:3px;
+}
+.banner_bottom .bottom_left ul li{
+	float: left;
+	width: 70px;
+	height: 82px;
+	padding: 0 3px;
+}
+.banner_bottom .bottom_left ul li a{
+	display: block;
+	width: 76px;
+	height: 82px;
+	line-height: 82px;
+	text-align: center;
+	color: #FFFFFF;
+}
+.tuwen{
+	width: 978px;
+	height: 170px;
+	float: left;
+	margin-left: 14px;
+}
+.tuwen ul li{
+	width: 316px;
+	height: 170px;
+	float: left;
+	margin-left: 15px;
+}
+.li1,.li2,.li3{
+	display: block;
+	width: 316px;
+	height: 170px;
+}
+.li1 img,.li2 img,.li3 img{
+	width: 316px;
+	height: 170px;
+}
+
+.maoleft,.maoright{
+	width: 41px;
+	height: 69px;
+	display: block;
+	background: red;
+}
+.maoleft{
+	position: absolute;
+	top: 30%; left: 234px;
+	background: url(../img/icon-slides.png) no-repeat -83px 0;
+}
+.maoleft:hover{
+	background-position: 0 0;
+}
+.maoright{
+	position: absolute;
+	top: 30%; right: 0;
+	background: url(../img/icon-slides.png) no-repeat -125px 0;
+}
+.maoright:hover{
+	background-position: -42px 0;
+}
+.maodianlianjie{
+	position: absolute;
+	top: 64%;
+	right: 3%;
+}
+.maodian1,.maodian2,.maodian3,.maodian4,.maodian5{
+	color: #8B8B8B;
+	line-height: 16px;
+}
+.maodian1:hover,.maodian2:hover,.maodian3:hover,.maodian4:hover,.maodian5:hover{
+	color: #FFFFFF;
+}

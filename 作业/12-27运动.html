@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			div{
+				width:100px;
+				height:100px;
+				background:red;
+			}
+		</style>
+	</head>
+	<body>
+		<div></div>
+		<script src="js/startMove.js" type="text/javascript" charset="utf-8"></script>
+		<script>
+			var oDiv=document.getElementsByTagName("div")[0];
+			oDiv.onmouseover=function(){
+				startMove(oDiv,{width:600,height:600});
+			}
+			oDiv.onmouseout=function(){
+				startMove(oDiv,{width:100,height:100})
+			}
+		</script>
+	</body>
+</html>

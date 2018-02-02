@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			body{
+				background: #000000;
+			}
+			#canvas{
+				background: #fff;
+			}
+		</style>
+	</head>
+	<body>
+		<canvas id="canvas" width="400" height="400"></canvas>
+	</body>
+	<script type="text/javascript">
+		var oc=document.querySelector("#canvas");
+		//绘制2d环境
+		var oGc=oc.getContext("2d");
+		//fillRect   strokeRect
+		//rect(L,T,W,H)绘制方块
+		oGc.beginPath();
+		oGc.fillStyle="green";
+		oGc.lineWidth="50";
+		oGc.strokeStyle="red";
+		oGc.lineJoin="bevel";		//边框样式       round 圆角       bevel 棱角     miter 直角
+		oGc.rect(100,100,100,100);
+		oGc.closePath();
+		oGc.fill();
+		oGc.stroke();
+	</script>
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			.box{
+				width: 500px;
+				height: 200px;
+				background: red;
+				margin: 20px auto;
+				line-height: 200px;
+				font-size: 50px;
+				color: white;
+				text-align: center;
+			}
+			.img{
+				width: 1000px;
+				height: 400px;
+				border: 1px solid #ccc;
+				margin: 0 auto;
+			}
+			.img>img{
+				width: 250px;
+				height: 100px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box">请将文件拖至此处</div>
+		<div class="img"></div>
+	</body>
+	<script type="text/javascript">
+		var odiv=document.querySelector(".box");
+		var od=document.querySelector(".img");
+		odiv.ondragenter=function(){
+			this.innerHTML="请松开鼠标释放";
+		}
+		odiv.ondragover=function(ev){
+			var ev=ev||window.event;
+			ev.preventDefault();
+		}
+		odiv.ondragleave=function(){
+			this.innerHTML="请将文件拖至此处";
+		}
+		odiv.ondrop=function(ev){
+			var ev=ev||window.event;
+			ev.preventDefault();
+			var fs=ev.dataTransfer.files;
+//			console.log(fs[0].type)
+			for (var i=0;i<fs.length;i++) {
+				
+				var a=fs[i].type.indexOf("image");
+				if(a==0){
+					//获取文件
+					var fd=new FileReader();
+					//获取文件里面的内容
+					fd.readAsDataURL(fs[i]);
+					fd.onload=function(){
+						var img1=document.createElement("img");
+						img1.src=this.result;
+						od.appendChild(img1);
+					}
+				}else if(a!=0){
+					var fd=new FileReader();
+					fd.readAsText(fs[i],"utf-8");
+					fd.onload=function(){
+						var op=document.createElement("p");
+						op.innerHTML=this.result;
+						document.body.appendChild(op);
+					}
+				}
+			}
+		}
+	</script>
+</html>

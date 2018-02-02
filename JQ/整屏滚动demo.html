@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				padding: 0;
+				margin: 0;
+			}
+			#wrap{
+				width: 100%;
+				position: relative;
+				overflow: hidden;
+			}
+			#wrap>ul{
+				width: 100%;
+				position: absolute;
+				top: 0;
+				left: 0;
+			}
+			#wrap>ul>li{
+				width: 100%;
+				background: red;
+				font-size: 80px;
+				font-weight: 800;
+				color: white;
+				text-align: center;
+				list-style: none;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="wrap">
+			<ul>
+				<li>第一屏</li>
+				<li style="background: orange;">第二屏</li>
+				<li style="background: yellow;">第三屏</li>
+				<li style="background: green;">第四屏</li>
+				<li style="background: cyan;">第五屏</li>
+			</ul>
+		</div>
+		<script src="js/jquery-3.2.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$("#wrap").height($(window).height());
+			$("#wrap>ul>li").height($(window).height());
+			$("#wrap>ul>li").css("line-height",$(window).height()+"px");
+			$(window).resize(function(){
+				$("#wrap").height($(window).height());
+				$("#wrap>ul>li").height($(window).height());
+			})
+			//谷歌。IE
+			window.onmousewheel=document.onmousewheel=scrollFn;
+			//火狐
+			window.addEventListener("DOMMouseScroll",scrollFn);
+			function scrollFn(e){
+				var e=e||window.event;
+				var b=true;
+				if(e.wheelDelta){
+					b=e.wheelDelta>0?true:false;
+				}else if(e.detail){
+					b=e.detail>0?false:true;
+				}
+				if(b){
+					scrollDown();
+				}else{
+					scrollUp();
+				}
+			}
+			var num=0;
+			var flang=true;
+			var index=0;
+			var timer=null;
+			function scrollUp(){
+				if(index<1){
+					clearTimeout(timer)
+					timer=setTimeout(function(){
+						index++;
+					},100);
+				}else if(flang){
+					flang=false;
+					num++;
+					if(num>4){
+						num=4;
+					}
+					change(num);
+				}
+			}
+			function scrollDown(){
+				if(index<1){
+					clearTimeout(timer)
+					timer=setTimeout(function(){
+						index++;
+					},100);
+				}else if(flang){
+					flang=false;
+					num--;
+					if(num<0){
+						num=0;
+					}
+					change(num);
+				}
+			}
+			function change(num){
+				$("#wrap>ul").animate({"top":-num*$(window).height()},500,function(){
+					flang=true;
+					index=0;
+				})
+			}
+		</script>
+	</body>
+</html>

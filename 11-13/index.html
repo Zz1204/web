@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+	<html>
+		<head>
+			<meta charset="utf-8" />
+			<title></title>
+			<style type="text/css">
+				.border{
+					border-bottom: 100px solid red;
+					border-top: 100px solid blue;
+					border-left: 100px solid yellow;
+					border-right: 100px solid orange;
+					width: 0; height: 0;
+					margin-bottom: 20px;
+				}
+				.duihua{
+					width: 500px; height: 30px; line-height: 30px;
+					border: 1px solid blueviolet;
+					border-radius: 5px;
+					background: turquoise;
+					text-align: center;
+					margin: 0 auto;
+					position: relative;
+				}
+				.duihua:before{
+					content: "";
+					display: block;
+					width: 0; height: 0;
+					border: 10px solid transparent;
+					border-right-color: blueviolet; /*定义需要添加的颜色,这里为边框色*/
+					position: absolute;
+					top: 5px; left: -20px;
+				}
+				.duihua:after{
+					content: ""; /*即使内容为空也要添加*/
+					display: block; /*必须显示为块*/
+					width: 0 ; height: 0; /*大小设为0*/
+					border: 10px solid transparent; /*边框设为透明*/
+					border-right-color: turquoise; /*定义需要添加的颜色,这里为背景色*/
+					position: absolute; /*定位*/
+					top: 5px; left: -19px;
+				}
+			</style>
+		</head>
+		<body>
+			<div class="border"></div>
+			<div class="duihua">哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈</div>
+		</body>
+	</html>

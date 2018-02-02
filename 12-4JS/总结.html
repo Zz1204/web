@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			div{
+				width:100px;
+				height:100px;
+				background:red;
+			}
+		</style>
+	</head>
+	<body>
+		<button>按钮</button>
+		<div></div>
+		<script>
+			//三目运算符判断平年闰年
+//			var a=prompt("请输入一个数")
+//			a%400==0||a%100!=0&&a%4==0?alert("闰年"):alert("平年");
+
+			//div显示
+//			var btn=document.getElementsByTagName("button")[0];
+//			var oDiv=document.getElementsByTagName("div")[0];
+//			var flang=true;
+//			btn.onclick=function(){
+//				if(flang==true){
+//					oDiv.style.display="none";
+//				}else{
+//					oDiv.style.display="block";
+//				}
+//				flang=!flang;
+//			}
+
+			
+			//while循环输出1-100的和
+//			var a=1;
+//			var he=0;
+//			while(a<=5){
+//				he+=a;
+//				a++;
+//			}
+//			alert(he);
+
+			
+			//奇数和以及偶数和并统计
+//			var a=parseInt(prompt("请输入第一个数"));
+//			var b=parseInt(prompt("请输入第二个数"));
+//			var jiShu=0;
+//			var jiShuHe=0;
+//			var ouShu=0;
+//			var ouShuHe=0;
+//			if(a>b){
+//				var dao=a;
+//				a=b;
+//				b=dao;
+//			}
+//			for(var i=a;i<=b;i++){
+//				if(i%2==0){
+//					ouShu++;
+//					ouShuHe+=i;
+//				}else{
+//					jiShu++;
+//					jiShuHe+=i;
+//				}
+//			}
+//			alert("偶数个数是"+ouShu+",偶数和是"+ouShuHe);
+//			alert("奇数个数是"+jiShu+",奇数和是"+jiShuHe);
+
+
+			//5位数的回文数
+//			for(var i=10000;i<100000;i++){
+//				var wan=parseInt(i/10000);
+//				var qian=parseInt(i%10000/1000);
+//				var shi=parseInt(i%100/10);
+//				var ge=parseInt(i%10);
+//				if(wan==ge&&qian==shi){
+//					document.write(i+"<br/>");
+//				}
+//			}
+			
+			
+			//乘法表
+//			for(var i=1;i<=9;i++){
+//				for(var j=1;j<=i;j++){
+//					document.write(j+"*"+i+"="+i*j+"&nbsp;&nbsp;");
+//				}
+//				document.write("<br/>");
+//			}
+
+
+			//数组最大数和最小数，并求出他们的坐标
+//			var arr=[1,2,3,4,6,5,7,9];
+//			var max=arr[0];
+//			var min=arr[0];
+//			var maxIndex=0;
+//			var minIndex=0;
+//			for(var i=0;i<arr.length;i++){
+//				if(max<arr[i]){
+//					max=arr[i];
+//					maxIndex=i;
+//				}
+//				if(min>arr[i]){
+//					min=arr[i];
+//					minIndex=i;
+//				}
+//			}
+//			alert("最大数是"+max+",他的下标是"+maxIndex+"，最小数是"+min+",他的下标是"+minIndex);
+
+
+			//冒泡排序
+//			var arr=[9,3,4,1,7,5,2,8,6];
+//			for(var i=0;i<arr.length-1;i++){		//最多要冒泡7次
+//				for(var j=0;j<arr.length-1-i;j++){	//每次里面已经有i个变量固定在结尾了
+//					if(arr[j]>arr[j+1]){			//每次和他后面的比较
+//						var dao=arr[j];
+//						arr[j]=arr[j+1];
+//						arr[j+1]=dao;
+//					}
+//				}
+//			}
+//			alert(arr);
+
+
+			//数组去重
+//			var arr=[1,2,3,3,2,5,6,3,8,7,8,4];
+//			var arr0=[1];
+//			for(var i=1;i<arr.length;i++){
+//				var flang=false;
+//				for(var j=0;j<arr0.length;j++){
+//					if(arr[i]==arr0[j]){
+//						flang=true;
+//						break;
+//					}
+//				}
+//				if(flang==false){
+//					arr0.push(arr[i]);
+//				}
+//			}
+//			alert(arr0);
+
+	
+			//求字符串中出现频率最多的字符并显示次数
+//			var str="asfdasfadsfasssss";
+//			var arr=[];
+//			for(var i=0;i<=124;i++){
+//				arr[i]=0;
+//			}
+//			for(var i=0;i<str.length;i++){
+//				var c=str.charCodeAt(i);
+//				arr[c]++;
+//			}
+//			var max=0;
+//			var maxIndex=0;
+//			for(var i=0;i<124;i++){
+//				if(max<arr[i]){
+//					max=arr[i];
+//					maxIndex=i;
+//				}
+//			}
+//			var maxA=String.fromCharCode(maxIndex);
+//			alert("字母是"+maxA+",他出现了"+max+"次。");
+
+			//求费波那契数列
+			
+//			function sum(x){
+//				if(x==1||x==2){
+//					return 1;
+//				}
+//				return sum(x-1)+sum(x-2);
+//				
+//			}
+//			var a=prompt("请输入一个数");
+//			alert(sum(a));
+
+			
+			//递归
+			//10的阶乘
+//			function jieCh(x){
+//				if(x==1){
+//					return 1;
+//				}
+//				return x*jieCh(x-1);
+//			}
+//			alert(jieCh(10));
+
+
+
+			//工厂模式
+//			function createPerson(name,age,sex){
+//				var o=new Object();
+//				o.name=name;
+//				o.age=age;
+//				o.sex=sex;
+//				o.run=function(){
+//					alert("名字"+o.name+",年龄"+o.age+",性别"+o.sex);
+//				}
+//				return o;
+//			}
+//			var a=createPerson("张三","18","男");
+//			console.log(a);
+//			a.run();
+//			var b=createPerson("李四","20","女");
+//			console.log(b);
+//			b.run();
+			
+			
+//第二遍
+			//三目运算符判断平年闰年
+//			var a=prompt("请输入一个数")
+//			a%400==0||a%100!=0&&a%4==0?alert("闰年"):alert("平年");
+
+			//div显示
+//			var btn=document.getElementsByTagName("button")[0];
+//			var oDiv=document.getElementsByTagName("div")[0];
+//			var flang=true;
+//			btn.onclick=function(){
+//				if(flang==true){
+//					oDiv.style.display="none";
+//				}else{
+//					oDiv.style.display="block";
+//				}
+//				flang=!flang;
+//			}
+
+			
+			//while循环输出1-100的和
+//			var a=1;
+//			var he=0;
+//			while(a<=5){
+//				he+=a;
+//				a++;
+//			}
+//			alert(he);
+
+			
+			//奇数和以及偶数和并统计
+//			var a=parseInt(prompt("请输入第一个数"));
+//			var b=parseInt(prompt("请输入第二个数"));
+//			var jiShu=0;
+//			var jiShuHe=0;
+//			var ouShu=0;
+//			var ouShuHe=0;
+//			if(a>b){
+//				var dao=a;
+//				a=b;
+//				b=dao;
+//			}
+//			for(var i=a;i<=b;i++){
+//				if(i%2==0){
+//					ouShu++;
+//					ouShuHe+=i;
+//				}else{
+//					jiShu++;
+//					jiShuHe+=i;
+//				}
+//			}
+//			alert("偶数个数是"+ouShu+",偶数和是"+ouShuHe);
+//			alert("奇数个数是"+jiShu+",奇数和是"+jiShuHe);
+
+
+			//5位数的回文数
+//			for(var i=10000;i<100000;i++){
+//				var wan=parseInt(i/10000);
+//				var qian=parseInt(i%10000/1000);
+//				var shi=parseInt(i%100/10);
+//				var ge=parseInt(i%10);
+//				if(wan==ge&&qian==shi){
+//					document.write(i+"<br/>");
+//				}
+//			}
+			
+			
+			//乘法表
+//			for(var i=1;i<=9;i++){
+//				for(var j=1;j<=i;j++){
+//					document.write(j+"*"+i+"="+i*j+"&nbsp;&nbsp;");
+//				}
+//				document.write("<br/>");
+//			}
+
+
+			//数组最大数和最小数，并求出他们的坐标
+//			var arr=[1,2,3,4,6,5,7,9];
+//			var max=arr[0];
+//			var min=arr[0];
+//			var maxIndex=0;
+//			var minIndex=0;
+//			for(var i=0;i<arr.length;i++){
+//				if(max<arr[i]){
+//					max=arr[i];
+//					maxIndex=i;
+//				}
+//				if(min>arr[i]){
+//					min=arr[i];
+//					minIndex=i;
+//				}
+//			}
+//			alert("最大数是"+max+",他的下标是"+maxIndex+"，最小数是"+min+",他的下标是"+minIndex);
+
+
+			//冒泡排序
+//			var arr=[9,3,4,1,7,5,2,8,6];
+//			for(var i=0;i<arr.length-1;i++){	//最多要冒泡7次
+//				for(var j=0;j<arr.length-1-i;j++){	//每次里面已经有i个变量固定在结尾了
+//					if(arr[j]>arr[j+1]){			//每次和他后面的比较
+//						var dao=arr[j];
+//						arr[j]=arr[j+1];
+//						arr[j+1]=dao;
+//					}
+//				}
+//			}
+//			alert(arr);
+
+
+			//数组去重
+//			var arr=[1,2,3,3,2,5,6,3,8,7,8,4];
+//			var arr0=[1];
+//			for(var i=1;i<arr.length;i++){
+//				var flang=false;
+//				for(var j=0;j<arr0.length;j++){
+//					if(arr[i]==arr0[j]){
+//						flang=true;
+//						break;
+//					}
+//				}
+//				if(flang==false){
+//					arr0.push(arr[i]);
+//				}
+//			}
+//			alert(arr0);
+
+	
+			//求字符串中出现频率最多的字符并显示次数
+//			var str="asfdasfadsfasssss";
+//			var arr=[];
+//			for(var i=0;i<=124;i++){
+//				arr[i]=0;
+//			}
+//			for(var i=0;i<str.length;i++){
+//				var c=str.charCodeAt(i);
+//				arr[c]++;
+//			}
+//			var max=0;
+//			var maxIndex=0;
+//			for(var i=0;i<124;i++){
+//				if(max<arr[i]){
+//					max=arr[i];
+//					maxIndex=i;
+//				}
+//			}
+//			var maxA=String.fromCharCode(maxIndex);
+//			alert("字母是"+maxA+",他出现了"+max+"次。");
+
+			//求费波那契数列
+			
+//			function sum(x){
+//				if(x==1||x==2){
+//					return 1;
+//				}
+//				return sum(x-1)+sum(x-2);
+//				
+//			}
+//			var a=prompt("请输入一个数");
+//			alert(sum(a));
+
+			
+			//递归
+			//10的阶乘
+//			function jieCh(x){
+//				if(x==1){
+//					return 1;
+//				}
+//				return x*jieCh(x-1);
+//			}
+//			alert(jieCh(10));
+
+
+
+			//工厂模式
+//			function createPerson(name,age,sex){
+//				var o=new Object();
+//				o.name=name;
+//				o.age=age;
+//				o.sex=sex;
+//				o.run=function(){
+//					alert("名字"+o.name+",年龄"+o.age+",性别"+o.sex);
+//				}
+//				return o;
+//			}
+//			var a=createPerson("张三","18","男");
+//			console.log(a);
+//			a.run();
+//			var b=createPerson("李四","20","女");
+//			console.log(b);
+//			b.run();
+
+
+//第三遍
+			//三目运算符判断平年闰年
+//			var a=prompt("请输入一个数")
+//			a%400==0||a%100!=0&&a%4==0?alert("闰年"):alert("平年");
+
+			//div显示
+//			var btn=document.getElementsByTagName("button")[0];
+//			var oDiv=document.getElementsByTagName("div")[0];
+//			var flang=true;
+//			btn.onclick=function(){
+//				if(flang==true){
+//					oDiv.style.display="none";
+//				}else{
+//					oDiv.style.display="block";
+//				}
+//				flang=!flang;
+//			}
+
+			
+			//while循环输出1-100的和
+//			var a=1;
+//			var he=0;
+//			while(a<=5){
+//				he+=a;
+//				a++;
+//			}
+//			alert(he);
+
+			
+			//奇数和以及偶数和并统计
+//			var a=parseInt(prompt("请输入第一个数"));
+//			var b=parseInt(prompt("请输入第二个数"));
+//			var jiShu=0;
+//			var jiShuHe=0;
+//			var ouShu=0;
+//			var ouShuHe=0;
+//			if(a>b){
+//				var dao=a;
+//				a=b;
+//				b=dao;
+//			}
+//			for(var i=a;i<=b;i++){
+//				if(i%2==0){
+//					ouShu++;
+//					ouShuHe+=i;
+//				}else{
+//					jiShu++;
+//					jiShuHe+=i;
+//				}
+//			}
+//			alert("偶数个数是"+ouShu+",偶数和是"+ouShuHe);
+//			alert("奇数个数是"+jiShu+",奇数和是"+jiShuHe);
+
+
+			//5位数的回文数
+//			for(var i=10000;i<100000;i++){
+//				var wan=parseInt(i/10000);
+//				var qian=parseInt(i%10000/1000);
+//				var shi=parseInt(i%100/10);
+//				var ge=parseInt(i%10);
+//				if(wan==ge&&qian==shi){
+//					document.write(i+"<br/>");
+//				}
+//			}
+			
+			
+			//乘法表
+//			for(var i=1;i<=9;i++){
+//				for(var j=1;j<=i;j++){
+//					document.write(j+"*"+i+"="+i*j+"&nbsp;&nbsp;");
+//				}
+//				document.write("<br/>");
+//			}
+
+
+			//数组最大数和最小数，并求出他们的坐标
+//			var arr=[1,2,3,4,6,5,7,9];
+//			var max=arr[0];
+//			var min=arr[0];
+//			var maxIndex=0;
+//			var minIndex=0;
+//			for(var i=0;i<arr.length;i++){
+//				if(max<arr[i]){
+//					max=arr[i];
+//					maxIndex=i;
+//				}
+//				if(min>arr[i]){
+//					min=arr[i];
+//					minIndex=i;
+//				}
+//			}
+//			alert("最大数是"+max+",他的下标是"+maxIndex+"，最小数是"+min+",他的下标是"+minIndex);
+
+
+			//冒泡排序
+//			var arr=[9,3,4,1,7,5,2,8,6];
+//			for(var i=0;i<arr.length-1;i++){	//最多要冒泡7次
+//				for(var j=0;j<arr.length-1-i;j++){	//每次里面已经有i个变量固定在结尾了
+//					if(arr[j]>arr[j+1]){			//每次和他后面的比较
+//						var dao=arr[j];
+//						arr[j]=arr[j+1];
+//						arr[j+1]=dao;
+//					}
+//				}
+//			}
+//			alert(arr);
+
+
+			//数组去重
+//			var arr=[1,2,3,3,2,5,6,3,8,7,8,4];
+//			var arr0=[1];
+//			for(var i=1;i<arr.length;i++){
+//				var flang=false;
+//				for(var j=0;j<arr0.length;j++){
+//					if(arr[i]==arr0[j]){
+//						flang=true;
+//						break;
+//					}
+//				}
+//				if(flang==false){
+//					arr0.push(arr[i]);
+//				}
+//			}
+//			alert(arr0);
+
+	
+			//求字符串中出现频率最多的字符并显示次数
+//			var str="asfdasfadsfasssss";
+//			var arr=[];
+//			for(var i=0;i<=124;i++){
+//				arr[i]=0;
+//			}
+//			for(var i=0;i<str.length;i++){
+//				var c=str.charCodeAt(i);
+//				arr[c]++;
+//			}
+//			var max=0;
+//			var maxIndex=0;
+//			for(var i=0;i<124;i++){
+//				if(max<arr[i]){
+//					max=arr[i];
+//					maxIndex=i;
+//				}
+//			}
+//			var maxA=String.fromCharCode(maxIndex);
+//			alert("字母是"+maxA+",他出现了"+max+"次。");
+
+			//求费波那契数列
+			
+//			function sum(x){
+//				if(x==1||x==2){
+//					return 1;
+//				}
+//				return sum(x-1)+sum(x-2);
+//				
+//			}
+//			var a=prompt("请输入一个数");
+//			alert(sum(a));
+
+			
+			//递归
+			//10的阶乘
+//			function jieCh(x){
+//				if(x==1){
+//					return 1;
+//				}
+//				return x*jieCh(x-1);
+//			}
+//			alert(jieCh(10));
+
+
+
+			//工厂模式
+//			function createPerson(name,age,sex){
+//				var o=new Object();
+//				o.name=name;
+//				o.age=age;
+//				o.sex=sex;
+//				o.run=function(){
+//					alert("名字"+o.name+",年龄"+o.age+",性别"+o.sex);
+//				}
+//				return o;
+//			}
+//			var a=createPerson("张三","18","男");
+//			console.log(a);
+//			a.run();
+//			var b=createPerson("李四","20","女");
+//			console.log(b);
+//			b.run();
+		</script>
+	</body>
+</html>

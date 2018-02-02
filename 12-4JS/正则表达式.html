@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			//正则表达式的两种声明方式
+//			var r=new RegExp("box");
+//			alert(r);
+//			
+//			var r0=/box/;
+//			alert(r0);
+			
+			//test();用于检测一个字符串是否匹配某个模式，
+			//返回ture则符合，返回false为不符合
+//			var str="jkasf baf oun s bbooxx xob box"
+//			var r=/box/;
+//			var c=r.test(str);
+//			console.log(c);
+			
+//			var str="jkasf baf oun s bbooxx xob BOx box Box boX"
+//			var r=/box/i;				//i不区分大小写
+//			var c=r.test(str);
+//			console.log(c);
+//			console.log(str.replace(/box/ig,"aa"))	//g全局匹配
+
+			//. 元字符，代表除了换行之外的所有单个字符
+//			var str="bpx";			// \n是换行     \转义字符，可以把特殊符号识别
+//			var r=/b.x/;
+//			console.log(r.test(str));
+
+			// * 元字符  重复多次匹配  出现任意次		0次或多次
+//			var str="booooooooooox";
+//			var r=/b.*x/;				//匹配前面的0次或者多次
+//			var c=r.test(str)
+//			console.log(c);
+			
+			
+			//[]表示字符可以出现的范围
+//			var str="aaa bbb ccc 2";
+//			var r=/[0-9]/;
+//			var c=r.test(str);
+//			console.log(c);
+
+
+			//非  ^					不放在[],则是字符串以他为开始
+//			var str="booox";
+//			var r=/b[^0-9]*x/;
+//			var c=r.test(str);
+//			console.log(c);
+
+//			var str="2booox";
+//			var r=/^\d/;
+//			var c=r.test(str);
+//			console.log(c);
+			
+			//$结束
+//			var str="2booox";
+//			var r=/x$/;				//以x结尾的字符串，可用汉字
+//			var c=r.test(str);
+//			console.log(c);
+			
+			
+
+			//+至少有一次
+//			var str="booox";
+//			var r=/b[^0-9]+x/;			//非0-9的字符至少出现一次
+//			var c=r.test(str);
+//			console.log(c);
+			
+			
+			//   \w  等价于[a-zA-Z0-9_]
+//			var str="@$#@";
+//			var r=/\w/;
+//			var c=r.test(str);
+//			console.log(c);
+
+
+			//   \d  代表数字[0-9]
+//			var str="5123333gjgtrf";
+//			var r=/\d/;
+//			var c=r.test(str);
+//			console.log(c);
+
+			//{n,m}   至少n次，最多m次
+			//{n,}    至少n次，多次不限
+			//{n}     只有n次
+//			var str="a1232ckjlasf123";
+//			var r=/a[0-9]{4,6}c/;
+//			var c=r.test(str);
+//			console.log(c);
+
+
+			//    \s   匹配空格         直接打空格也可以
+//			var str="aa    bc";
+//			var r=/a *b/;
+//			var c=r.test(str);
+//			console.log(c)
+
+
+			//或 |
+			var str="box bcx bvx";
+			var r=/box|bpx/;
+			var c=r.test(str);
+			console.log(c)
+		</script>
+	</body>
+</html>

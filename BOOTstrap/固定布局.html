@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<!--IE渲染-->
+   		<meta name="viewport" content="width=device-width, initial-scale=1">
+   		<!--适应移动端-->
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"/>
+		<style type="text/css">
+			div[class*=col-]{
+				background: red;
+				border: 1px solid #00f;
+				color: white;
+				height: 50px;
+			}
+		</style>
+	</head>
+	<body>
+		<!--一行12列-->
+		<!--1200>=      pc高分辨率		col-lg-
+		992>=		pc小分辨率			col-md-
+		768>=		平板。iPad		col-sm-
+		768<		移动端,手机		col-xs-
+			-->
+		<div class="container">
+			<!--<div class="row">
+				<div class="col-lg-1">col-lg-1</div>
+				<div class="col-lg-11">col-lg-11</div>
+			</div>
+			<div class="row">
+				<div class="col-lg-3">col-lg-3</div>
+				<div class="col-lg-4">col-lg-4</div>
+			</div>-->
+				
+			<!--col-lg:当屏幕分辨率小于-->
+			<div class="row">
+				<div class="col-lg-4">col-lg-4</div>
+				<div class="col-lg-4">col-lg-4</div>
+				<div class="col-lg-4">col-lg-4</div>
+				<!--1200>=      pc高分辨率-->
+			</div>
+			<div class="row">
+				<div class="col-md-4">col-md-4</div>
+				<div class="col-md-4">col-md-4</div>
+				<div class="col-md-4">col-md-4</div>
+				<!--992>=		pc小分辨率-->
+			</div>
+			<div class="row">
+				<div class="col-sm-4">col-sm-4</div>
+				<div class="col-sm-4">col-sm-4</div>
+				<div class="col-sm-4">col-sm-4</div>
+				<!--768>=		平板。iPad-->
+			</div>
+			<div class="row">
+				<div class="col-xs-4">col-xs-4</div>
+				<div class="col-xs-4">col-xs-4</div>
+				<div class="col-xs-4">col-xs-4</div>
+				<!--768<		移动端,手机-->
+			</div>
+			<!--组合模式-->
+			<div class="row">
+				<div class="col-lg-4 col-md-6">col-lg-4 col-md-6</div>
+				<div class="col-lg-4 col-md-6">col-lg-4 col-md-6</div>
+				<div class="col-lg-4 col-md-6">col-lg-4 col-md-6</div>
+			</div>
+		</div>
+		
+		
+		
+	</body>
+	<!--bootstrap基于jQuery-->
+	<script src="js/jquery-3.2.1.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+</html>

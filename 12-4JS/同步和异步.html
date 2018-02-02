@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script>
+			//同步，前面代码会阻塞后面代码的执行
+//			alert(a);
+//			alert(l);
+
+
+			//异步，前面代码不会阻塞后面的代码执行
+			//setInterval() 定时器           setTimeout() 延时器
+			setTimeout(function(){
+				alert(12345);
+			},3000);
+			alert(54321);
+		</script>
+	</body>
+</html>

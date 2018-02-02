@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			button{
+				margin:0 20px;
+			}
+			div{
+				width:100px;
+				height:100px;
+				background:red;
+				
+			}
+		</style>
+	</head>
+	<body>
+		<button>上</button>
+		<button>下</button>
+		<button>左</button>
+		<button>右</button>
+		<div style="position:absolute;top:50px;left:50px;"></div>
+		<script>
+			var up=document.getElementsByTagName("button")[0];
+			var down=document.getElementsByTagName("button")[1];
+			var left=document.getElementsByTagName("button")[2];
+			var right=document.getElementsByTagName("button")[3];
+			var oDiv=document.getElementsByTagName("div")[0];
+			var a=50;
+			up.onclick=function(){
+				oDiv.style.top=parseInt(oDiv.style.top)-a+"px";
+			}
+			down.onclick=function(){
+				oDiv.style.top=parseInt(oDiv.style.top)+a+"px";
+			}
+			left.onclick=function(){
+				oDiv.style.left=parseInt(oDiv.style.left)-a+"px";
+			}
+			right.onclick=function(){
+				oDiv.style.left=parseInt(oDiv.style.left)+a+"px";
+			}
+		</script>
+	</body>
+</html>

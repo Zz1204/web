@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div style="color: red;font-size: 16px;">看我大美女</div>
+		<script type="text/javascript">
+			var arr=["red","green","blue","pink","orange","yellow"];
+			var oDiv=document.getElementsByTagName("div")[0];
+			var num=0;
+			var tem=6;
+			var timer=setInterval(function(){
+				num++;
+				oDiv.style.color=arr[num%arr.length];
+				oDiv.style.fontSize=parseInt(oDiv.style.fontSize)+tem+"px";
+				if(num==6){
+					num=0;
+					tem=-tem;
+				}
+//				console.log(oDiv.style.fontSize)
+			},200);
+		</script>
+	</body>
+</html>

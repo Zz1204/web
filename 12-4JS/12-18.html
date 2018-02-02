@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<button>1</button>
+		<button>2</button>
+		<button>3</button>
+		<button>4</button>
+		<button>5</button>
+		<script>
+			var btn=document.getElementsByTagName("button");
+			for(var i=0;i<btn.length;i++){
+				var a=btn[i];
+				a.index=i;			//获取下标值
+				btn[i].onclick=function(){
+					alert(this.index+1);		//this指向点击的btn[i]
+					console.log(this);
+				}
+			}
+				
+			
+			//this是js里的一个关键字,函数运行时,自动生成的一个函数对象.
+//			this没有一个固定的值,但是有一个原则,this指向的是调用函数的那个对象
+//			this的指向在函数定义的时候是确定不了的，只有函数执行的时候才能确定this到底指向谁，实际上this的最终指向的是那个调用它的对象
+			
+			
+//			var a=1;
+//			function num(){
+//				var a=2;
+//				console.log(this);
+//				console.log(this.a);
+//			}
+//			window.num();
+
+//			var a=1;
+//			var o={
+//				a:2,
+//				run:function(){
+//					console.log(this)
+//					console.log(this.a);
+//				}
+//			}
+//			o.run();
+			
+			
+		</script>
+	</body>
+</html>

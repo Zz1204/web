@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			/*指定选择符*/
+			a[href="#"]{
+				color: red;
+			}
+			
+			/*子选择符*/
+			.box>ul>li>ul>.aa{
+				color: blue;
+			}
+			
+			/*相邻选择符*/
+			div+p+p{
+				color: red;
+			}
+			
+			/*兄弟选择符*/
+			div~p{
+				background: red;
+			}
+			
+			/*触发焦点改变样式*/
+			input:focus{
+				background: yellow;
+			}
+			
+			/*匹配不含有s选择符的元素E*/
+			p:not(.abc) { color: #f00;}
+		</style>
+	</head>
+	<body>
+		<!--<a href="#">哈哈哈啊哈哈</a>
+		<div class="box">
+			<ul>
+				<li class="aa">我是第一个li标签</li>
+				<li>
+					<ul>
+						<li class="aa">我是第二个li标签</li>
+					</ul>
+				</li>
+			</ul>
+		</div>
+		<p class="box">我是个p标签</p>
+		<div class="box2">我是第二个</div>-->
+		
+		<!--<div>
+			<div>
+			<h3>我是标题1</h3>
+			</div>
+			
+			<div>
+			<small>我是小标题</small>
+			<p>我第1个是p标签</p>
+			</div>
+			
+			<p>我就是紧贴在div元素后面的p元素</p>
+			<p>我第3个是p标签</p>
+		</div>-->
+		<!--<div>
+			<p>我第1个是p标签，我在div里</p>
+			<p>我第2个是p标签，我在div里</p>
+		</div>
+		<p>我第3个是p标签，我不在div里</p>
+		<p>我第3个是p标签，我不在div里</p>-->
+		<p class="abc">否定伪类选择符 E:not(s)</p>
+		<p id="abc">否定伪类选择符 E:not(s)</p>
+		<p class="abcd">否定伪类选择符 E:not(s)</p>
+		<p>否定伪类选择符 E:not(s)</p>
+		
+		<input type="text" name="" id="" value="" />
+	</body>
+</html>

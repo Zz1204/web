@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			body{
+				background: #000;
+			}
+			#canvas{
+				background: #fff;
+			}
+		</style>
+	</head>
+	<body>
+		<!--canvas  画布 	画图-->
+		<canvas id="canvas" width="400" height="400"></canvas>
+	</body>
+	<script type="text/javascript">
+		var oc=document.querySelector("#canvas");
+		//绘制2d环境
+		var oGc=oc.getContext("2d");
+		//绘制方块 	fillrect (L,T,W,H) left top width height  默认黑色
+//		oGc.fillRect(10,10,100,100);
+		
+		//代边框的方块   strokerect(L,T,W,H)
+//		oGc.strokeRect(10,10,100,100);
+//
+//		oGc.fillStyle="red";			//填充     填充要在绘制前面
+//		oGc.lineWidth="5";				//线宽
+//		oGc.strokeStyle="blue";			//边框颜色
+//		oGc.strokeRect(10,10,100,100);	//绘制边框方块
+
+		//画个三角形
+//		绘制路径:		开始绘制			beginPath();
+//					移动绘制目标点		moveTo();
+//					移动至新的目标点		lineTo();
+//					结束绘制			closePath();
+//					绘制线条			stroke();
+//		save 保存路径		restore 恢复路径
+		
+		oGc.save(); //保存路径
+		oGc.beginPath();
+		oGc.lineWidth="5";
+		oGc.strokeStyle="red";
+		oGc.fillStyle="#FFFF00";
+		oGc.moveTo(100,100);
+		oGc.lineTo(200,200);
+		oGc.lineTo(300,200)
+		oGc.closePath();
+		oGc.fill();			//填充
+		oGc.stroke();
+		oGc.restore();   //恢复路径
+	</script>
+</html>

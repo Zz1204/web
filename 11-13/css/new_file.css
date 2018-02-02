@@ -1,0 +1,41 @@
+*{
+	padding: 0; margin: 0;
+	font-size: 16px; font-family: "微软雅黑"; color: #000000;
+}
+a{
+	text-decoration: none;
+}
+ul,li{
+	list-style: none;
+}
+
+
+body{
+	width: 100%;
+	background: url(../img/3S9sFMD.jpg) repeat-x;
+}
+#header{
+	width: 968px;
+	height: 75px;
+	margin: 0 auto;
+	
+}
+.logo img{
+	margin-top: 14px;
+	border: none;
+}
+#header ul{
+	float: right; margin-top: 22px;
+}
+#header ul li{
+	float: left; margin: 0 2px;
+}
+#header ul li a{
+	line-height: 33px; display: block;padding-left: 16px; 
+	background: url(../img/lTcb_ve.png) no-repeat ;
+	
+}
+#header ul li a span{
+	color: #FFFFFF; height: 33px; display: block; font-size: 14px; padding-right: 16px;
+	background: url(../img/lTcb_ve.png) no-repeat right 0;
+}

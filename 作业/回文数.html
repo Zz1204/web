@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script>
+			for(var i=10000;i<100000;i++){
+				var wan=parseInt(i/10000);
+				var ge=parseInt(i%10);
+				var qian=parseInt(i%10000/1000);
+				var bai=parseInt(i%100/10);
+				if(wan==ge&&qian==bai){
+					document.write(i+"<br/>");
+				}
+			}
+		</script>
+	</body>
+</html>

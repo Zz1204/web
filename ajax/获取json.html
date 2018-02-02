@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div></div>
+		<script src="js/ajax.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			var oDiv=document.getElementsByTagName("div")[0];
+			var url="json.json";			
+			ajax.get(url,function(str){
+				var str=eval("("+str+")");
+				oDiv.innerHTML=str.xinxi[1].name;
+			})
+		</script>
+	</body>
+</html>

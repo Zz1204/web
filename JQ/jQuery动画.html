@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			div{
+				width:300px;
+				height:300px;
+				background:red;
+				/*display:none;*/
+				position:absolute;
+				top:50px;
+				left:30px;
+			}
+		</style>
+	</head>
+	<body>
+		<button>按钮</button>
+		<div></div>
+		<script src="js/jquery-3.2.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<script>
+			//显示隐藏
+			//隐藏hide()
+//			$("button").bind("click",function(){
+//				$("div").hide(1000,function(){
+//					alert("1");
+//				})
+//			})
+			//显示show()
+//			$("button").bind("click",function(){
+//				$("div").show(1000,function(){
+//					alert("1");
+//				})
+//			})
+			//显示隐藏交替toggle();
+//			$("button").bind("click",function(){
+//				$("div").toggle(1000);
+//			})
+
+
+			//淡入淡出
+			//淡入fadeIn();
+//			$("button").bind("click",function(){
+//				$("div").fadeIn(1000);
+//			})
+			
+			//淡出fadeOut();
+//			$("button").bind("click",function(){
+//				$("div").fadeOut(1000);
+//			})
+
+			//淡入淡出  fadeToggle();
+//			$("button").bind("click",function(){
+//				$("div").fadeToggle(1000);
+//			})
+
+			//设置透明度
+//			$("button").bind("click",function(){
+//				$("div").fadeTo(1000,0.4,function(){
+//					alert("1");
+//				});
+//			})
+
+
+			//滑出  slideUp()
+//			$("button").bind("click",function(){
+//				$("div").slideUp(1000);
+//			})
+			//滑入  slideDown()
+//			$("button").bind("click",function(){
+//				$("div").slideDown(1000);
+//			})
+			//滑入滑出   slideToggle();
+//			$("button").bind("click",function(){
+//				$("div").slideToggle(1000);
+//			})
+
+
+			//动画 animate
+			
+//			$("button").bind("click",function(){
+//				$("div").animate({"width":"500px"},1000,function(){
+//					alert("1");
+//				})
+//			})
+
+			//一次动画改变多个样式
+//			$("button").bind("click",function(){			
+//				$("div").animate(
+//					{
+//						"width":"500px",
+//						"height":"500px",
+//						"left":"500px",
+//						"top":"500px"
+//					},2000,function(){
+//						alert("1");
+//					}
+//				)
+//			})
+
+			//先运行第一个动画，再运行第二个
+			$("button").bind("click",function(){			
+				$("div").animate({"width":"100px"},1000);
+				$("div").animate({"height":"100px"},1000);
+			})
+		</script>
+	</body>
+</html>

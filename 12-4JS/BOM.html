@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			/*div{
+				width: 100px;
+				height: 100px;
+				background: red;
+			}
+			p{
+				background: yellow;
+			}*/
+			.box{
+				width:300px;
+				height: 300px;
+				background: red;
+			}
+			.box1{
+				width: 200px;
+				height:200px;
+				background: yellow;
+			}
+			.box2{
+				width: 100px;
+				height: 100px;
+				background: blue;
+			}
+		</style>
+	</head>
+	<body>
+		<!--<div>
+			<p>hhhhhh</p>
+			<button>点击</button>
+		</div>
+		<span></span>-->
+		
+		<div class="box">
+			<div class="box1">
+				<div class="box2"></div>
+			</div>
+		</div>
+		<script type="text/javascript">
+			//网页可见区域宽
+//			console.log(document.body.clientWidth);
+			//网页可见区域高
+//			console.log(document.body.clientHeight);
+			//网页可见区域宽(包括边线的宽)
+//			console.log(document.body.offsetWidth);
+			//网页可见区域高(包括边线的高)
+//			console.log(document.body.offsetHeight);
+			//网页正文全文宽
+//			console.log(document.body.scrollWidth);
+			//网页正文全文高
+//			console.log(document.body.scrollHeight);
+			//网页被卷去的高
+//			console.log(document.body.scrollTop);
+			//网页被卷去的左
+//			console.log(document.body.scrollLeft);
+			//网页正文部分上
+//			window.screenTop;
+			//网页正文部分左：
+//			window.screenLeft;
+			//屏幕分辨率的高
+//			window.screen.height;
+			//屏幕分辨率的宽
+//			window.screen.width;
+
+
+
+			//事件流
+//			var oDiv=document.getElementsByTagName("div")[0];
+//			var oP=document.getElementsByTagName("p")[0];
+			
+//			addEventListener()事件监听  方法用于向指定元素添加事件句柄
+			//可绑定同一个事件多次
+//			oP.addEventListener("click",function(){
+//				alert("1");
+//			})
+//			oP.addEventListener("click",function(){
+//				alert("2");
+//			})
+
+
+			//捕获，冒泡阶段
+//			oDiv.addEventListener("click",buhuo,true);
+//			oP.addEventListener("click",buhuo0,true);
+//			function buhuo(){
+//				alert("捕获阶段div");
+//			}
+//			function buhuo0(){
+//				alert("捕获阶段p")
+//			}
+//			
+//			oDiv.addEventListener("click",maopao,false);
+//			oP.addEventListener("click",maopao0,false);
+//			function maopao(){
+//				alert("冒泡阶段div");
+//			}
+//			function maopao0(){
+//				alert("冒泡阶段p")
+//			}
+			//可控是在什么阶段执行，但不可控制冒泡或捕获
+			
+			
+			
+			//使用removeEventListenet()方法移除
+			//由addEventListener()方法添加的事件句柄
+//			var oDiv=document.getElementsByTagName("div")[0];
+//			var oP=document.getElementsByTagName("p")[0];
+//			var btn=document.getElementsByTagName("button")[0];
+//			var opan=document.getElementsByTagName("span")[0];
+//			oDiv.addEventListener("mousemove",my);
+//			function my(){
+//				opan.innerHTML=Math.random();
+//			}
+//			btn.onclick=function(){
+//				oDiv.removeEventListener("mousemove",my);
+//			}
+
+
+			//阻止冒泡，从哪阻止就放那
+			//window.event? window.event.cancelBubble = true : e.stopPropagation();
+			var oDiv=document.getElementsByClassName("box")[0];
+			var oDiv1=document.getElementsByClassName("box1")[0];
+			var oDiv2=document.getElementsByClassName("box2")[0];
+			oDiv.onclick=function(){
+				alert("box");
+				
+			}
+			oDiv1.onclick=function(){
+				alert("box1");
+
+			}
+			oDiv2.onclick=function(evt){
+				alert("box2");
+				window.event? window.event.cancelBubble = true : e.stopPropagation();
+				
+			}
+		</script>
+	</body>
+</html>

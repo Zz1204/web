@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			table{
+				margin:20px auto;
+				border:2px solid #000;
+			}
+			td{
+				border:1px solid #000;
+				padding:0 10px;
+				text-align:center;
+			}
+		</style>
+	</head>
+	<body>
+		ID:<input type="text" name="" id="" value="" />
+		姓名:<input type="text" name="" id="" value="" />
+		电话:<input type="text" name="" id="" value="" />
+		<button onclick="clicko();">提交</button>
+		<table>
+			<tr>
+				<td>Id</td>
+				<td>Name</td>
+				<td>Tel</td>
+				<td>删除</td>
+			</tr>
+		</table>
+		<script>
+			var ipt=document.getElementsByTagName("input");
+			var btn=document.getElementsByTagName("button")[0];
+			var tab=document.getElementsByTagName("table")[0];
+			function clicko(){
+				//创建四个td
+				var td0=document.createChild("td");
+				var td1=document.createChild("td");
+				var td2=document.createChild("td");
+				var td3=document.createChild("td");
+				//td赋值
+				td0.innerHTML=ipt[0].value;
+				td1.innerHTML=ipt[1].value;
+				td2.innerHTML=ipt[2].value;
+				td3.innerHTML="<a href='#' style='color:red;'>删除</a>";
+			}
+		</script>
+	</body>
+</html>

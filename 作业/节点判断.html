@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div>
+			字字吱吱吱吱
+			<em>eretete<i>uasdfl</i></em>
+			sjdja
+			<span>dad</span>
+			sdawd
+			<span></span>
+			sdawd
+			sdwada
+			adwada
+			<span>1</span>
+			<span>2</span>
+		</div>
+		<script>
+			var oDiv=document.getElementsByTagName("div")[0];
+			var oNode=oDiv.childNodes
+			for(var i=0;i<oNode.length;i++){
+				if(oNode[i].nodeType==3){
+					console.log("文本节点:"+oDiv.childNodes[i].nodeValue);
+				}
+				if(oNode[i].nodeType==1){
+					console.log("元素节点:"+oDiv.childNodes[i].nodeName);
+				}
+			}
+		</script>
+	</body>
+</html>

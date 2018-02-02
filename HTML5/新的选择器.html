@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<ul class="oul1" id="oul2">
+			<li>天气不错</li>
+			<li>天气不错</li>
+			<li>天气不错</li>
+			<li>天气不错</li>
+			<li>天气不错</li>
+		</ul>
+		<ul class="oul1" id="oul3">
+			<li>天气不错</li>
+			<li>天气不错</li>
+			<li>天气不错</li>
+			<li>天气不错</li>
+			<li>天气不错</li>
+		</ul>
+	</body>
+	<script>
+		//		新的选择器
+//		querySelector 		querySelectorAll
+//		querySelector(标签     class名     id);获取的是单个元素,从上往下第一个
+//		querySelectorAll(标签     class名     id);获取的是所有元素
+		IE678  不支持	新增标签也不支持
+
+
+//		var oul=document.querySelector(".oul1");
+//		oul.style.background="red";
+		var oul=document.querySelectorAll(".oul1");
+		for (var i=0;i<oul.length;i++) {
+			oul[i].style.background="red";
+		}
+	</script>
+</html>

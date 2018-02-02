@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href=""/>
+		<style type="text/css">
+			body{
+				background: black;
+			}
+			.box{
+				width: 500px;
+				height: 500px;
+				-webkit-transform-style: preserve-3d;
+				-webkit-transform: /*translate(50%, 50%) */rotateY(78deg);
+				
+			}
+			.box2{
+				width: 500px;
+				height: 500px;
+				-webkit-transform-style: preserve-3d;
+				animation: name 15s linear infinite ;
+			}
+			.d1,.d2,.d3{
+				width: 500px;
+				height: 500px;
+				border: 5px solid #FF0000;
+				position: absolute;
+				top: 0; left: 0;
+				border-radius: 50%;
+			}
+			.d2{
+				transform: rotateX(60deg);
+			}
+			.d3{
+				-webkit-transform: rotateX(-60deg);
+			}
+			span{
+				display: block;
+				width: 100%;
+				height: 100%;
+				background: url(img/hx.png) no-repeat center center;
+				border-radius: 50%;
+				background-size: 100%;
+				animation: hxx 2s infinite linear;
+			}
+			@-webkit-keyframes name{
+				 0% {
+			        transform: rotatex(0deg);
+			    }
+			    100% {
+			        transform: rotatex(-360deg);
+			    }
+			}
+			@-webkit-keyframes hxx{
+				to{
+					transform: rotatez(360deg);
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box">
+			<div class="box2">
+				<div class="d1">
+					<span></span>
+				</div>
+				<div class="d2">
+					<span></span>
+				</div>
+				<div class="d3">
+					<span></span>
+				</div>
+			</div>
+		</div>
+		<a href="" <!--target="_blank"-->>hflkjdsauli</a>
+	</body>
+</html>

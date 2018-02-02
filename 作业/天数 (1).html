@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+//			var d=new Date("2017-12-11");
+//			var a=d.getDate();
+//			console.log(a);
+//			var c=d.setDate(a+100);
+//			var e=new Date(c);
+//			alert(e);
+			
+			function setMyDate(data,n){
+				var a=data.getDate();
+				var c=data.setDate(a+n);
+				var e=new Date(c);
+				return e;
+			}
+			alert(setMyDate(new Date("2017-11-11"),10)); 
+			alert(setMyDate(new Date("2017-01-11"),100)); 
+		</script>
+	</body>
+</html>

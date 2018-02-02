@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			body{
+				background:red;
+			}
+			.box{
+				width:320px;
+				height:160px;
+				background:url(img/i2.jpg) no-repeat;
+				border:1px solid #000;
+				position:relative;
+			}
+			.box2{
+				width:320px;
+				height:160px;
+				border:1px solid #000;
+				position:absolute;
+				top:0;
+				left:350px;
+				background:url(img/i1.jpg) no-repeat;
+				display:none;
+			}
+			span{
+				width:160px;
+				height:80px;
+				display:none;
+				background:rgba(255,255,255,0.5);
+				position:absolute;
+				top:0;
+				left:0;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box">
+			<span></span>
+			<div class="box2"></div>
+		</div>
+		<script>
+			var oDiv=document.getElementsByClassName("box")[0];
+			var oSp=document.getElementsByTagName("span")[0];
+			var big=document.getElementsByClassName("box2")[0];
+			oDiv.onmouseover=function(){
+				oSp.style.display="block";
+				big.style.display="block";
+			}
+			oDiv.onmouseout=function(){
+				oSp.style.display="none";
+				big.style.display="none";
+				
+			}
+			oDiv.onmousemove=function(evt){
+				var evt=evt||window.event;
+				var y=evt.clientY-40;
+				var x=evt.clientX-80;
+				if(x<0){
+					x=0;
+				}
+				if(x>160){
+					x=160;
+				}
+				if(y<0){
+					y=0;
+				}
+				if(y>80){
+					y=80;
+				}
+				oSp.style.top=y+"px";
+				oSp.style.left=x+"px";
+				big.style.backgroundPositionX=-x*2+"px";
+				big.style.backgroundPositionY=-y*2+"px";
+//				var bx=evt.clientX*-2+160;
+//				var by=evt.clientY*-2+80;
+//				if(bx<-320){
+//					bx=-320;
+//				}
+//				if(bx>0){
+//					bx=0;
+//				}
+//				if(by<-160){
+//					by=-160;
+//				}
+//				if(by>0){
+//					by=0;
+//				}
+//				big.style.backgroundPositionX=bx+"px";
+//				big.style.backgroundPositionY=by+"px";
+			}
+		</script>
+	</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			div{
+				position: relative;
+			}
+			img{
+				width: 240px;height: 180px;
+				position: absolute;
+				top: 0;
+				left:0;
+			}
+			a{
+				display: block;
+				padding-top: 200px;
+			}
+		</style>
+	</head>
+	<body>
+		<div style="text-align: center;width: 240px;height: 180px;">
+			<img src="img/u=1936838390,1639008187&fm=27&gp=0.jpg"/>
+			
+			<a href="#">加入购物车</a>
+		</div>
+		<script src="js/startMove.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			var oImg=document.getElementsByTagName("img")[0];
+			var oA=document.getElementsByTagName("a")[0];
+			var oDiv=document.getElementsByTagName("div")[0];
+			oA.onclick=function(e){
+				var img=document.createElement("img")
+				img.src="img/u=1936838390,1639008187&fm=27&gp=0.jpg";
+				oDiv.replaceChild(img,oDiv.childNodes[0]);
+				e.preventDefault();
+				
+				startMove(oImg,{left:1200,width:0,height:0},function(){
+					oImg.style.left=0;
+					oImg.style.width="240px";
+					oImg.style.height="180px";
+					
+				});
+			}
+		</script>
+	</body>
+</html>

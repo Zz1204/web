@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			div{
+				width: 100px;
+				height: 100px;
+				background: red;
+			}
+		</style>
+	</head>
+	<body>
+		<button>按钮</button>
+		<div></div>
+		<script type="text/javascript">
+			var but=document.getElementsByTagName("button")[0];
+			var oDiv=document.getElementsByTagName("div")[0];
+			var abc=true;
+			but.onclick=function(){
+				if(abc==true){
+					oDiv.style.display="none";
+				}else{
+					oDiv.style.display="block";
+				}
+				abc=!abc;		//点击之后abc变成非abc
+				console.log(abc);
+			}
+		</script>
+	</body>
+</html>

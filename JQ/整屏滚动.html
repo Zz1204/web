@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			
+		</style>
+	</head>
+	<body>
+		<script src="js/jquery-3.2.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			//谷歌，IE，欧朋，Safari
+			window.onmousewheel=document.onmousewheel=scrollFn;
+			//火狐
+			window.addEventListener("DOMMouseScroll",scrollFn);
+			function scrollFn(e){
+//				console.log("滚滚滚");
+				var e=e||window.event;
+//				console.log(e.wheelDelta);
+				//e.wheelDelta;	谷歌,IE往下滚是-120；往上滚是120；
+//				console.log(e.detail);
+				//e.detail;火狐往上是-3，往下是3
+				var b=true;
+				if(e.wheelDelta){
+					b=e.wheelDelta>0?true:false;
+				}else if(e.detail){
+					b=e.detail>0?false:true;
+				}
+				if(b==true){
+					console.log("往上")
+				}else{
+					console.log("往下")
+				}
+			}
+		</script>
+	</body>
+</html>

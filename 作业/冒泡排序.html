@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script>
+//			var arr=[4,2,5,3,6,1,8,7];
+//			for(var i=0;i<arr.length-1;i++){
+//				for(var j=0;j<arr.length-1-i;j++){
+//					if(arr[j]>arr[j+1]){
+//						var dao=arr[j];
+//						arr[j]=arr[j+1];
+//						arr[j+1]=dao;
+//					}
+//				}
+//			}
+//			alert(arr);
+
+
+
+			var arr=[4,2,5,3,6,1,8,7];
+			for(var i=0;i<arr.length-1;i++){
+				for(var j=0;j<arr.length-1-i;j++){
+					if(arr[j]>arr[j+1]){
+						var dao=arr[j];
+						arr[j]=arr[j+1];
+						arr[j+1]=dao;
+					}
+				}
+			}
+			alert(arr);
+		</script>
+	</body>
+</html>

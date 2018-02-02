@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div>
+			  
+			嘻嘻嘻嘻嘻
+			<p>嘿嘿嘿嘿嘿嘿嘿嘿</p>
+			<span>哈哈哈哈哈    哈哈<i>呵呵呵呵呵呵</i></span>
+			
+			<span>hhhhh</span>
+			
+		</div>
+		<script type="text/javascript">
+			var oDiv=document.getElementsByTagName("div")[0];
+			for(var i=0;i<oDiv.childNodes.length;i++){
+				var r=/^\s+$/;
+				var c=r.test(oDiv.childNodes[i].nodeValue)
+				if(oDiv.childNodes[i].nodeType==3&&c==true){
+					oDiv.removeChild(oDiv.childNodes[i]);
+				}
+			}
+			console.log(oDiv.childNodes);
+		</script>
+	</body>
+</html>

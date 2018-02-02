@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		
+	</head>
+	<body>
+		<div>
+		<p>账号:<input type="text" name="" id="" value="" /><span></span></p>
+		<p>密码:<input type="password" name="" id="" value="" /><span></span></p>
+		<p>确认密码:<input type="password" name="" id="" value="" /><span></span></p>
+		<p>验证码:<input type="text" name="" id="" value="" /><span></span><span></span></p>
+		<button>立即注册<tton>
+		</div>
+		<script type="text/javascript">
+			var ipt=document.getElementsByTagName("input");
+			var osp=document.getElementsByTagName("span");
+			var btn=document.getElementsByTagName("button")[0];
+			ipt[0].onfocus=function(){
+				osp[0].innerHTML="请输入手机号码"
+			}
+			ipt[0].onblur=function(){
+				if(/^1[3|4|5|7|8]\d{9}$/.test(ipt[0].value)){
+					ipt[0].style.borderColor=""
+					osp[0].innerHTML="正确";
+				}else{
+					osp[0].innerHTML="请输入正确的手机号";
+					ipt[0].style.borderColor="red"
+				}
+			}
+			ipt[1].onfocus=function(){
+				osp[1].innerHTML="请输入6-22位由字母、数字、下划线组成的密码";
+			}
+			ipt[1].onblur=function(){
+				var r=/^\w+$/;
+				var b=r.test(ipt[1].value)
+				console.log(b)
+				if(b==true&&ipt[1].value.length>=6&&ipt[1].value.length<=20){
+					osp[1].innerHTML="正确"
+					ipt[1].style.borderColor=""
+				}else{
+					osp[1].innerHTML="请输入正确的密码格式";
+					ipt[1].style.borderColor="red"
+				}
+			}
+			ipt[2].onfocus=function(){
+				osp[2].innerHTML="请再次输入密码";
+			}
+			ipt[2].onblur=function(){
+				if(ipt[2].value==ipt[1].value){
+					osp[2].innerHTML="正确";
+					ipt[2].style.borderColor=""
+				}else{
+					osp[2].innerHTML="两次密码不一致";
+					ipt[2].style.borderColor="red"
+				}
+			}
+			var a=parseInt(Math.random()*26+65);
+			var aa=String.fromCharCode(a);
+			var b=a=parseInt(Math.random()*26+97);
+			var bb=String.fromCharCode(b);
+			var c=parseInt(Math.random()*26+65);
+			var cc=String.fromCharCode(c);
+			var d=a=parseInt(Math.random()*26+97);
+			var dd=String.fromCharCode(d);
+			osp[3].innerHTML=aa+bb+cc+dd;
+			var p=osp[3].innerHTML;
+			console.log(p);
+			ipt[3].onblur=function(){
+				if(ipt[3].value!=p){
+					osp[4].innerHTML="请输入正确的验证码"
+					ipt[3].style.borderColor="red"
+				}else{
+					osp[4].innerHTML="正确"
+					ipt[3].style.borderColor=""
+				}
+			}
+			btn.onclick=function(){
+				alert("注册成功");
+			}
+		</script>
+	</body>
+</html>

@@ -1,0 +1,91 @@
+body{
+	background: #f1f2f6;
+}
+#body-content{
+	width:780px;
+	min-height: 700px;
+	background: #FFFFFF;
+	padding: 70px 160px 220px 160px;
+}
+.b-c-title-1{
+	font-size: 54px;
+	line-height: 60px;
+	color: #311759;
+}
+.b-c-title-2{
+	font-size: 18px;
+	letter-spacing: 6px;
+	color: #311759;
+}
+.b-c-title-2+img{
+	margin-top: 15px;
+}
+.b-c-title-3{
+	height: 60px;
+	margin-top: 70px;
+	font-size: 30px;
+	color: #311759;
+	overflow: hidden;
+	background: url(../img/pen_line_long.png) no-repeat -320px 58px;
+}
+.b-c-title-3>.pen{
+	width: 61px;
+	height: 58px;
+	background: url(../img/pen_article.png) no-repeat;
+	right: 0;
+	top: 7px;
+	cursor: pointer;	
+}
+.b-c-title-3>.pen:hover{
+	background-position-x: -61px;
+}
+.b-c-title-4{
+	color: #6b6a6c;
+	padding-top: 15px;
+	margin-bottom: 60px;
+}
+.b-c-title-4>span:first-child{
+	margin-right: 20px;
+}
+.b-c-title-img{
+	margin-bottom: 35px;
+}
+.b-c-title-text-tit{
+	font-size: 22px;
+	margin-bottom: 23px;
+}
+.b-c-title-text-p{
+	line-height: 22px;
+	margin-bottom: 23px;
+}
+.like-btn{
+	width: 73px;
+	height: 73px;
+	margin: 80px auto 0;
+	background: url(../img/article_iflike.png) no-repeat;
+}
+.like-btn:hover{
+	animation: 1s linear 0s normal none 1 running tan;
+}
+.like-btn>.tex{
+	width: 0px;
+    height: 35px;
+    top: 20px;
+    left: 100px;
+    line-height: 35px;
+    background: url(../img/article_iflike_nomberbg.png) no-repeat;
+    color: #fff;
+    transition: all 0.5s;
+    overflow: hidden;
+}
+.like-btn:hover .tex{
+	width: 135px;
+}
+
+.te{
+	bottom: 30px;
+	left: 505px;
+	opacity: 0;
+	text-align: center;
+}
+

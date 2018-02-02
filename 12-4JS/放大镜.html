@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			.box{
+				width:200px;
+				height:100px;
+				background:url(img/i1.jpg);
+				background-size:cover;
+				position:relative;
+			}
+			.box2{
+				width:400px;
+				height:200px;
+				background:url(img/i1.jpg);
+				background-size:cover;
+				display:none;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box">
+			<div class="box2" style="position: absolute;top:0;left:0;"></div>
+		</div>
+		<script>
+			var oDiv=document.getElementsByClassName("box")[0];
+			var oDiv1=document.getElementsByClassName("box2")[0];
+			oDiv.onmouseenter=function(){
+				oDiv1.style.display="block";
+			}
+			oDiv.onmousemove=function(evt){
+				var evt=evt||window.event;
+				oDiv1.style.top=evt.offsetY+10+"px";
+				oDiv1.style.left=evt.offsetX+10+"px";
+			}
+			oDiv.onmouseout=function(){
+				oDiv1.style.display="none";
+				
+			}
+		</script>
+	</body>
+</html>

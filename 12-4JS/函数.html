@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			div{
+				width:100px;
+				height:100px;
+				background:red;
+			}
+		</style>
+	</head>
+	<body>
+		<button>按钮</button>
+		<div></div>
+		<script>
+			var hello=function(){
+				document.write("Hello world!"+"<br/>");
+			}
+			var a=function(){
+				document.write("你好世界！"+"<br/>");
+			}
+			
+			hello();		//函数的调用
+			a();
+			
+			var btn=document.getElementsByTagName("button")[0];
+			var oDiv=document.getElementsByTagName("div")[0];
+			
+			btn.onclick=function(){
+				color();
+			}
+			
+			//调用这种方式定义的函数，调用只能在下
+//			var color=function(){
+//				oDiv.style.background="yellow";
+//			}
+
+			//调用这种方式定义的函数，调用可以在上，可以在下
+			function color(){
+				oDiv.style.background="blue";
+			}
+			
+			
+//			function sum(a,b,c){				//形参，形式参数
+//				var he=a*b*c;
+//				document.write(he);
+//			}
+//			sum(1,6);
+//			sum(1,4,6)							//实参
+			
+			
+			//function可以传多种数据类型
+//			function sum(arr){
+//				var he=arr[0]+arr[1];
+//				alert(he);
+//			}
+//			sum([1,2]);
+
+			//死循环
+//			function sum(){
+//				console.log("1");
+//				sum();
+//			}
+//			sum();
+
+			//递归
+			//10的阶乘
+//			function jieCh(x){
+//				if(x==1){
+//					return 1;
+//				}
+//				return x*jieCh(x-1);
+//			}
+//			alert(jieCh(10));
+
+
+//			function jieCh(a){
+//				if(a==1){
+//					return 1;
+//				}
+//				return a*jieCh(a-1);
+//			}
+//			alert(jieCh(10));
+
+//			function sum(a,b,c){
+//				console.log(arguments);			//伪数组
+//				return a+b+c;
+//			}
+//			alert(sum(1,2));
+
+			//arguments
+//			function sum(){
+//				if(arguments.length==2){
+//					return arguments[0]+arguments[1];
+//				}else{
+//					return "传入参数不合法";
+//				}
+//			}
+//			
+//			console.log(sum(1,2));
+			
+			//利用arguments求和
+			//arguments将储存实参，可以实现不传形参
+			function sum(){
+				var he=0;
+				for(var i=0;i<arguments.length;i++){
+					he+=arguments[i];
+				}
+				return he;
+			}
+			alert(sum(1,2,3,4,5,6,7));
+		</script>
+	</body>
+</html>

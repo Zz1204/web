@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div class="box">
+			hahaha
+			<span>hehehe</span>
+			<em>opopop<i>ninini</i></em>
+		</div>
+		<script>
+			var oDiv=document.getElementsByClassName("box")[0];
+			var oB=document.getElementsByTagName("body")[0]
+			//节点的三个属性
+			//nodeName 节点名;     nodeType 节点类型 ;    nodeValue 节点内容
+//			console.log(oDiv.nodeName);			//文本的名	
+			
+//			console.log(oDiv.nodeType);			
+			
+			//文本节点nodeType为3;元素节点nodeType为1
+			
+//			console.log(oDiv.childNodes[0].nodeType);    
+			//获取元素的孩子节点
+			
+//			console.log(oDiv.nodeValue);		
+			//获取元素的内容
+			
+//			console.log(oDiv.childNodes[0].nodeValue);   
+			//获取元素文本的内容
+			//元素节点没有nodeValue值(null),文本节点的nodeValue值是取出文本
+			
+			//childNodes:可以获取一个元素节点所有的子节点,包括元素节点,文本节点,只访问子节点
+//			console.log(oDiv.childNodes);
+			//取出的是数组形式，有数组的特性，.length和下标
+//			console.log(oDiv.childNodes[3]);
+//			console.log(oDiv.childNodes.length);
+//			for(var i=0;i<oDiv.childNodes.length;i++){
+//				console.log(oDiv.childNodes[i]);
+//			}
+
+
+			//firstChild   获取第一个子节点
+			//lastChild    获取最后一个子节点
+//			console.log(oDiv.firstChild);
+//			console.log(oDiv.lastChild);
+
+
+			//父节点   parentNode
+//			console.log(oDiv.parentNode);
+
+			//ownerDocument:  返回当前节点的文档对象根节点，相当于document
+//			console.log(oDiv.ownerDocument);
+
+			//同级上一个节点和同级下一个节点              上：previousSibling    下：nextSibling
+
+//			console.log(oDiv.childNodes[1].previousSibling);
+//			console.log(oDiv.childNodes[1]);
+//			console.log(oDiv.childNodes[1].nextSibling);
+
+
+//			createElement(): 创建一个元素节点,不在页面显示
+//			var oP=document.createElement("p");
+//			oP.innerText="xixixixi";
+//			console.log(oP);
+//			appendChild();给某节点添加一个子节点;两者配合可添加到页面
+//			oDiv.appendChild(oP);
+
+
+			//在指定位置创建节点
+			//insertBefore(参数1,参数2):在参数2节点前插入参数1
+//			var pNode=document.createElement("p");
+//			pNode.innerText="ajlkhfdkjhf";
+//			oDiv.insertBefore(pNode,oDiv.childNodes[2]);
+
+
+			//createTextNode;创建文本节点;也可使用指定位置
+//			var tNode=document.createTextNode("你好你好你好");
+//			oDiv.appendChild(tNode);
+
+
+			//replaceChild(,);第一个节点替换第二个节点;文本节点和元素节点
+//			oDiv.replaceChild(oP,oDiv.childNodes[3]);
+
+
+			//removeChild();删除节点
+//			
+
+
+			//cloneNode();克隆节点        默认为false,只克隆节点;true克隆整个事件
+			var a=oDiv.cloneNode(true);
+			console.log(a);
+		</script>
+	</body>
+</html>

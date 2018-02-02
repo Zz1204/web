@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			.box{
+				width: 500px;
+				height: 600px;
+				background: #ccc;
+				border: 3px solid #f00;
+				margin: 0 auto;
+				position: relative;
+			}
+			.dan{
+				width: 20px;
+				height: 20px;
+				background: blue;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box">
+			<div class="dan" style="position: absolute;left: 0;top: 0;"></div>
+		</div>
+		<script type="text/javascript">
+			var oDiv=document.getElementsByClassName("dan")[0];
+			var i=1;
+			var j=1;
+			var timer=setInterval(function(){
+				oDiv.style.left=parseInt(oDiv.style.left)+i+"px";
+				if(oDiv.style.left=="480px"){
+					i=-1;
+				}
+				if(oDiv.style.left=="0px"){
+					i=1;
+				}
+				oDiv.style.top=parseInt(oDiv.style.top)+j+"px";
+				if(oDiv.style.top=="580px"){
+					j=-1;
+				}
+				if(oDiv.style.top=="0px"){
+					j=1;
+				}
+			},10)
+		</script>
+	</body>
+</html>

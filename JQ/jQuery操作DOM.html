@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			.bgred{
+				background:red;
+			}
+			.clrw{
+				color:#fff;
+			}
+		</style>
+	</head>
+	<body>
+		<p class="one">选出你最喜欢的水果 </p>
+		<p class="one">选出你最喜欢的水果 </p>
+		<ul>
+			<li>苹果</li>
+			<li>橘子</li>
+			<li class="a">香蕉</li>
+			<li class="a">樱桃</li>
+		</ul>
+		<p class="one">选出你最喜欢的水果 </p>
+		<a href="#" title="连接" name="bbb">链接链接</a>
+		<p class="myClass" title="选择你最喜欢的水果">选择你最喜欢的水果</p>
+		<script src="js/jquery-3.2.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<script>
+			//1,查找节点
+			//1)元素节点
+//			var $box=$("p");
+			//2)属性节点
+//			var $attr=$box.attr("class");		//获取P的class
+//			var $attr=$box.attr("class","two");	//修改P的class
+			//3)文本节点
+//			var txt=$box.text();				//获取p的文本
+//			$box.text("哈哈哈哈哈哈");				//修改p的文本
+
+
+			//2,添加节点
+//			var li1=$("<li>芒果</li>");			//创建一个节点
+//			var li2=$("<li>葡萄</li>");
+//			var li3=$("<li>柚子</li>");
+			
+			//A.append(B);						//A里面插入B
+//			$("ul").append(li1,li2,li3);		//插入节点,链式添加
+
+			//A.appendTo(B);					//将A插入B
+//			li1.appendTo($("ul"));
+			
+			//A.prepend(B);						//A的前面插入B
+//			$("ul").prepend(li1,li2);
+			
+			//A.prependTo(B);					//将A插入B前面
+//			li1.prependTo($("ul"));
+
+			//after();在元素后面插入兄弟元素
+//			var $p=$("p");
+//			var strong=$("<strong>哈哈</strong>");
+//			$p.after(strong);
+			
+			//insertAfter()
+//			strong.insertAfter($p);
+			
+			//before();在元素前面插入兄弟元素
+//			$p.before(strong);
+			
+			//insertBefore();
+//			strong.insertBefore($p);
+
+			//remove();移除节点      删除之后，绑定事件也会删除
+//			var $li=$("ul li:eq(0)");
+//			$li.click(function(){
+//				alert("1");
+//			})
+//			$li.remove();			//移除节点
+//			$("ul").append($li);	//添加节点
+
+			//detach();移除节点		删除之后，绑定事件还在
+//			var $li=$("ul li:eq(0)");
+//			$li.click(function(){
+//				alert("1");
+//			})
+//			$li.detach();			//移除节点
+//			$("ul").append($li);	//添加节点	
+			
+			//empty();清空节点
+//			$("ul").empty();
+
+			//clone();克隆节点
+//			var clone=$("ul li").eq(0).clone();
+//			$("ul").append(clone);
+			
+//			$("ul li").eq(0).click(function(){
+//				$(this).clone(true).appendTo($("ul"));
+//				//clone();不传参将只克隆节点，不克隆事件
+//				//clone();传入true，则节点与事件全克隆
+//			})
+
+			//替换节点
+			//replaceWith();和replaceAll();
+//			var $s=$("<strong>选一个</strong>");
+//			$("p").replaceWith($s);
+//			$s.replaceAll(".one");
+
+			//包裹节点
+			//wrap();   每个元素包裹一次,单独包裹
+//			$("p").wrap("<b></b>");
+
+			//wrapAll();  将所有匹配的元素用一个元素包裹起来，会更改结构
+			//如果被包裹的多个元素之间有其他元素，其他元素会被放到包裹元素之后
+//			$("p").wrapAll("<b></b>")
+
+			//wrapInner();  将匹配元素的子元素包裹起来
+//			$("p").wrapInner("<b></b>")
+
+			//属性操作
+			//获取属性
+//			console.log($("a").attr("title"));
+			//设置属性attr(属性，属性值)
+//			$("a").attr("title","your title");	//设置单个属性
+//			$("a").attr({"title":"your title","name":"aaa"});
+			//设置多个属性需要用对象的方式
+			
+			//删除属性
+			//removeAttr();
+//			$("a").removeAttr("name");
+
+			//样式操作
+			//获取样式
+//			var $pc=$("p").eq(3).attr("class");
+			//设置样式
+//			var $p=$("p").eq(3);
+//			$p.attr("class","bgred");
+			//追加样式		追加一个class
+//			$p.addClass("clrw");
+			//删除样式,可以使用空格隔开删除多个class，不传参将清空class名
+//			$p.removeClass("bgred");
+		</script>		
+	</body>
+</html>

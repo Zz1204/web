@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<span class="hor">00</span>时
+		<span class="min">00</span>分
+		<span class="sec">00</span>秒
+		<input type="button"  value="开始">
+		<input type="button"  value="zan">
+		<script type="text/javascript">
+			var hor=document.getElementsByClassName("hor")[0];
+			var min=document.getElementsByClassName("min")[0];
+			var src=document.getElementsByClassName("sec")[0];
+			var start=document.getElementsByTagName("input")[0];
+			var end=document.getElementsByTagName("input")[1];
+			var num=0;
+			start.onclick=function(){
+				start.disabled=true;
+				timer=setInterval(function(){
+					num++;
+					src.innerHTML=a(parseInt(num%60));
+					min.innerHTML=a(parseInt((num/60)%60)); 
+					hor.innerHTML=a(parseInt((num/3600)%24));
+				},1000)
+			}
+			end.onclick=function(){
+				clearInterval(timer);
+				start.disabled=false;
+			}
+			function a(n){
+				if(n<10){
+					return "0"+n;
+				}
+				return n;
+			}
+		</script>
+	</body>
+</html>

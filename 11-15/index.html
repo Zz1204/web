@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<style type="text/css">
+			.content{
+				width: 80%;
+				height: 200px;
+				background: yellow;
+				margin: 0 auto;
+				font-size: 12px;
+			}
+			.right{
+				float: left;
+				width: 40%;
+				height: 200px;
+				background: red;
+				font-size: 2em;
+			}
+			.right a{
+				font-size: 2em;
+			}
+			.left{
+				float: right;
+				width: 40%;
+				height: 200px;
+				background: blue;
+				font-size: 2rem;
+			}
+			@media only screen and (min-width: 100px) and (max-width: 640px) {
+				.left,.right{
+					width: 100%;
+					font-size: 3em;
+				}
+				.right a{
+					font-size: 1rem;
+				}
+				.right a:hover{
+					color: red;
+				}
+				.left{
+					background: palegreen;
+				}
+				.right{
+					background: wheat;
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<div class="content">
+			<div class="right">
+				做做足欧总做做做作者
+				<a href="#">绿氨基丁酸高发u袁氏当国u</a>
+			</div>
+			<div class="left">偶作组走走做足u走哦组u欧洲</div>
+		</div>
+	</body>
+</html>

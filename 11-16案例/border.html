@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			.d1{
+				width: 0 ; height: 0;
+				border:100px solid transparent;
+				border-bottom-color: red;
+				border-right-color: blueviolet;
+			}
+			.d2{
+				width: 800px;
+				height: 100px;
+				text-align: center;
+				margin: 50px auto;
+				background: red;
+				border: 2px solid #000;
+				position: relative;
+			}
+			.d2:before{
+				content: "";
+				display: block;
+				width: 0; height: 0;
+				border: 25px solid transparent;
+				position: absolute;
+				border-right-color: #000;
+				top: 25px;
+				left: -50px;
+			}
+			.d2:after{
+				content: "";
+				display: block;
+				width: 0; height: 0;
+				border: 25px solid transparent;
+				position: absolute;
+				border-right-color: red;
+				top: 25px;
+				left: -47px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="d1">
+			
+		</div>
+		<div class="d2">
+			<a href="#">hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh</a>
+		</div>
+	</body>
+</html>

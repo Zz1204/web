@@ -1,0 +1,136 @@
+/*清格式*/
+body,div,p,ul,li,ol,dl,dt,dd,img,input,button,h1,h2,h3,h4,h5,h6,span{
+	padding: 0;
+	margin: 0;
+}
+body{
+	font-family: "微软雅黑";
+	font-size: 16px;
+	color: #000;
+}
+img{
+	border: none;
+	vertical-align: middle;
+}
+ul,li,ol,dl,dt,dd{
+	list-style: none;
+}
+a{
+	text-decoration: none;
+}
+.fl{
+	float: left;
+}
+.fr{
+	float: right;
+}
+.pr{
+	position: relative;
+}
+.pa{
+	position: absolute;
+}
+.pf{
+	position: fixed;
+}
+.tc{
+	text-align: center;
+}
+.ma{
+	margin-left: auto;
+	margin-right: auto;
+}
+
+
+/*html*/
+body{
+	width:100%;
+	height: 100%;
+}
+
+
+/*top*/
+#top{
+	width:100%;
+	height: 90px;
+}
+#top>a{
+	width: 100%;
+	height:100%;
+	display: block;
+	background: url(../img/top.jpg) no-repeat -312px 0;
+}
+.t-btn{
+	width: 24px;
+	height: 24px;
+	background: url(../img/icon1.png) no-repeat 0 -385px;
+	top: 10px;
+	right: 10px;
+	border-radius: 50%;
+	cursor: pointer; 	
+}
+
+
+/*head*/
+#head{
+	width: 1200px;
+}
+#head .h-left li{
+	float: left;
+	
+	line-height: 30px;
+	padding: 0 8px;
+	position: relative;
+}
+#head .h-left li:first-child{
+	padding-left: 0;
+}
+#head .h-left li:before{
+	content: "";
+	width: 1px;
+	height: 10px;
+	position: absolute;
+	top: 10px;
+	right: 0;
+	background: #A4A4A4;
+}
+#head .h-left li:last-child:before{
+	content: "";
+	width: 8px;
+	height: 6px;
+	position: absolute;
+	top: 12px;
+	right: -5px;
+	background: url(../img/jt.jpg) no-repeat ;
+}
+#head .h-left .last-li:hover:last-child:before{
+	background: url(../img/hjt.jpg) no-repeat ;
+}
+#head ul li>a{
+	color: #a4a4a4;
+	font-size: 10px;
+}
+#head ul li>a:hover{
+	color: #ca151d;
+}
+.t-n{
+	width:162px;
+	top: 30px;
+	right: 0;
+	    border: 1px solid #ededed;
+}
+.t-n p{
+	line-height: 32px;
+	width: 144px;
+	margin: 0 auto;
+}
+.t-n p a{
+	font-size: 12px;
+	color: #3a3a3a;
+}
+.t-n p a:hover{
+	color: #CA151D;
+}
+.t-n p:last-child{
+	border-bottom: 1px solid #ededed;
+}

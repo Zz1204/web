@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			.one{
+				width:200px;
+				height:50px;
+				border:1px solid #000;
+				font-size:18px;
+				line-height:50px;
+				text-align:center;
+				
+			}
+			.red{
+				color:red;
+			}
+			.yellow{
+				background:yellow;
+			}
+			.xie{
+				font-style: italic;
+			}
+			.da{
+				font-size:30px;
+			}
+		</style>
+	</head>
+	<body>
+		<p class="one" title="title">你喜欢吃什么</p>
+		<button>红色字体</button>
+		
+		<script src="js/jquery-3.2.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<script>
+			//获取样式
+//			console.log($("p").attr("class"));
+			//设置样式
+//			$("p").attr("class","red");
+			//追加样式
+//			$("p").addClass("red");
+			//移除样式
+//			$("p").removeClass("red");
+			//toggleClass();样式重复切换
+			$("button").bind("click",function(){
+				$("p").toggleClass("red");
+			})
+			//hasClass();判断是否有某个样式,有为true,没有为false
+//			console.log($("p").hasClass("red"))
+
+			
+
+		</script>
+	</body>
+</html>

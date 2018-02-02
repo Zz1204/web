@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			*{margin:0;padding:0;}
+			li{list-style:none;}
+			.box{width:810px; height:320px; overflow: hidden; position:relative;}
+			.box>ul{width:4050px; height:320px; position:absolute; top:0;}
+			.box>ul>li{width:810px; height:320px;float: left;}
+			.box>ol{ position:absolute; bottom:0px; right:0px}
+			.box>ol>li{ float:left; font-size:20px; padding-right:10px; cursor:pointer;}
+			.selected{color:red;}	
+			span{
+				display: inline-block; width: 50px;height: 50px;background: black;opacity: 0.3;font-size: 40px;
+				position: absolute;left: 10px;top: 135px;color: white;text-align: center;line-height: 50px;
+			}	
+			.right{
+				position: absolute;left: 750px;top: 135px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box">
+			<ul>
+				<li><img src="img/t1.jpg" /></li>
+				<li><img src="img/t2.jpg" /></li>
+				<li><img src="img/t3.jpg" /></li>
+				<li><img src="img/t4.jpg" /></li>
+				<li><img src="img/t1.jpg" /></li>
+			</ul>
+			<ol>
+				<li class="selected">●</li>
+				<li>●</li>
+				<li>●</li>
+				<li>●</li>
+			</ol>	
+			<span class="left"><</span>
+			<span class="right">></span>	
+		</div>
+		<script src="js/startMove.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			var box=document.getElementsByClassName("box")[0];
+			var oUl=document.getElementsByTagName("ul")[0];
+			var oOl=document.getElementsByTagName("ol")[0];
+			var oLi=oOl.children;
+			var right=document.getElementsByClassName("right")[0];
+			var left=document.getElementsByClassName("left")[0];
+			var num=0;
+			function next(){
+				num++;
+				if(num>=4){
+					oLi[num-1].className="";
+					oLi[0].className="selected";
+					startMove(oUl,{left:-810*num},function(){
+						num=0;
+						oUl.style.left="0"
+					})
+				}else{
+					for(var i=0;i<oLi.length;i++){
+						oLi[i].className="";
+					}
+					oLi[num].className="selected";
+					startMove(oUl,{left:-810*num});
+				}
+			}
+			var timer=setInterval(next,3000);
+			box.onmouseover=function(){
+				clearInterval(timer);
+			}
+			box.onmouseout=function(){
+				timer=setInterval(next,3000);
+			}
+			for(var i=0;i<oLi.length;i++){
+				var a=oLi[i];
+				a.index=i;
+				oLi[i].onclick=function(){
+					for(var j=0;j<oLi.length;j++){
+						oLi[j].className="";
+					}
+					this.className="selected";
+					num=this.index;
+					startMove(oUl,{left:-810*num});
+				}
+			}
+			right.onclick=function(){
+				clearInterval(timer);
+				next();
+			}
+			left.onclick=function(){
+				clearInterval(timer);
+				
+				num--;
+				if(num<0){
+					num=3;
+					oUl.style.left="-3240px";
+					startMove(oUl,{left:-810*num})
+				}else{
+					startMove(oUl,{left:-810*num});
+				}
+				console.log(num);
+				for(var j=0;j<oLi.length;j++){
+					oLi[j].className="";
+				}
+				oLi[num].className="selected";
+			}
+		</script>
+	</body>
+</html>

@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			//简单的数据类型
+//			1,undefined    未定义
+//			var a;
+//			console.log(a);   //值
+//			console.log(typeof a);    //类型
+			//判断数据类型
+			
+//			var a;
+//			console.log(typeof a);
+//			console.log(typeof b);
+////			声明了但是未初始化的变量和他们的数据类型都是undefined.
+//			alert(a);
+//			alert(b);
+			//但是他们一个是有undefined值，一个是报错.
+			
+			
+//			2,null    Null值表示一个空对象指针
+//			var a=null;
+//			alert(a);     //null
+//			alert(typeof a);    //object   对象
+
+//			alert(1==1);
+//			alert(null==undefined);     //true
+//			Undefined是派生于null的值,因此undefined==null;
+			
+			
+			
+//			3,boolean类型      有两个值 true和 false;
+//			var a=(true);
+//			var b=(false);
+//			alert(typeof a);
+//			alert(typeof b);
+
+
+
+//			4,Number;
+//			1). NaN    not a number
+//			var b=1/"hahaha"
+//			alert(b);   //NaN   不是数值的数值
+//			alert(typeof b);     //NaN值是Number类型
+//			alert(NaN==NaN);	 //不等于任何数值，包括他自己
+			
+//			var a=NaN+1;		 //只要是存在NaN的操作，值都是NaN
+//			alert(a);
+			
+			
+//			2). 整数
+//			3). 浮点数,小数
+
+
+
+			//转换数值类型
+//			Number（）；可以用于任何数据类型，转化规则如下：
+			
+//			var a=Number(true);
+//			alert(a);        //true由布尔类型转换成Number类型，值为1
+//			alert(typeof a);
+			
+//			var a=Number(false);
+//			alert(a);        //false由布尔类型转换成Number类型，值为0
+//			alert(typeof a);
+			
+//			var a=Number(undefined);
+//			alert(a);		//undefined转换成Number类型，值为NaN
+//			alert(typeof a);
+
+//			var a=Number(null);
+//			alert(a);		//null转换成Number类型，值为0
+//			alert(typeof a);
+		
+//			var a=Number("1323");
+//			alert(a);       //字符串中只包含数字的转换成Number类型，值为字符串的数值
+//			alert(typeof a);
+
+//			var a=Number("");
+//			alert(a);		 //空和空字符串的转换成Number类型，值为0
+//			alert(typeof a);
+
+//			var a=Number("123asdf");
+//			alert(a);		//字符串中包含数字以外其他字符的转换成Number类型，值为NaN
+//			alert(typeof a);
+			
+//			var a=Number(-1.11);
+//			alert(a);       //数值转换成Number类型，值为他本身
+//			alert(typeof a);
+
+//			parseInt();Number()在转化为整数时不够合理，所以，一般用这个
+			
+//			var a=parseInt(  12);
+//			alert(a);		//忽略空格从前往后解析，
+//			alert(typeof a);	//同样是Number类型
+		
+//			var a=parseInt(1.11);
+//			alert(a);		//数字会被解析成整数
+//			alert(typeof a);
+			
+//			var a=parseInt(undefined);
+//			alert(a);		//undefined和null会被解析成NaN
+//			alert(typeof a);
+			
+//			var a=parseInt();
+//			alert(a);		//空和空字符串会被解析成NaN
+//			alert(typeof a);
+			
+//			var a=parseInt("123qew");
+//			alert(a);		//字符串前面有数字，则解析成前面的数字
+//			alert(typeof a);
+			
+//			var a=parseInt("qwe123");
+//			alert(a);		//字符串前面有字母，则解析成NaN
+//			alert(typeof a);
+
+
+//			parseFloat()和paesrInt()一样
+//			var a=parseFloat("1.11@hahah")
+//			alert(a);		//也是从第一个字符开始解析,解析至数字之外的字符截止
+//			alert(typeof a);
+
+
+//			5，String类型：即字符串，用双引号或单引号表示：
+//			var a=("oiuy890");
+//			alert(a);
+//			alert(typeof a);  //String类型
+			
+		</script>
+	</body>
+</html>

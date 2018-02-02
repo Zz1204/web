@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+	</head>
+	<body>
+		<!--1、新增的语义化标签(新标签)
+		html   标签      div   p   h1~h6   dl  dt  dd  ul  li  i  a  span.....
+		H5新增语义化（有代表含义的）标签-->
+		
+		<header>头部</header>
+		<footer>底部</footer>
+		<article>主体内容部分</article>
+		<section>内容</section>
+		<aside>侧边栏</aside>
+		<nav>导航</nav>
+		
+		<!--标题组合-->
+		<hgroup>
+			<h1>web10班</h1>
+			<h2>总共17人</h2>
+		</hgroup>
+		
+		<!--缩略图-->
+		<figure>
+			<img src=""/>
+			<figcaption></figcaption>
+		</figure>
+		
+		<!--时间或日期-->
+		<p>我<time>7点30分</time>起床</p>
+		
+		
+		<!---->
+		<input type="text" list="listData"/>	<!--list属性要和datalist的id名相同-->
+		<datalist id="listData">
+			<option value="javascript">javascript</option>
+			<option value="html5">html5</option>
+			<option value="css3">css3</option>
+		</datalist>
+		
+		<!--details标签用于描述文档或者文档某个部分的细节-->
+		<!--summary 标题内容-->
+		<details open>	<!--open可控状态-->
+			<summary>李敏</summary>
+			<p>女汉子！！！</p>
+		</details>
+		
+		
+		<!--作者标签-->
+		<address>天蚕土豆</address>
+		
+		<!--标记符号标签-->
+		<p>我不爱<mark>看电视</mark>，我爱学习</p>
+		
+		
+		<!--进度条-->
+		<progress value="0" max="100">50%</progress>
+		<script type="text/javascript">
+			var op=document.getElementsByTagName("progress")[0];
+			var time=null;
+			time=setInterval(function(){
+				op.value++;
+				if(op.value==100){
+					clearInterval(time);
+					console.log("加载完成")
+				}
+			},100)
+		</script>
+	</body>
+</html>

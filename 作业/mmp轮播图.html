@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			*{
+				padding:0;
+				margin:0;
+			}
+			ul,li{
+				list-style:none;
+			}
+			.box{
+				width:810px;
+				height:320px;
+				margin:50px auto;
+				overflow:hidden;
+				position:relative;
+			}
+			ul{
+				width:4050px;
+				height:320px;
+				position:absolute;
+				top:0;
+				left:0;
+			}
+			li{
+				width:810px;
+				height:320px;
+				float:left;
+			}
+			li img{
+				float:left;
+			}
+			.rb{
+				position:absolute;
+				top:275px;
+				right:50px;
+				
+			}
+			span{
+				font-size:30px;
+				cursor: pointer;
+			}
+			.red{
+				color:red;	
+			}
+			.left,.right{
+				width:50px;
+				height:80px;
+				display:inline-block;
+				background:rgba(0,0,0,0.3);
+				position:absolute;
+				top:120px;
+				text-align:center;
+				line-height:80px;
+				color:#eee;
+			}
+			.left{
+				left:0;
+			}
+			.right{
+				right:0;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box">
+			<ul>
+				<li><img src="img/t1.jpg"/></li>
+				<li><img src="img/t2.jpg"/></li>
+				<li><img src="img/t3.jpg"/></li>
+				<li><img src="img/t4.jpg"/></li>
+				<li><img src="img/t1.jpg"/></li>
+			</ul>
+			<div class="rb">
+				<span class="red">✦</span>
+				<span>✦</span>
+				<span>✦</span>
+				<span>✦</span>
+			</div>
+			<span class="left"><</span>
+			<span class="right">></span>
+		</div>
+		<script src="js/startMove.js" type="text/javascript" charset="utf-8"></script>
+		<script>
+			var oDiv=document.getElementsByClassName("box")[0];
+			var oUl=document.getElementsByTagName("ul")[0];
+			var num=0;
+			var oDian=document.getElementsByClassName("rb")[0];
+			var oSp=oDian.children;							//children获取他的子元素节点
+			var left=document.getElementsByClassName("left")[0];
+			var right=document.getElementsByClassName("right")[0];
+			
+			//图片
+			function next(){
+				num++;
+				if(num==4){
+					oSp[num-1].className="";				//当num=4的时候，清掉oSp[3]的class
+					oSp[0].className="red";					//让oSp[0]的class等于有样式的
+					startMove(oUl,{left:-810*num},function(){	//需要运行完动画之后执行以下函数
+						if(num>=4){
+							num=0;							//让num=0；一直循环
+							oUl.style.left="0";				//让oUl的left瞬间归0；
+						}
+					})
+				}else{
+					for(var i=0;i<oSp.length;i++){
+						oSp[i].className="";				//首先先清掉所有的class
+					}
+					oSp[num].className="red";				//oSp[num]赋值class
+					startMove(oUl,{left:-810*num});
+				}
+			}
+			
+			
+			//点
+			var timer=setInterval(next,3000);
+			oDiv.onmouseover=function(){				//鼠标滑入清除定时器
+					clearInterval(timer);
+				}
+			oDiv.onmouseout=function(){					//鼠标移开启动定时器
+				timer=setInterval(next,3000)
+			}
+			
+			for(var i=0;i<oSp.length;i++){
+				var a=oSp[i];								//获取他的下标，让num与其坐标相等
+				a.index=i;
+				oSp[i].onclick=function(){
+					for(var j=0;j<oSp.length;j++){
+						oSp[j].className="";				//点击时清空所有的class
+						this.className="red";				//然后让点击的点class为red
+					}
+					num=this.index;							//num与点击的坐标相等，然后从这个坐标开始运行
+					startMove(oUl,{left:num*-810})
+				}
+			}
+			
+			//左右
+			right.onclick=function(){
+				clearInterval(timer);
+				next();
+			}
+			left.onclick=function(){
+				clearInterval(timer);
+				num--;
+				if(num<0){
+					num=3;
+					oUl.style.left="-3240px";
+					startMove(oUl,{left:num*-810})
+				}else{
+					startMove(oUl,{left:num*-810})
+				}
+				for(var j=0;j<oSp.length;j++){
+					oSp[j].className="";				//然后让点击的点class为red
+				}
+				oSp[num].className="red";
+			}
+		</script>
+	</body>
+</html>
