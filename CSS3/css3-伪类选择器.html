@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style media="screen">
+        p{
+            width: 500px;
+            height: 300px;
+            border:1px solid #ccc;
+        }
+        /* ::first-line     第一行 */
+        p::first-line{
+            color: red;
+        }
+        /* ::first-letter     首行第一个字 */
+        p::first-letter{
+            font-size: 30px;
+        }
+        /* ::selection     选中区域 */
+        p::selection{
+            background: yellow;
+            color: red;
+        }
+        /* :before     在元素之前添加 */
+        p:before{
+            content: "马上要放假了";
+        }
+        /* :after     在元素之后添加*/
+        p:after{
+            content: "作业好多";
+            font-size: 40px;
+            color: yellow;
+        }
+    </style>
+</head>
+<body>
+    <!--
+        love hate     爱恨交织
+        伪类      a:link     a:visited     a:hover     a:active
+    -->
+    <p>梁家河村，这个位于陕西省延安市延川县的村庄，是习近平曾插队落户、劳动生活过7年的地方。习近平在一次演讲中说：“梁家河这个小村庄的变化，是改革开放以来中国社会发展进步的一个缩影。”梁家河如何体现中国的发展进步的？</p>
+</body>
+</html>

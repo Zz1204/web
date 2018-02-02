@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style media="screen">
+        /*
+             E:nth-child(n)     选择父级下面第几个元素；
+             元素下标从1开始       下标对应的元素需要匹配E
+        */
+        li:nth-child(1){
+            background: red;
+        }
+        /*
+            E:nth-of-type(n)    选取E属性的第几个元素
+            even:奇数行
+            odd:偶数行
+        */
+        li:nth-of-type(2){
+            background: yellow;
+        }
+        li:nth-of-type(even){
+            background: black;
+        }
+        li:nth-of-type(odd){
+            background: yellow;
+        }
+        /*
+            E:nth-last-of-type(n)      选择倒数第n个元素
+        */
+        li:nth-last-of-type(1){
+            background: pink;
+        }
+    </style>
+</head>
+<body>
+    <ul>
+        <li><a href="#">结构性选择器</a></li>
+        <!-- <p>结构性选择器</p>
+        <div>结构选择器</div>
+        <span>结构选择器</span>
+        <b>结构性选择器</b> -->
+        <li><a href="#">结构性选择器</a></li>
+        <li><a href="#">结构性选择器</a></li>
+        <li><a href="#">结构性选择器</a></li>
+        <li><a href="#">结构性选择器</a></li>
+        <li><a href="#">结构性选择器</a></li>
+        <li><a href="#">结构性选择器</a></li>
+        <li><a href="#">结构性选择器</a></li>
+        <li><a href="#">结构性选择器</a></li>
+        <li><a href="#">结构性选择器</a></li>
+    </ul>
+</body>
+</html>

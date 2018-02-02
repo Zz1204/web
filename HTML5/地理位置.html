@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+	<title>Document</title>
+</head>
+<body>
+	<!--地理位置：经度、纬度-->
+	<input type="button" value="地理位置"/>
+	<br />
+	<textarea name="" rows="10" cols="30"></textarea>
+</body>
+<script type="text/javascript">
+	var btn=document.querySelector("input");
+	var txt=document.querySelector("textarea");
+	btn.onclick=function(){
+		//地理信息
+		// navigator.geolocation
+		//getCurrentPosition  具体获取某些信息的
+		//三个参数，请求成功的函数，请求失败的函数，数据收集{json格式}
+		
+//		经度 :  coords.longitude
+//		纬度 :  coords.latitude
+//		准确度 :  coords.accuracy
+//		海拔 :  coords.altitude
+//		海拔准确度 :  coords.altitudeAcuracy
+//		行进方向 :  coords.heading
+//		地面速度 :  coords.speed
+//		时间戳 : new Date(position.timestamp)
+
+		navigator.geolocation.getCurrentPosition(function(position){
+			txt.value+="经度:"+position.coords.longitude+"\n";
+			txt.value+="纬度:"+position.coords.latitude+"\n";
+			txt.value+="精确度:"+position.coords.accuracy+"\n";
+			txt.value+="海拔:"+position.coords.altitude+"\n";
+			txt.value+="海拔准确度:"+position.coords.altitudeAcuracy+"\n";
+			txt.value+="行进方向:"+position.coords.heading+"\n";
+			txt.value+="地面速度 :"+position.coords.speed+"\n";
+			txt.value+="时间戳 :"+new Date(position.timestamp)
+			
+			
+			
+		},function(err){
+			console.log(err.code)
+//			失败编号  ：code
+//            0  :  不包括其他错误编号中的错误
+//            1  :  用户拒绝浏览器获取位置信息
+//            2  :  尝试获取用户信息，但失败了
+//            3  :   设置了timeout值，获取位置超时了
+
+		},{
+			//延迟加载时间
+			timeout:500,
+		})
+	}
+	
+</script>
+</html>

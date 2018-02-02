@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<!--永久化存储-->
+		<!--临时存储-->
+		<button id="btn1">设置</button>
+	</body>
+	<script>
+		var btn=document.querySelector("#btn1");
+		btn.onclick=function(){
+			// 永久化存储   localStorage     key值    value值   {name:"sum"}
+			window.localStorage.name="sum";
+		}
+	</script>
+</html>

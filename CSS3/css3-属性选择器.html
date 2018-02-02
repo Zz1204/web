@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style media="screen">
+        /* 属性选择器 */
+        input[type=text]{
+            background: red;
+        }
+        input[value=a]{
+            background: black;
+        }
+        /* 以n为开头的value属性 */
+        input[value^=n]{
+            background: blue;
+        }
+        /* 以a结尾的value属性 */
+        input[value$=a]{
+            background: yellow;
+        }
+        /* 包含name的value属性 */
+        input[value*=name]{
+            background: pink;
+        }
+    </style>
+</head>
+<body>
+    <!-- 选择器  标签、群组、子代、id、class、name -->
+    <!-- css3     属性选择器 -->
+    <input type="text" value="name">
+    <input type="text" value="nme">
+    <input type="text" value="anae1">
+    <input type="text" value="bamea">
+    <input type="text" value="cnamea">
+    <input type="password">
+</body>
+</html>

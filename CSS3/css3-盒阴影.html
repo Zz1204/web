@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style media="screen">
+        /* box-shadow    */
+        div{
+            width: 200px;
+            height: 100px;
+            border: 1px solid #333;
+            margin: 20px auto 0;
+            box-shadow: 10px 10px 10px #ccc;
+        }
+        /* 倒影 */
+        /* 方向 direction  方向 above/below/left/right   距离*/
+        img{
+            margin: 0 auto;
+            display: block;
+            width: 500px;
+            height: 250px;
+            -webkit-box-reflect: below 10px;
+        }
+    </style>
+</head>
+<body>
+    浏览器内核前缀
+    谷歌：     -webkit-
+    火狐：     -moz-
+    IE：       -m-
+    苹果：      -o-
+    <div></div>
+    <img src="img/tiandao.jpeg" alt="">
+</body>
+</html>

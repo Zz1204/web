@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style media="screen">
+        body{
+            background: #000;
+        }
+        #canvas{
+            background: #fff;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="canvas" width="500" height="500"></canvas>
+</body>
+<script type="text/javascript">
+    var oc=document.querySelector("#canvas");
+    var ogc=oc.getContext("2d");
+    ogc.save();
+    ogc.beginPath();
+    ogc.lineWidth="5";
+    ogc.fillStyle="red";
+    ogc.strokeStyle="yellow";
+    ogc.moveTo(250,50);
+    ogc.lineTo(320,200);
+    ogc.lineTo(500,200);
+    ogc.lineTo(350,300);
+    ogc.lineTo(400,450);
+    ogc.lineTo(250,350);
+    ogc.lineTo(100,450);
+    ogc.lineTo(150,300);
+    ogc.lineTo(20,200);
+    ogc.lineTo(180,200);
+    ogc.lineTo(250,50);
+    ogc.fill();
+    ogc.stroke();
+    ogc.restore();
+
+    ogc.beginPath();
+    ogc.arc(250,260,90,0,360*Math.PI/180,false);
+    ogc.stroke();
+
+    ogc.beginPath();
+    ogc.arc(250,215,45,-90*Math.PI/180,-270*Math.PI/180,false);
+    ogc.stroke();
+
+    ogc.beginPath();
+    ogc.arc(250,305,45,-90*Math.PI/180,-270*Math.PI/180,true);
+    ogc.stroke();
+
+    ogc.beginPath();
+    ogc.arc(250,305,5,0,360*Math.PI/180,true);
+    ogc.stroke();
+
+    ogc.beginPath();
+    ogc.arc(250,215,5,0,360*Math.PI/180,true);
+    ogc.stroke();
+</script>
+</html>

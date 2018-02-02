@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+      body{
+        background: #000;
+      }
+      canvas{
+        background: white;
+      }
+  </style>
+</head>
+<body>
+      <canvas id="canvas" width="400" height="400"></canvas>
+</body>
+<script type="text/javascript">
+    var  oc=document.querySelector('#canvas');
+    var  ogc=oc.getContext('2d');
+    //  绘制圆
+      function miao(){
+        ogc.clearRect(0,0,oc.width,oc.height);
+    for(var i=0;i<60;i++){
+          ogc.beginPath();
+          ogc.moveTo(200,200);
+          ogc.arc(200,200,150,6*i*Math.PI/180,6*(i+1)*Math.PI/180,false);
+          ogc.closePath();
+          ogc.stroke();
+    }
+    //  覆盖圆盘
+      ogc.beginPath();
+      ogc.fillStyle='white';
+      ogc.strokeStyle='white';
+      ogc.arc(200,200,150*19/20,0,360*Math.PI/180,false);
+      ogc.closePath();
+      ogc.fill();
+      ogc.stroke();
+
+      for(var i=0;i<12;i++){
+            ogc.beginPath();
+            ogc.strokeStyle='black';
+            ogc.moveTo(200,200);
+            ogc.arc(200,200,150,30*i*Math.PI/180,30*(i+1)*Math.PI/180,false);
+            ogc.closePath();
+            ogc.stroke();
+      }
+      //  覆盖圆盘
+        ogc.beginPath();
+        ogc.fillStyle='white';
+        ogc.strokeStyle='white';
+        ogc.lineWidth='3';
+        ogc.arc(200,200,150*18/20,0,360*Math.PI/180,false);
+        ogc.closePath();
+        ogc.fill();
+        ogc.stroke();
+
+        // 中心圆点
+        ogc.beginPath();
+        ogc.fillStyle='black';
+        ogc.arc(200,200,10,0,360*Math.PI/180,false);
+        ogc.closePath();
+        ogc.fill();
+        ogc.stroke();
+          //   创建日期对象
+            var oDate=new Date();
+            //  获取时
+            var oH=oDate.getHours();
+            //  获取分
+            var oM=oDate.getMinutes();
+             //  获取秒
+             var oS=oDate.getSeconds();
+             //console.log(oH,oM,oS)
+
+            var  ohValue=(-90+oH*30+oM/2)*Math.PI/180;
+
+            var  oMValue=(-90+oM*6)*Math.PI/180;
+
+            var  oSValue=(-90+oS*6)*Math.PI/180;
+
+          //  时针
+          ogc.beginPath();
+          ogc.lineWidth='5';
+          ogc.strokeStyle='black';
+          ogc.moveTo(200,200);
+          ogc.arc(200,200,75,ohValue,ohValue,false);
+          ogc.closePath();
+          ogc.stroke();
+
+        //  分针
+        ogc.beginPath();
+        ogc.lineWidth='3';
+        ogc.strokeStyle='black';
+        ogc.moveTo(200,200);
+        ogc.arc(200,200,100,oMValue,oMValue,false);
+        ogc.closePath();
+        ogc.stroke();
+
+        //  秒针
+        ogc.beginPath();
+        ogc.lineWidth='1';
+        ogc.strokeStyle='black';
+        ogc.moveTo(200,200);
+        ogc.arc(200,200,130,oSValue,oSValue,false);
+        ogc.closePath();
+        ogc.stroke();
+    }
+      miao();
+      setInterval(function(){
+        miao();
+      },1000)
+
+
+
+
+</script>
+</html>
