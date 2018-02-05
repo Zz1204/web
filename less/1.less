@@ -1,0 +1,118 @@
+//1、关于注释
+
+//2、设置变量
+    // less 定义变量   通过@进行定义
+    @bgc:red;
+    @w:200px;
+    @h:300px;
+    body{
+        background: @bgc;
+        width: @w;
+        height:@h;
+    }
+//3、如何加单位   unit()
+    @num:500;
+    div{
+        width: unit(@num,px);
+    }
+    //向上取整  ceil()    向下取整 floor()    四舍五入round()   绝对值abs()
+    @num1:3.6px;
+    div{
+        margin-bottom: round(@num1);
+    }
+//4、嵌套使用    表示他父级 &
+    .ul1{
+        width: 100%;
+        .li1{
+            background: @bgc;
+            .text{
+                color: #fff;
+                &:hover{
+                    color: green;
+                }
+            }
+        }
+    }
+    
+    //demo
+    #wrap{
+        .content{
+            .left{
+                .top{
+                    a{
+                        color: brown;
+                        &:hover{
+                            color: pink;
+                        }
+                    }
+                }
+                .bottom{
+                    span{
+                        color: yellow;
+                        &:hover{
+                            color: darkorange;
+                        }
+                    }
+                }
+            }
+            .right{
+                .top{
+                    p{
+                        color: blue;
+                        &:hover{
+                            color: teal;
+                        }
+                    }
+                }
+                .bottom{
+                    h3{
+                        color: green;
+                        &:hover{
+                            color: chartreuse;
+                        }
+                    }
+                    
+                }
+            }
+        }
+    }
+    
+    
+//5、  less  函数
+    //   .函数名称(参数1,参数2)
+    
+    #div1{
+        width: @w;
+        height: @h;
+        background: yellow;
+        .border1;
+    }
+    .border1(@a:10px,@b:solid,@c:#000){
+        border: @a @b @c;
+    }
+
+//6、  函数+判断     when();
+    #div2{
+        width: @w;
+        height: @h;
+        background: yellow;
+        .border2(11px,solid,#000);
+    }
+    .border2(@a,@b,@c)when(@a>10){
+        border: @a @b @c;
+    }
+//7、替换名称
+    @color:background;
+    #div3{
+        @{color}:@bgc;
+    }
+
+//8、循环   loop
+    .box(4);
+    .box(@i)when(@i>0){
+        .p:nth-of-type(@{i}){
+            width: @i*100px;  
+            height: @i*100px; 
+        }
+        .box(@i - 1)
+    }

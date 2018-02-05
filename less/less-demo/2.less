@@ -1,0 +1,31 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+ul,li{
+    list-style: none;
+}
+ul{
+    max-width: 450px;
+    min-height: 100px;
+    margin: 100px auto;
+    border: 1px solid #ccc;
+    
+}
+ul:after{
+    content: "";
+    display: block;
+    clear: both;
+}
+.li(1); 
+
+.li(@a)when(@a<11){
+   li:nth-of-type(@{a}){
+       width: 70px;
+       height: 70px;
+       float: left;
+       margin: 5px 10px 5px;
+       background: url("img/@{a}.png");
+   }
+   .li(@a + 1)
+}

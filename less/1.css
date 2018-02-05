@@ -1,0 +1,78 @@
+body {
+  background: #ff0000;
+  width: 200px;
+  height: 300px;
+}
+div {
+  width: 500px;
+}
+div {
+  margin-bottom: 4px;
+}
+.ul1 {
+  width: 100%;
+}
+.ul1 .li1 {
+  background: #ff0000;
+}
+.ul1 .li1 .text {
+  color: #fff;
+}
+.ul1 .li1 .text:hover {
+  color: green;
+}
+#wrap .content .left .top a {
+  color: brown;
+}
+#wrap .content .left .top a:hover {
+  color: pink;
+}
+#wrap .content .left .bottom span {
+  color: yellow;
+}
+#wrap .content .left .bottom span:hover {
+  color: darkorange;
+}
+#wrap .content .right .top p {
+  color: blue;
+}
+#wrap .content .right .top p:hover {
+  color: teal;
+}
+#wrap .content .right .bottom h3 {
+  color: green;
+}
+#wrap .content .right .bottom h3:hover {
+  color: chartreuse;
+}
+#div1 {
+  width: 200px;
+  height: 300px;
+  background: yellow;
+  border: 10px solid #000000;
+}
+#div2 {
+  width: 200px;
+  height: 300px;
+  background: yellow;
+  border: 11px solid #000000;
+}
+#div3 {
+  background: #ff0000;
+}
+.p:nth-of-type(4) {
+  width: 400px;
+  height: 400px;
+}
+.p:nth-of-type(3) {
+  width: 300px;
+  height: 300px;
+}
+.p:nth-of-type(2) {
+  width: 200px;
+  height: 200px;
+}
+.p:nth-of-type(1) {
+  width: 100px;
+  height: 100px;
+}
