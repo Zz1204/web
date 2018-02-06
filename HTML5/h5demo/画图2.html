@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			body{
+				background: #000000;
+			}
+			#canvas{
+				background: #fff;
+			}
+		</style>
+	</head>
+	<body>
+		<canvas id="canvas" width="400" height="400"></canvas>
+	</body>
+	<script type="text/javascript">
+		var oc=document.querySelector("#canvas");
+		//绘制2d环境
+		var oGc=oc.getContext("2d");
+		//拖拽     鼠标按下    鼠标移动     鼠标抬起
+		var x;
+		var y;
+		oc.onmousedown=function(ev){
+			var ev=ev||window.event;
+			x=ev.clientX;
+			y=ev.clientY;
+			oGc.strokeStyle="red";
+			oGc.moveTo(x,y);
+			oc.onmousemove=function(ev){
+				var ev=ev||window.event;
+				oGc.lineTo(ev.clientX,ev.clientY);
+				oGc.stroke();
+			}
+			document.onmouseup=function(){
+				oc.onmousemove=document.onmouseup=null;
+			}
+		}
+	</script>
+</html>

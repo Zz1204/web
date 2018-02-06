@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style media="screen">
+        div{
+            width: 800px;
+            height: 300px;
+            background: red;
+            margin: 10px auto;
+            animation: change 2s infinite linear;
+        }
+
+        @keyframes change {
+            /* from to */
+            /* from{
+                background: red;
+            }to{
+                background: yellow;
+            } */
+
+
+            /* 百分比 */
+            0%{
+                background: red;
+            }
+            20%{
+                background: orange;
+            }
+            40%{
+                background: yellow;
+            }
+            60%{
+                background: green;
+            }
+            100%{
+                background: cyan;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- css3  运动    关键帧  keyFrames   动画
+    有的时候要加浏览器内核前缀
+    jQuery:animated({width:100},1000,"运动形式",回调函数)；
+    animation: 4各参数,没有顺序
+    时间
+    动画名称
+    执行次数
+    延迟时间
+    运动形式 -->
+
+
+    <div></div>
+</body>
+</html>

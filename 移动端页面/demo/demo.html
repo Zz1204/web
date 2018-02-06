@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+			//获取像素比
+			//console.log(window.devicePixelRatio)
+			var pixelRatio=1/window.devicePixelRatio;
+			//console.log(pixelRatio);
+			//通过js动态设置视口(viewport)
+			document.write('<meta name="viewport" content="width=device-width,initial-scale=' + pixelRatio + ',minimum-scale=' + pixelRatio + ',maximum-scale=' + pixelRatio + '" />');
+			var html=document.getElementsByTagName("html")[0];
+			//获取屏幕宽度
+			var pageWidth=html.getBoundingClientRect().width;
+			//屏幕宽度  / 固定数值  = 基准值
+			html.style.fontSize=pageWidth/16+"px";
+			//1rem=40px
+		</script>
+		<link rel="stylesheet" type="text/css" href="demo.css"/>
+	</head>
+	<body>
+		<header>
+			<div class="left">
+				<span>分类</span>
+			</div>
+			<div class="center">
+				<span></span>
+				<input type="text" name="" id="" value="" placeholder="荣耀4X最后一天预订！"/>
+			</div>
+			<div class="right">
+				<span>购物车</span>
+			</div>
+		</header>
+	</body>
+</html>

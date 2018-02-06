@@ -1,0 +1,72 @@
+/*清格式*/
+body,div,p,ul,li,ol,dl,dt,dd,img,input,button,h1,h2,h3,h4,h5,h6,span{
+    padding: 0;
+    margin: 0;
+}
+img{
+    border: none;
+    vertical-align: middle;
+}
+ul,li,ol,dl,dt,dd{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+}
+@rem:40rem;
+header{
+    width: 100%;
+    height: 76/@rem;
+    background: #fabc09;
+    .left{
+        width: 80/@rem;
+        height: 100%;
+        float: left;
+        background: url(img/1.jpg) no-repeat 22/@rem 12/@rem;
+        background-size: 36/@rem;
+        span{
+            display: block;
+            font-size: 15/@rem;
+            margin-top: 48/@rem;
+            margin-left: 23/@rem;
+        }
+    }
+    .center{
+        width: 480/@rem;
+        height: 50/@rem;
+        float: left;
+        background: #D5DBA9;
+        border-radius: 5px;
+        margin-top: 15/@rem;
+        span{
+            background: url(img/search.png) no-repeat;
+            background-size: 22/@rem 23/@rem;
+            float: left;
+            width: 22/@rem;
+            height: 23/@rem;
+            margin: 15/@rem 12/@rem 0 16/@rem;
+        }
+        input{
+            width: 428/@rem;
+            height: 100%;
+            float: left;
+            border: none;
+            background: #D5DBA9;
+            outline: none;
+            font-size: 22/@rem;
+        }
+    }
+    .right{
+        float: left;
+        width: 80/@rem;
+        height: 100%;
+        background: url(img/cart.png) no-repeat 22/@rem 13/@rem;
+        background-size: 34/@rem;
+        span{
+            display: block;
+            font-size: 15/@rem;
+            margin-top: 48/@rem;
+            margin-left: 23/@rem;
+        }
+    }
+}

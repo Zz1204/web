@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style media="screen">
+        body{
+            background: #000;
+        }
+        #canvas{
+            background: #fff;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="canvas" width="400" height="400"></canvas>
+</body>
+    <script type="text/javascript">
+        var oc=document.querySelector("#canvas");
+        var ogc=oc.getContext("2d");
+        function miao (){
+            // 清除画布
+            ogc.clearRect(0,0,oc.width,oc.height)
+            // 秒针、分针刻度
+            for (var i = 0; i < 60; i++) {
+                ogc.beginPath();
+                ogc.moveTo(200,200);
+                ogc.arc(200,200,150,6*i*Math.PI/180,6*(i+1)*Math.PI/180,false);
+                ogc.stroke();
+            }
+            // 分针、秒针过度
+            ogc.save();
+            ogc.beginPath();
+            ogc.fillStyle="#fff";
+            ogc.strokeStyle="#fff";
+            ogc.arc(200,200,150*19/20,0,2*Math.PI,false);
+            ogc.closePath();
+            ogc.fill();
+            ogc.stroke();
+            ogc.restore();
+            // 时针刻度
+            for (var i = 0; i < 12; i++) {
+                ogc.beginPath();
+                ogc.moveTo(200,200);
+                ogc.arc(200,200,150,30*i*Math.PI/180,30*(i+1)*Math.PI/180,false);
+                ogc.stroke();
+            }
+            // 时针过度
+            ogc.save();
+            ogc.beginPath();
+            ogc.fillStyle="#fff";
+            ogc.strokeStyle="#fff";
+            ogc.arc(200,200,150*18/20,0,2*Math.PI,false);
+            ogc.closePath();
+            ogc.fill();
+            ogc.stroke();
+            ogc.restore();
+            //圆点
+            ogc.save();
+            ogc.beginPath();
+            ogc.arc(200,200,5,0,2*Math.PI,false);
+            ogc.closePath();
+            ogc.fill();
+            ogc.stroke();
+            ogc.restore();
+
+            // 创建日期对象
+            var oDate=new Date();
+            // 获取时
+            var oH=oDate.getHours();
+            // 获取分
+            var oM=oDate.getMinutes();
+            // 获取秒
+            var oS=oDate.getSeconds();
+
+            var ohValue=(-90+oH*30+oM/2)*Math.PI/180;
+            var omValue=(-90+oM*6)*Math.PI/180;
+            var osValue=(-90+oS*6)*Math.PI/180;
+
+            // 秒针
+            ogc.save();
+            ogc.beginPath();
+            ogc.moveTo(200,200);
+            ogc.strokeStyle="red";
+            ogc.arc(200,200,115,osValue,osValue,false);
+            ogc.stroke();
+            ogc.restore();
+            // 分针
+            ogc.save();
+            ogc.beginPath();
+            ogc.lineWidth="3";
+            ogc.moveTo(200,200);
+            ogc.strokeStyle="#000";
+            ogc.arc(200,200,95,omValue,omValue,false);
+            ogc.stroke();
+            ogc.restore();
+            // 时针
+            ogc.save();
+            ogc.beginPath();
+            ogc.lineWidth="5";
+            ogc.moveTo(200,200);
+            ogc.strokeStyle="#000";
+            ogc.arc(200,200,75,ohValue,ohValue,false);
+            ogc.stroke();
+            ogc.restore();
+        }
+        miao();
+        setInterval(function(){
+            miao();
+        },1000);
+    </script>
+</html>

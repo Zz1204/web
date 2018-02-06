@@ -1,0 +1,94 @@
+/*清格式*/
+body,
+div,
+p,
+ul,
+li,
+ol,
+dl,
+dt,
+dd,
+img,
+input,
+button,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+span {
+  padding: 0;
+  margin: 0;
+}
+img {
+  border: none;
+  vertical-align: middle;
+}
+ul,
+li,
+ol,
+dl,
+dt,
+dd {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+}
+header {
+  width: 100%;
+  height: 1.9rem;
+  background: #fabc09;
+}
+header .left {
+  width: 2rem;
+  height: 100%;
+  float: left;
+  background: url(img/1.jpg) no-repeat 0.55rem 0.3rem;
+  background-size: 0.9rem;
+}
+header .left span {
+  display: block;
+  font-size: 0.375rem;
+  margin-top: 1.2rem;
+  margin-left: 0.575rem;
+}
+header .center {
+  width: 12rem;
+  height: 1.25rem;
+  float: left;
+  background: #D5DBA9;
+  border-radius: 5px;
+  margin-top: 0.375rem;
+}
+header .center span {
+  background: url(img/search.png) no-repeat;
+  background-size: 0.55rem 0.575rem;
+  float: left;
+  width: 0.55rem;
+  height: 0.575rem;
+  margin: 0.375rem 0.3rem 0 0.4rem;
+}
+header .center input {
+  width: 10.7rem;
+  height: 100%;
+  float: left;
+  border: none;
+  background: #D5DBA9;
+  outline: none;
+  font-size: 0.55rem;
+}
+header .right {
+  float: left;
+  width: 2rem;
+  height: 100%;
+  background: url(img/cart.png) no-repeat 0.55rem 0.325rem;
+  background-size: 0.85rem;
+}
+header .right span {
+  display: block;
+  font-size: 0.375rem;
+  margin-top: 1.2rem;
+  margin-left: 0.575rem;
+}

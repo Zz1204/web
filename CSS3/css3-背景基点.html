@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style media="screen">
+        div{
+            width: 300px;
+            height: 300px;
+            border: 10px solid rgba(0,0,0,0.5);
+            padding: 50px;
+            background: url(img/1.jpg) no-repeat;
+            /* background-origin:  默认padding-box，从padding区域平铺; border-box,从边框平铺，content-box,从内容去平铺*/
+            /* background-origin: content-box; */
+            /* background-clip:  默认border-box, 边框以外裁剪，padding-box,裁剪padding以外的区域，content-box，裁剪内容区域以外的，text截取文字背景*/
+            background-clip: padding-box;
+        }
+    </style>
+</head>
+<body>
+    <!-- 背景基点 -->
+    <!-- backgroune-origin     起源  平铺起点-->
+    背景平铺  默认  padding区域+内容区域
+
+    <!-- background-clip    裁剪区域 -->
+    背景裁切  ：把相应的区域裁掉
+    <div></div>
+</body>
+</html>

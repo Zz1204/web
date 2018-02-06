@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<!--<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />-->
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<title>Document</title>
+		<script type="text/javascript">
+			//获取像素比
+			//console.log(window.devicePixelRatio)
+			var pixelRatio=1/window.devicePixelRatio;
+			//console.log(pixelRatio);
+			//通过js动态设置视口(viewport)
+			document.write('<meta name="viewport" content="width=device-width,initial-scale=' + pixelRatio + ',minimum-scale=' + pixelRatio + ',maximum-scale=' + pixelRatio + '" />');
+		</script>
+		<script type="text/javascript">
+			var html=document.getElementsByTagName("html")[0];
+			//获取屏幕宽度
+			var pageWidth=html.getBoundingClientRect().width;
+			//屏幕宽度  / 固定数值  = 基准值
+			html.style.fontSize=pageWidth/16+"px";
+		</script>
+		</script>
+		<style type="text/css">
+			div{
+				width:100px;
+				height:100px;
+				background: red;
+			}
+		</style>
+	</head>
+	<body>
+		<!--<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />-->
+		
+		<!--
+		name="viewport"   视图
+		device-width      设备的宽度
+		initial-scale     初始比例
+		maxmum-scale  	  最大缩放比例
+		minmum-scale  	  最小缩放比例
+		user-scalable     是否禁止缩放
+		-->
+		<!--注意  每个手机型号都有自己的像素比   window.devicePixelRatio(像素比)-->
+		<div></div>
+	</body>
+	<script type="text/javascript">
+		console.log(window.devicePixelRatio)
+	
+	//手机型号像素比
+//		iPhone5:2;
+//		iPhone6:2;
+//		iPhone6P:3;
+//		1、解决像素比
+//		2、适应各种手机的布局
+			//单位      px   em    %
+				//rem  大小只与设置的html大小相关，与其他标签没有任何关系   根字体   html
+				//1rem就等于html设置的字体大小
+	</script>
+</html>

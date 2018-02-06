@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			body{
+				background: #000000;
+			}
+			#canvas{
+				background: #fff;
+			}
+		</style>
+	</head>
+	<body>
+		<canvas id="canvas" width="400" height="400"></canvas>
+	</body>
+	<script type="text/javascript">
+		var oc=document.querySelector("#canvas");
+		var oGc=oc.getContext("2d");
+		oGc.beginPath();
+		oGc.lineWidth="5";
+		oGc.strokeStyle="red";
+		oGc.fillStyle="yellow";
+		oGc.moveTo(10,10);
+		oGc.lineTo(110,10);
+		oGc.lineTo(60,110);
+		oGc.closePath();
+		oGc.fill();
+		oGc.stroke();
+		
+		oGc.beginPath();
+		oGc.lineWidth="5";
+		oGc.strokeStyle="red";
+		oGc.fillStyle="green";
+		oGc.moveTo(10,150);
+		oGc.lineTo(110,150);
+		oGc.lineTo(60,170);
+		oGc.closePath();
+		oGc.fill();
+		oGc.stroke();
+		
+		oGc.beginPath();
+		oGc.lineWidth="5";
+		oGc.strokeStyle="red";
+		oGc.fillStyle="blue";
+		oGc.moveTo(200,200);
+		oGc.lineTo(300,300);
+		oGc.lineTo(200,300);
+		oGc.closePath();
+		oGc.fill();
+		oGc.stroke();
+	</script>
+</html>
