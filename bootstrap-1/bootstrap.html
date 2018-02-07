@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- 指明页面进行渲染的时候用ie下面的edge浏览器的方式进行渲染 -->
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <style media="screen">
+        div[class*=col-]{
+            height: 50px;
+            border: 1px solid #000;
+            background: red;
+            line-height: 50px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <!-- bootstrap     前端框架  响应式   当成手机端 -->
+    <!-- (根据屏幕分辨率的不同，呈现出不同的样式) -->
+    <!-- 引入框架  css  js(需要依赖jQuery，先引入jQuery，再引入bootstrap) -->
+    <!-- jQuery 1.多的版本  支持IE678   2版本以上就不支持IE678 -->
+
+    <!-- 栅格化系统 -->
+    <!-- 1、容器的概念
+        (1)、流体布局容器    container-fluid
+        (2)、固定布局容器    container -->
+
+        <!-- 流体布局    ：    宽度100%  撑满一行的 -->
+        <!-- <div class="container-fluid" style="background:red">流体布局</div> -->
+
+        <!-- 固定布局 -->
+        <!-- 阈值： -->
+        <!--
+            分辨率>=1200  固定布局的容器  width:1170px;
+            1200>分辨率>=992  固定布局的容器  width:970px;
+            992>分辨率>=768  固定布局的容器  width:750px;
+            分辨率<768  固定布局的容器  width:auto  自适应;
+         -->
+        <!-- 行    row  一行12列 -->
+
+        <!-- 列    col -->
+
+        <!-- 4阈值分辨率表示方法 -->
+        <!--
+            超大屏幕分辨率    >=1200         lg
+            中等屏幕分辨率    1200>   >=992   md
+            小屏幕分辨率      992>    >=768   sm
+            超小屏幕分辨率     小于768          xs
+        -->
+        <div class="container" style="background:blue">
+            <div class="row">
+                <div class="col col-md-10">col-lg-4</div>
+                <div class="col col-md-2">col-lg-4</div>
+            </div>
+        </div>
+</body>
+<script src="js/jquery-3.2.1.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+</html>
