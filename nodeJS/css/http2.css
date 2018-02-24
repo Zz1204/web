@@ -1,0 +1,29 @@
+body{
+	padding: 0;
+	margin: 0;
+}
+ul,li{
+	list-style: none;
+}
+ul{
+	width: 800px;
+	height: 50px;
+	margin: 20px auto;
+}
+li{
+	width: 200px;
+	float: left;
+	text-align: center;
+	line-height: 50px;
+	color: red;
+}
+img{
+	width: 300px;
+	border: none;
+	display: block;
+	margin: 0 auto;
+}
+h1{
+	font-family: '宋体';
+	text-align: center;
+}

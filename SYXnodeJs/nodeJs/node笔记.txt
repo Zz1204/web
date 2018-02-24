@@ -1,0 +1,69 @@
+检测node的版本：   node  -v
+检测npm的版本  :  npm -v
+下载cnpm    npm install -g cnpm --registry=https://registry.npm.taobao.org
+cnpm  是国内淘宝的服务器去下载     npm  从国外的服务器去下载   相对于cnpm下载速度比较慢
+检测 cnpm  版本  cnpm -v
+清空cmd中的内容  ：  cls
+
+nodejs是基于谷歌的v8引擎和libuv库封装的一个js的运行平台
+
+特点：
+        1.事件驱动
+        2.异步编程思想
+        3.无阻塞的异步I/O
+
+        node的REPL模式： read-eval-print-loop：输入-求值-输出-循环
+	进入  repl模式   命令   node直接进入   可以写任何的js代码
+
+
+	如何用node去运行运行文件   ？  node  文件的名称
+
+
+	//进程  process   argv  数组   进行接受参数
+  	//数组的下标为0的这项  :  node的运行程序  'C:\\Program Files\	\nodejs\\node.exe
+  	//数组的下标为1的这项   当前的文件路径   'C:\\Users\\suyanxiang\	\Desktop\\nodeJs\\demo
+  	//数组的下标为2的这项开始就是  ：传递的参数
+
+ 	console.log(__dirname); // 当前 文件所在的文件夹
+    	console.log(__filename);  //  当前文件的路径
+
+
+	//module  模块
+//什么叫模块？   一个文件就是一个模块
+//
+	淘宝    搜索  购物车 支付.......  整合到一起  有利于后期代码维护
+  // 	网页   包含  很多文件（模块）  模块里面他可以包含多个组件
+
+// 
+ 	模块 下面有暴露的功能
+     
+ 	//module.exports   暴露   原理commonJS方法
+     
+ 	//exports        暴露      原理 node
+
+   
+	 //  接收   require(文件的路径);
+
+	//module.exports     可以暴露多个
+  	// 如果是多个的情况下  需要进行区分   从这个对象下面去加属性就可以了
+  	  module.exports.syx=add;
+    	module.exports.syx123=add1;
+
+	// 包管理工具
+
+  	//1.  初始package.json文件  (包的描述的文件)  指令  npm  init
+ 	 //  下载  bootstrap包     npm install(i)  bootstrap
+   	 //  简写模式   npm i jquery
+  	//2种模式   开发模式  --save-dev (-D)   运行模式  --save (-S)
+   	//下载完成会生成一个叫 node_modules  文件夹  核心文件
+
+
+
+
+
+
+
+	
+
+
+

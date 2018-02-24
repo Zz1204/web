@@ -1,0 +1,9 @@
+node -v  查看node版本
+npm    从国外网站下载
+cnpm   cnpm是国内淘宝的服务器去下载    npm从国外的服务器去下载，相对于cnpm下速度较慢
+下载cnpm  npm install -g cnpm --registry=https://registry.npm.taobao.org
+检测  cnpm版本  cnpm -v
+cls  清空cmd中的内容
+进入REPL模式  命令  node直接进入  可以写任何的js代码
+退出REPL模式  命令  两次Ctrl+c
+如何用node去运行文件   node 文件的名字
