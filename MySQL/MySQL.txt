@@ -1,0 +1,28 @@
+数据库：存放数据的
+       数据库->表->行 列
+启动mysql： net start mysql57(57为版本);
+停止mysql:  net stop mysql57;
+
+cmd中一定要用管理员的身份进入
+进入mysql数据库  -u(username) -p(password) -P(端口号默认是3306) -h(主机地址,默认是localhost)
+    mysql -u账号 -p密码 -P端口号 -h主机地址
+
+1、显示数据库：show databases;
+2、创建数据库：create database web;(web为数据库名称)
+3、删除数据库：drop database web;(web为数据库名称)
+4、进入指定数据库：use 数据库名称;
+5、创建数据表：create table 表名 (字段的名称(name,age,job) 数据类型);
+   数据类型分成三种：数字、字符串、日期
+        数字：整数、浮点数
+            整数：tinyint  0-255 / int  0-2^31
+        日期：datetime类型 YYYY-MM-DD HH:MM:SS / date类型      YYYY-MM-DD
+        字符串：char(20)  位数可以超过20位 / varchar(20)  最大20位
+6、查看数据库中指定数据表的表头：desc 表名;
+7、查看数据库中的数据表：show tables;
+8、删除数据表：drop table 表名;
+
+
+增：insert into 表名 (name,age,job) values (zz,20,"男",IT),(zzz,21,"女","会计");
+删：delete from 表名 where 字段=值;
+改：update 表名 set 字段=新值 where 字段=值;匹配多个字段可用and/or相接;
+查：select * from 表名;   查看指定数据表
