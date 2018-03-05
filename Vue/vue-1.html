@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:v-on="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="vue.js"></script>
+</head>
+<body>
+    <!--
+        根节点
+        vue结构的起始点    vue-cli vue的脚手架工具
+        v-on  就是触发我们methods里面定义的函数
+            v-on  简写成  @ 绑定事件
+        -->
+    <div id="app">
+        <p v-on:click="clicks(121212)">{{msg}}</p>
+        <p @click="zz456(46464)">姓名：{{name}}</p>
+        <p @mouseover="zz123" @mouseout="zz234">性别：{{sex}}</p>
+        <p>年龄：{{age}}</p>
+        <input type="text" @keydown.enter="down">
+    </div>
+</body>
+<script>
+    //初始vue对象
+    new Vue({
+        //挂载点     element   元素
+        el:'#app',
+        //挂载数据   data   对应的结构是json 结构
+        //如果你想要在页面中显示初始的数据，那么就要用到插值表达式 {{}}
+        data:{
+            msg:"zz",
+            name:'zzzx',
+            sex:'男',
+            age:'21'
+        },
+        //vue 实例中的方法
+        methods:{
+            clicks:function(value){
+                console.log(value);
+            },
+            //es6 语法  函数的扩展
+            zz456(value){
+                console.log(value)
+            },
+            zz123(){
+                console.log('鼠标移入');
+            },
+            zz234(){
+                console.log('鼠标划出')
+            },
+            //对于键盘事件   需要进行区分
+            //keydown  到底按下的是哪个键值
+            //修饰符
+            // enter
+//            tab
+//            delete
+//            esc
+//            space
+//            up
+//            down
+//            left
+//            right
+
+                down(){
+                alert('回车');
+            }
+        }
+    })
+</script>
+</html>

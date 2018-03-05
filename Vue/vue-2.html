@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        {{msg}}
+        <!--
+            渲染数据第一种方式
+                插值表达式{{}}可以渲染数据，他里面可以写js表达式
+            渲染数据第二种方式
+                指令 vue里面   指令都是v-开头的
+                    angular  指令  ng-
+                v-text  渲染文本数据
+                v-html  渲染带有标签的数据 (解析标签)
+        -->
+        <div v-text="text"></div>
+        <div v-html="text"></div>
+    </div>
+</body>
+<script>
+    new Vue({
+        el:'#app',
+        data:{
+            msg:'挂载数据',
+            text:'<h2>我是渲染的数据</h2>'
+        }
+    })
+</script>
+</html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="vue.js"></script>
+    <style>
+        .active{
+
+            background: red;
+        }
+        .active2{
+            background: green;
+        }
+        .aaaa{
+            background: yellow;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        {{msg}}
+        <p v-text="text"></p>
+        <p v-html="text"></p>
+        <input type="text" v-model="text">
+        {{datas}}
+
+        v-bind:他是用来绑定属性的   class  style  src href、、、、、
+        v-bind简写  :
+        <img :src="src" alt="" width="200px">
+
+
+
+        <!--绑定class类型-->
+
+        <!--<p :class="c1">第一种方式：通过解析数据，获得相应的class</p>-->
+        <!--<p :class="'active'">第二种方式：直接去找style里面的class类型</p>-->
+
+
+        <!--灵活添加和删除class    jq:addClass/removeClass/toggleClass-->
+        <!--通过改变数据来进行添加和删除class-->
+
+        <!--<p :class="{'active':isactive,'active2':isactive2}">123456</p>-->
+        <!--<button @click="a">添加/删除</button>-->
+
+        <!--<p :class="['aaaa',{'active':isactive},c1]">222</p>-->
+
+
+        绑定style
+        <p :style="{'color':'red','font-size':'20px'}">11111</p>
+        <p :style="styles">asdf</p>
+
+
+        绑定value
+        <input type="text" :value="val">
+
+
+        绑定href
+        <a :href="href">百度</a>
+    </div>
+</body>
+<script>
+    new Vue({
+        el:'#app',
+        data:{
+            msg:'zxz',
+            text:'<h2>数据绑定</h2>',
+            datas:'',
+            src:'http://img.taopic.com/uploads/allimg/140315/234804-1403150U52457.jpg',
+            c1:'active',
+            active:'active',
+            active1:'active2',
+            isactive:true,
+            isactive2:false,
+            c1:'aaaa',
+            styles:{
+                color:'red',
+                fontSize:50+'px',
+                background:'pink'
+            },
+            val:'文本框',
+            href:'http://www.baidu.com'
+
+        },
+        methods:{
+            a(){
+                //this   指的是当前的实例  vue
+                this.isactive=!this.isactive;
+                this.isactive2=!this.isactive2;
+            }
+        }
+    })
+</script>
+</html>

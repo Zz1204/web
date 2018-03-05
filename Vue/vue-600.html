@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="vue.js"></script>
+</head>
+<body>
+<!--循环遍历   v-for  -->
+  <!--  v-for  循环遍历数据  -->
+  <!--
+        (item,index) in arr   item 表示的是arr数据中的每一项
+                               index  下标
+   -->
+    <div id="app">
+        <ul>
+            <li v-for="(item,index) in arr">
+                <p>姓名：{{item.name}} {{index}}</p>
+                <p>年龄：{{item.age}}</p>
+                <p>性别：{{item.sex}}</p>
+            </li>
+        </ul>
+        <div v-for="(value,key,index) in datas">{{key}} : {{value}}{{index}}</div>
+    </div>
+</body>
+<script>
+    new Vue({
+        el:"#app",
+        data:{
+            arr:[
+                {name:'zxc1',age:20,sex:'男'},
+                {name:'zxc2',age:21,sex:'女'},
+                {name:'zxc3',age:22,sex:'男'},
+                {name:'zxc4',age:23,sex:'女'}
+            ],
+            datas:{
+                username:'张三',
+                pass:'123456',
+                phone:'12345678909',
+                sex:'男'
+            }
+        }
+    })
+</script>
+</html>

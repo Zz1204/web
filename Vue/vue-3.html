@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="vue.js"></script>
+</head>
+<body>
+    双向数据绑定 指令 v-model
+
+
+
+    <div id="app">
+        对于input文本输入框而言   v-model  就是相当于他的value值
+        <input type="text" v-model="msg" placeholder="请输入">
+        <p>{{msg}}</p>
+
+        对于单选框来说  redio     v-model  选中的时候绑定的是其value值
+        <input type="radio" value="男" name="sex" v-model="text">男
+        <input type="radio" value="女" name="sex" v-model="text">女
+        {{text}}
+
+        对于复选框   checkbox    v-model   绑定的是布尔值
+        如果 checkbox  通过 v-model绑定的数据如果是数组   那么绑定的就是他的value
+        <input type="checkbox" value="看电影" v-model="onoff">看看电影
+        <input type="checkbox" value="听音乐" v-model="onoff">听听音乐
+        {{onoff}}
+
+        对于下拉选框   select   v-model   假设option中有value值，那么绑定的就是value值，
+                                        如果没有，绑定的就是html结构里面的内容
+        <select name="" id="" v-model="add">
+            <option value="山东">11山东</option>
+            <option value="北京">11背景</option>
+            <option value="上海">11上海</option>
+            <option value="杭州">11杭州</option>
+        </select>
+        {{add}}
+        
+        对于文本域   textarea   v-model    绑定的是value值
+        <textarea name="" id="a" cols="30" rows="10" v-model="textarea"></textarea>
+        {{textarea}}
+    </div>
+</body>
+<script>
+    new Vue({
+        el:'#app',
+        data:{
+            msg:'',
+            text:'',
+            onoff:[],
+            add:'',
+            textarea:''
+        }
+    })
+</script>
+</html>
