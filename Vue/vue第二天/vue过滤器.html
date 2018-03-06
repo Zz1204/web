@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <div v-for="item in arr">{{item|abc}}</div>
+        <div>{{time|times}}</div>
+    </div>
+</body>
+<script>
+    // 过滤操作  filter    全局过滤     私有过滤
+    //全局过滤   Vue.filter    放在vue实例的前面
+    //Vue.filter(过滤器的名称,回调函数(过滤的每一项))
+    //想要使用我们自己定义的filter，我们就要用   管道符号  |
+
+
+            Vue.filter('abc',function (item) {
+                return item<10?'0'+item:item;
+            })
+            //
+            // //年月日   2018-03-06
+            // Vue.filter('times',function (item) {
+            //     var y=item.getFullYear();
+            //     var m=item.getMonth()+1;
+            //     m=m<10?'0'+m:m;
+            //     var d=item.getDate();
+            //     d=d<10?'0'+d:d;
+            //     return y+'-'+m+'-'+d;
+            // })
+
+
+    new Vue({
+        el:'#app',
+        data:{
+            arr:[1,2,3,4,5,6,7,8,9,10,11,12],
+            time:new Date(),
+        },
+        //私有过滤
+        filters:{
+            times(item){
+                var y=item.getFullYear();
+                var m=item.getMonth()+1;
+                m=m<10?'0'+m:m;
+                var d=item.getDate();
+                d=d<10?'0'+d:d;
+                return y+'-'+m+'-'+d;
+            },
+        }
+    })
+</script>
+</html>

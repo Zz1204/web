@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="vue.js"></script>
+</head>
+<body>
+    <!--vue的组件
+       component 就是可重复利用的html代码
+       一个文件就是一个模块   模块里面包含对个组件
+
+        组件 全局组件 ('组件名称',配置参数json) (写在new Vue实例里面)
+        组件里面的数据都是函数  data(){};
+        私有组件
+        父组件  子组件
+            父传子  父级中的数据传到子级  绑定自定义属性 通过 props进行接收
+       -->
+
+    <div id="app">
+        <my-component :abc="arr"></my-component>
+    </div>
+
+    html5 里面提供了另外一个标签  template
+    <template id="tem">
+        <!--div根标签-->
+        <div>
+            <ul>
+                <li v-for="item in arr1">{{item}}</li>
+            </ul>
+        </div>
+    </template>
+</body>
+<script>
+    //全局组件
+    Vue.component('myComponent',{
+        //接收自定义属性
+        props:['abc'],
+       // 模板
+        template:'#tem',
+        data(){
+            return {
+                // arr:[1,2,3,4,5,6,7,8,9]
+                arr1:this.abc,
+            };
+        }
+    });
+    new Vue({
+        el:'#app',
+        data:{
+            arr:[0,1,2,3,4,5,6,7,8,9,10]
+        }
+    })
+</script>
+</html>

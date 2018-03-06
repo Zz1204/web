@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        {{num2}}
+    </div>
+</body>
+<script>
+    new Vue({
+        el:'#app',
+        data:{
+            num:10,
+            num1:20,
+        },
+        //计算属性   computed   会把计算的结果存储到缓存里面
+        // 当页面进行刷新获取数据的时候，首先从缓存进行读取
+        computed:{
+            num2(){
+                return this.num*100/50+this.num1;
+            }
+        }
+    })
+</script>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <zxc></zxc>
+        <zxc1></zxc1>
+    </div>
+    <template id="tem">
+        <div>
+            <p>{{num}}</p>
+            <button @click="change">按钮</button>
+        </div>
+    </template>
+    <template id="tem1">
+        <div>
+            <p>{{num1}}</p>
+            <button @click="change1">按钮</button>
+        </div>
+    </template>
+</body>
+<script>
+    var uncle=new Vue();
+    Vue.component('zxc',{
+        template:'#tem',
+        data(){
+            return{
+                num:10
+            }
+        },
+        methods:{
+            change(){
+                //触发事件
+                uncle.$emit('abc')
+            }
+        },
+        mounted:function () {
+            var _this=this;
+            uncle.$on('nba',function () {
+                _this.num++
+            })
+        }
+    });
+    Vue.component('zxc1',{
+        template:'#tem1',
+        data(){
+            return{
+                num1:20
+            }
+        },
+        mounted:function () {
+            var _this=this;
+            uncle.$on('abc',function(){
+                _this.num1++;
+            })
+        },
+        methods:{
+            change1(){
+                uncle.$emit('nba')
+            }
+        }
+    });
+
+
+    new Vue({
+        el:'#app',
+
+    })
+</script>
+</html>

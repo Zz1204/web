@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="vue.js"></script>
+</head>
+<body>
+    <div id="app"></div>
+    Vue的生命周期    (钩子函数)
+    1、创建前    beforeCreate     el元素和data 都是undefined
+****2、创建      create      vue而言  data数据已经初始但是没有赋值，并且el还是undefined
+    3、挂载前    beforeMount         data数据已经初始但是没有赋值，el实例进行初始
+****4、挂载后    mounted        数据初始而且已经赋值，el实例早已初始化完成
+    5、更新前    beforeUpdate   数据初始而且赋值，el实例早已初始化完成
+    6、更新后    updated         数据初始而且赋值并且数据更新完成，el实例早已初始化完成
+    7、激活前    beforeActive   数据更新完成，el实例存在
+    8、激活后    actived         更新的数据被重新激活  el存在
+    9、销毁前    beforeDestory   销毁数据和实例
+    10、销毁后   destoryed       销毁数据和实例
+</body>
+<script>
+    new Vue({
+        el:"",
+        data:{
+
+        },
+        methods:{
+
+        },
+        beforeCreate:function(){
+
+        },
+        create:function(){
+
+        }
+    })
+</script>
+</html>

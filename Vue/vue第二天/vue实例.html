@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        {{num}}
+    </div>
+</body>
+<script>
+    var vm=new Vue({
+        data:{
+            num:1
+        }.$mount('#app')
+    });
+    //vm.$el   挂载的元素
+    //vm.$data  找到挂载数据
+    //vm.$options  自定义的属性   自定义的组件   components      过滤器   filters
+    console.log(vm.$options)
+    //实例上面的方法   挂载元素的方法  el:'#app'
+    vm.$mount('#app')
+</script>
+</html>
