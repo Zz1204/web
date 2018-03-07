@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>父传子</title>
+    <script src="vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <zxc :abc="arr"></zxc>
+    </div>
+    <template id="tem">
+        <!-- 根元素标签 -->
+        <div>
+            <ul>
+                <li v-for="item in arr1">{{item}}</li>
+            </ul>
+        </div>
+    </template>
+</body>
+<script>
+    // 组件   一段可重复使用的html代码块
+    // 父传子   绑定自定义属性  子组件通过props接收
+    Vue.component('zxc',{
+        //模板
+        template:'#tem',
+        //props接收自定义属性   数组    可以接收多个自定义属性
+        props:['abc'],
+        // 组件里的数据用函数表示  data(){}
+        data(){
+            return {
+                //this 指的是zxc组件
+                arr1:this.abc,
+            }
+        },
+    })
+    new Vue({
+        el:'#app',
+        data:{
+            arr:['zxc','20','boy','IT']
+        }
+    })
+</script>
+</html>

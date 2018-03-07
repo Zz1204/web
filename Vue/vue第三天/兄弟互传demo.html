@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="vue.js"></script>
+    <style>
+        .red{
+            background: red;
+        }
+        .green{
+            background: green;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <zxc></zxc>
+        <zxc1></zxc1>
+    </div>
+    <template id="tem">
+        <div>
+            <p>姓名：<input type="text" v-model="arr1.name"></p>
+            <p>年龄：<input type="text" v-model="arr1.age"></p>
+            <p>
+                性别：
+                <select name="" id="" v-model="arr1.sex">
+                    <option>男</option>
+                    <option>女</option>
+                </select>
+                <button @click="rem">清空</button>
+                <button @click="add">添加</button>
+            </p>
+        </div>
+    </template>
+    <template id="tem1">
+        <div>
+            <table style="text-align: center" border="1" width="250px" cellpadding="0" cellspacing="0">
+                <thead>
+                <tr>
+                    <th>姓名</th>
+                    <th>年龄</th>
+                    <th>性别</th>
+                    <th>操作</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr v-for="(item,index) in arr" :class="index%2==0?'red':'green'">
+                    <td>{{item.name}}</td>
+                    <td>{{item.age}}</td>
+                    <td>{{item.sex}}</td>
+                    <td><button @click="del(index)">删除</button></td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </template>
+</body>
+<script>
+    var vm=new Vue();
+    Vue.component('zxc',{
+        template:'#tem',
+        data(){
+            return {
+                arr1:{
+                    name:'',
+                    age:'',
+                    sex:''
+                }
+            }
+        },
+        methods:{
+            add(){
+                vm.$emit('abc',this.arr1);
+                this.arr1={
+                    name:'',
+                    age:'',
+                    sex:''
+                }
+            },
+            rem(){
+                this.arr1={
+                    name:'',
+                    age:'',
+                    sex:''
+                }
+            }
+        }
+    });
+
+    Vue.component('zxc1',{
+        template:'#tem1',
+        data(){
+            return {
+                arr:[
+                    {name:'张三',age:'12',sex:'男'},
+                    {name:'李四',age:'15',sex:'女'},
+                    {name:'王五',age:'18',sex:'男'}
+                ]
+            }
+        },
+        mounted(){
+            vm.$on('abc',(datas)=>{
+                this.arr.push(datas)
+            })
+        },
+        methods:{
+            del(index){
+                this.arr.splice(index,1)
+            }
+        }
+    });
+
+    new Vue({
+        el:'#app',
+    })
+</script>
+</html>

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="vue.js"></script>
+    <style>
+        .red{
+            background: red;
+        }
+        .green{
+            background: green;
+        }
+    </style>
+</head>
+<body>
+<div id="app">
+    <p>姓名：<input type="text" v-model="arr2.name"></p>
+    <p>年龄：<input type="text" v-model="arr2.age"></p>
+    <p>
+        性别：
+        <select name="" id="" v-model="arr2.sex">
+            <option>男</option>
+            <option>女</option>
+        </select>
+        <button @click="remo">清空</button>
+        <button @click="add">添加</button>
+    </p>
+    <zxc :abc="arr"></zxc>
+</div>
+<template id="tem">
+    <div>
+        <table style="text-align: center" border="1" width="250px" cellpadding="0" cellspacing="0">
+            <thead>
+            <tr>
+                <th>姓名</th>
+                <th>年龄</th>
+                <th>性别</th>
+                <th>操作</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr v-for="(item,index) in arr1" :class="index%2==0?'red':'green'">
+                <td>{{item.name}}</td>
+                <td>{{item.age}}</td>
+                <td>{{item.sex}}</td>
+                <td><button @click="remove(index)">删除</button></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</template>
+</body>
+<script>
+    Vue.component('zxc',{
+        template:'#tem',
+        props:['abc'],
+        data(){
+            return {
+                arr1:this.abc
+            }
+        },
+        methods:{
+            remove(index){
+                this.arr1.splice(index,1)
+            }
+        }
+    });
+    new Vue({
+        el:'#app',
+        data:{
+            arr:[
+                {name:'张三',age:'12',sex:'男'},
+                {name:'李四',age:'15',sex:'女'},
+                {name:'王五',age:'18',sex:'男'}
+            ],
+            arr2:{
+                name:'',
+                age:'',
+                sex:''
+            }
+        },
+        methods:{
+            add(){
+                this.arr.push(this.arr2);
+                this.arr2={
+                    name:'',
+                    age:'',
+                    sex:''
+                }
+            },
+            remo(){
+                this.arr2={
+                    name:'',
+                    age:'',
+                    sex:''
+                }
+            }
+        }
+    })
+</script>
+</html>

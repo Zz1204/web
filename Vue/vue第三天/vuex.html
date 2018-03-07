@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="vue.js"></script>
+    <script src="vuex.js"></script>
+</head>
+<body>
+    <!--vuex：状态管理工具 ==>（数据）-->
+    <!--1、使用vuex-->
+        <!--创建vuex对象  store()  仓库-->
+
+    <!--状态管理数据   state  存放数据（初始数据）-->
+    <div id="app">
+        {{num}}
+        <button @click="add">按钮</button>
+    </div>
+</body>
+<script>
+    //1、创建vuex对象
+    var store=new Vuex.Store({
+        //配置参数
+        //状态  初始数据
+        state:{
+            num:10
+        },
+        //如果想要改变state里面的值，那么必须通过mutations改变数据（改变stats里面数据的唯一途径）
+        mutations:{
+            change(state,abc){
+                state.num+=abc;
+            },
+        }
+    })
+
+    new Vue({
+        el:'#app',
+        //引入的数据   es6语法   key:value    如果key值和value相同的话   可以进行简写  key
+        store,
+        data:{
+
+        },
+        computed:{
+            num(){
+                return this.$store.state.num;
+            }
+        },
+        methods:{
+            add(){
+                this.$store.commit('change',100);
+            },
+        }
+    })
+</script>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="vue.js"></script>
+    <style>
+        .active{
+            width: 300px;
+            height: 200px;
+            background: red;
+        }
+        .active1{
+            width: 100%;
+            height: 200px;
+            background: yellow;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <div :class="[{'active':isStyle},{'active1':isShow}]">我是父级里面的结构，一会子级更改我的样式</div>
+        <zxc @abc="nba"></zxc>
+    </div>
+    <template id="style">
+        <div>
+            <button @click="change">我的功能是改变父组件里面的div样式</button>
+        </div>
+    </template>
+</body>
+<script>
+    // 子传父通过自定义事件传递
+    //触发子组件里面的数据的时候  $emit()  触发父组件里面的自定义事件
+    //自定义的事件一定要写在子组件标签上面
+    Vue.component('zxc',{
+        template:'#style',
+        methods:{
+            change(){
+                this.$emit('abc')
+            }
+        }
+    })
+    new Vue({
+        el:'#app',
+        data:{
+            isStyle:false,
+            isShow:true,
+        },
+        methods:{
+            nba(){
+                this.isStyle=!this.isStyle;
+                this.isShow=!this.isShow;
+            }
+        }
+    })
+</script>
+</html>

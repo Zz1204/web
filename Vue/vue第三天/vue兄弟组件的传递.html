@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <my-com></my-com>
+        <my-com1></my-com1>
+    </div>
+    <template id="tem">
+        <div>
+            <p>{{num}}</p>
+            <button @click="change">我来改变组件my-com1的数据</button>
+        </div>
+    </template>
+    <template id="tem1">
+        <div>
+            <p>{{num1}}</p>
+            <button @click="change1">我来改变组件my-com的数据</button>
+        </div>
+    </template>
+</body>
+<script>
+    // 兄弟组件传递
+    //通过新创建vue实例，通过新创建的vue实例进行事件的监听和执行
+    //首先触发自定义的事件   需要被我们新创建的vue实例进行监听  $on
+
+    //1、
+    var connect=new Vue();
+
+    Vue.component('myCom',{
+        template:'#tem',
+        data(){
+            return {
+                num:10,
+            }
+        },
+        //挂载后监听
+        mounted(){
+          connect.$on('nba',()=>{
+              this.num++;
+          })
+        },
+        methods:{
+            change(){
+                connect.$emit('abc',this.num)
+            }
+        }
+    });
+    Vue.component('myCom1',{
+        template:'#tem1',
+        data(){
+            return {
+                num1:20
+            }
+        },
+        //挂载后监听
+        mounted(){
+            //监听兄弟组件触发的事件
+            //es6 语法中 箭头函数()=>{}  this不会进行更改
+            connect.$on('abc',(num)=>{
+                this.num1+=num;
+            });
+
+        },
+        methods:{
+            change1(){
+                connect.$emit('nba');
+            }
+        }
+    })
+
+
+    new Vue({
+        el:'#app',
+    })
+</script>
+</html>

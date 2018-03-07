@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <script src="vue.js"></script>
+    <script src="../vue第三天/vuex.js"></script>
     <style>
         .red{
             background: red;
@@ -15,90 +16,99 @@
 </head>
 <body>
     <div id="app">
-        <p>姓名：<input type="text" v-model="arr1.name"></p>
-        <p>年龄：<input type="text" v-model="arr1.age"></p>
+        <p>姓名：<input type="text" v-model="arr2.name"></p>
+        <p>年龄：<input type="text" v-model="arr2.age"></p>
         <p>
             性别：
-            <select name="" id="" v-model="arr1.sex">
+            <select name="" id="" v-model="arr2.sex">
                 <option>男</option>
                 <option>女</option>
             </select>
             <button @click="remo">清空</button>
             <button @click="add">添加</button>
         </p>
-        <zxc :abc="arr"></zxc>
+        <table style="text-align: center" border="1" width="250px" cellpadding="0" cellspacing="0">
+            <thead>
+            <tr>
+                <th>姓名</th>
+                <th>年龄</th>
+                <th>性别</th>
+                <th>操作</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr v-for="(item,index) in arr" :class="index%2==0?'red':'green'">
+                <td>{{item.name}}</td>
+                <td>{{item.age}}</td>
+                <td>{{item.sex}}</td>
+                <td><button @click="remove(index)">删除</button></td>
+            </tr>
+            </tbody>
+        </table>
     </div>
-    <template id="tem">
-        <div>
-            <table style="text-align: center" border="1" width="250px" cellpadding="0" cellspacing="0">
-                <thead>
-                <tr>
-                    <th>姓名</th>
-                    <th>年龄</th>
-                    <th>性别</th>
-                    <th>操作</th>
-                </tr>
-                </thead>
-                <tbody>
-                <tr v-for="(item,index) in arr1" :class="index%2==0?'red':'green'">
-                    <td>{{item.name}}</td>
-                    <td>{{item.age}}</td>
-                    <td>{{item.sex}}</td>
-                    <td><button @click="remove(index)">删除</button></td>
-                </tr>
-                </tbody>
-            </table>
-        </div>
-    </template>
+
 </body>
 <script>
-    Vue.component('zxc',{
-        template:'#tem',
-        props:['abc'],
-        data(){
-            return {
-                arr1:this.abc
-            }
-        },
-        methods:{
-            remove(index){
-                this.arr1.splice(index,1)
-            }
-        }
-    });
-    new Vue({
-        el:'#app',
-        data:{
+
+    var store=new Vuex.Store({
+        state:{
             arr:[
                 {name:'张三',age:'12',sex:'男'},
                 {name:'李四',age:'15',sex:'女'},
                 {name:'王五',age:'18',sex:'男'}
             ],
-            arr1:{
+            arr2:{
                 name:'',
                 age:'',
                 sex:''
             }
         },
-        methods:{
-            add(){
-                this.arr.push(this.arr1);
-                this.arr1={
-                    name:'',
-                    age:'',
-                    sex:''
-                }
-            },
-            remo(){
-                this.arr1={
+        mutations:{
+            change(state,data){
+                state.arr.push(data);
+                state.arr2={
                     name:'',
                     age:'',
                     sex:''
                 }
             }
-
         }
+    })
 
+    new Vue({
+        el:'#app',
+        store,
+        computed:{
+            arr(){
+                return this.$store.state.arr
+            },
+            arr2(){
+                return this.$store.state.arr2
+            }
+        },
+        // data:{
+        //     arr:[
+        //         {name:'张三',age:'12',sex:'男'},
+        //         {name:'李四',age:'15',sex:'女'},
+        //         {name:'王五',age:'18',sex:'男'}
+        //     ],
+        //     arr2:{
+        //         name:'',
+        //         age:'',
+        //         sex:''
+        //     }
+        // },
+        methods:{
+            add(){
+                this.$store.commit('change',this.arr2)
+            },
+            remo(){
+
+            },
+            remove(index){
+                this.arr1.splice(index,1)
+            }
+        }
     })
 </script>
 </html>
