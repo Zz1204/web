@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="jquery-3.1.1.js"></script>
+    <script>
+        $(function(){
+            $.ajax({
+                type:'get',
+                url:'/shop',
+                success:function(data){
+                    //console.log(data);
+                    data.forEach(function(item,index){
+                        var $h1=$("<h1>"+item.name+"</h1>");
+                        var $h2=$("<h2>"+item.age+"</h2>");
+                        var $h3=$("<h3>"+item.sex+"</h3>");
+                        var $h4=$("<h1>"+item.job+"</h1>");
+                        var $img=$("<img style='width:300px;' src=./img/"+item.src+">");
+                        $img.appendTo(document.body);
+                        $h1.appendTo(document.body);
+                        $h2.appendTo(document.body);
+                        $h3.appendTo(document.body);
+                        $h4.appendTo(document.body);
+                    })
+                }
+            })
+        })
+    </script>
+</head>
+<body>
+</body>
+</html>

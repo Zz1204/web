@@ -1,0 +1,24 @@
+ul{
+    width: 800px;
+    height: 50px;
+    margin: 20px auto;
+    list-style: none;
+    padding: 0;
+}
+li{
+    width: 200px;
+    float: left;
+    text-align: center;
+    line-height:50px ;
+    color: aqua;
+}
+img{
+    width: 300px;
+    border: none;
+    display: block;
+    margin: 0 auto;
+}
+h1{
+    text-align: center;
+    font-family: "华文楷体";
+}

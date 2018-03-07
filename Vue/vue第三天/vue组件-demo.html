@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="vue.js"></script>
+    <script src="vuex.js"></script>
+    <style>
+        #app>div{
+            width: 80%;
+            margin: 50px auto;
+            overflow: hidden;
+        }
+        .input{
+            width: 100%;
+            line-height: 50px;
+            font-size: 40px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+        }
+        .button{
+            width: 150px;
+            height: 50px;
+            background: aqua;
+            float: right;
+            text-align: center;
+            border: none;
+            margin-top: 10px;
+        }
+        .zxc{
+            width: 80%;
+        }
+        .p{
+            line-height: 30px;
+            border-bottom: 1px solid aqua;
+        }
+        .fr{
+           float: right;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <div>
+            <input type="text" :class="'input'" v-model="arr2">
+            <button :class="'button'" @click="add">添加</button>
+        </div>
+        <zxc :abc="arr" :class="'zxc'"></zxc>
+    </div>
+    <template id="tem">
+        <div>
+            <p v-for="item in arr1" :class="'p'">
+                <input type="checkbox" v-model="check">
+                <span>{{item}}</span>
+                <span :class="'fr'">删除</span>
+            </p>
+            <p>
+                <input type="checkbox" @click="checkbox" v-model="quan">
+                <span>全选</span>
+                <button :class="'fr'">删除</button>
+            </p>
+
+        </div>
+    </template>
+</body>
+<script>
+
+    // var store=new Vue.Store({
+    //     state:{
+    //         name:NODE
+    //     }
+    //
+    // })
+
+
+    Vue.component('zxc',{
+        template:'#tem',
+        props:['abc'],
+        data(){
+            return {
+                arr1:this.abc,
+                check:false,
+                quan:false
+            }
+        },
+        methods:{
+            checkbox(){
+                this.check==true
+                console.log(this.check)
+                this.check==true?this.quan==true:this.quan==false
+            },
+
+        }
+    })
+    
+
+
+    new Vue({
+        el:'#app',
+        data:{
+          arr:['node','vue','js','css'],
+            arr2:[],
+        },
+        methods:{
+            add(){
+                this.arr.push(this.arr2);
+                this.arr2=[];
+            }
+        }
+    })
+</script>
+</html>
