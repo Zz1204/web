@@ -50,7 +50,7 @@
     <template id="tem">
         <div>
             <p v-for="item in arr1" :class="'p'">
-                <input type="checkbox" v-model="check">
+                <input type="checkbox" v-model="check" >
                 <span>{{item}}</span>
                 <span :class="'fr'">删除</span>
             </p>
@@ -79,13 +79,13 @@
         data(){
             return {
                 arr1:this.abc,
-                check:false,
+                check:[],
                 quan:false
             }
         },
         methods:{
             checkbox(){
-                this.check==true
+                this.check=!this.check
                 console.log(this.check)
                 this.check==true?this.quan==true:this.quan==false
             },

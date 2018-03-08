@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="vue.js"></script>
+    <script src="vuex.js"></script>
+
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        .header{
+            width: 1000px;
+            margin: 0px auto 100px;
+        }
+        .header .box{
+            width: 1000px;
+            height: 30px;
+            line-height: 30px;
+            font-size: 26px;
+            margin: 50px 0;
+            border: 2px solid #ccc;
+            border-radius:4px;
+        }
+        .header button{
+            width: 200px;
+            height: 50px;
+            background: #00FFFF;
+            float: right;
+            font-size: 18px;
+        }
+        .div1{
+            margin: 0px auto ;
+            width: 1000px;
+        }
+        .div1 ul{
+            overflow: hidden;
+            margin-bottom: 30px;
+        }
+        .div1 ul li{
+            width: 1000px;
+            border-bottom: 2px solid red;
+            line-height: 50px;
+            float: left;
+        }
+        .div1 ul li .span1{
+            float: right;
+            font-size: 20px;
+            color: red;
+        }
+        .div1 ul+p{
+            margin-top: 50px;
+            line-height: 50px;
+        }
+        .div1 ul+p .ded{
+            width: 200px;
+            height: 50px;
+            float: right;
+            background: red;
+        }
+    </style>
+
+</head>
+<body>
+    <div id="app">
+        <in></in>
+        <da></da>
+    </div>
+    <template id="input">
+        <div class="header">
+            <input type="text" class="box" v-model="arr1">
+            <button @click="add">添加</button>
+        </div>
+    </template>
+    <template id="data">
+        <div class="div1">
+            <ul>
+                <li v-for="item,index in daData">
+                    <input type="checkbox">
+                    <span>{{item}}=={{index}}</span>
+                    <span class="span1" @click="del(index)">删除</span>
+                </li>
+            </ul>
+            <p>
+                <input type="checkbox">全选
+                <button class="ded">删除</button>
+            </p>
+        </div>
+    </template>
+</body>
+<script>
+    var store=new Vuex.Store({
+        state:{
+            arr:['html','css','javascript','jquery']
+        },
+        mutations:{
+            add1(state,d){
+                state.arr.push(d);
+            },
+
+        }
+    })
+    Vue.component('in',{
+        template:'#input',
+        store,
+        data(){
+            return {
+                arr1:''
+            }
+        },
+        methods:{
+            add(){
+                this.$store.commit('add1',this.arr1);
+                this.arr1='';
+            }
+        }
+    })
+    Vue.component('da',{
+        template:'#data',
+        store,
+        computed:{
+            daData(){
+                return this.$store.state.arr;
+            },
+
+
+        }
+
+    })
+    new Vue({
+        el:'#app'
+    })
+</script>
+</html>

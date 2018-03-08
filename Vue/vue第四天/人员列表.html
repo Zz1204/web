@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="vue.js"></script>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        .box{
+            width: 800px;
+            margin: 50px auto 0;
+        }
+        .top{
+            width: 100%;
+            overflow: hidden;
+        }
+        .top input{
+            width: 100%;
+            height: 30px;
+            border-radius: 5px;
+        }
+        .top button{
+            float: right;
+            margin-top: 20px;
+            width: 130px;
+            height: 40px;
+            background: aqua;
+        }
+        .bottom{
+            width: 100%;
+            overflow: hidden;
+            margin-top: 50px;
+        }
+        .bottom ul {
+            width: 100%;
+        }
+        .bottom ul li{
+            width: 100%;
+            height: 40px;
+            line-height: 40px;
+            border-bottom:3px solid cornflowerblue ;
+            overflow: hidden;
+        }
+
+        .bottom ul li .left{
+            float: left;
+        }
+        .bottom ul li .right{
+            float: right;
+        }
+        .bottom ul li .right .edit{
+            margin-right: 20px;
+            color: red;
+            display: none;
+        }
+        .bottom ul li:hover .right .edit{
+            display:inline-block;
+            transition: 0.5s;
+
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+       <div class="box">
+           <div class="top">
+               <input type="text" v-model="datas.content">
+               <button @click="add">添加</button>
+           </div>
+           <div class="bottom">
+               <ul>
+                   <li v-for="(item,index) in items">
+                       <label class="left">
+                           <input type="checkbox" v-model="item.onoff">
+                           <input  @keyup.enter="up(index)" v-if='item.isShow' style="width: 300px;height: 25px;" type="text" v-model="item.content">
+                           <span v-else>{{item.content}}</span>
+                       </label>
+                        <div class="right">
+                            <span class="edit" @click="edit(index)">编辑</span>
+                            <span style="color: red" @click="del(index)">删除</span>
+                        </div>
+                   </li>
+
+                   <li style="margin-top: 50px;border-bottom: none">
+                       <label class="left">
+                           <input type="checkbox" v-model="active" @click="check">
+                           <span>全选</span>
+                       </label>
+                       <div class="right">
+                           <button @click="alldel" style="width: 130px;height: 40px;background: chartreuse">删除</button>
+                       </div>
+                   </li>
+               </ul>
+           </div>
+       </div>
+    </div>
+</body>
+
+<script>
+    new Vue({
+        el:'#app',
+        data:{
+            //  添加的数据
+            datas:{
+                content:'',
+                onoff:false,
+                isShow:false,
+            },
+            active:false,
+            //  原始数据
+            items:[
+                {content:'HTML',onoff:false,isShow:false},
+                {content:'NODE',onoff:false,isShow:false},
+                {content:'PHP',onoff:false,isShow:false},
+                {content:'VUE',onoff:false,isShow:false},
+                {content:'ANGULAR',onoff:false,isShow:false},
+            ]
+        },
+        methods:{
+            //  添加的方法
+            add:function(){
+                this.items.push(this.datas);
+                this.datas={};
+            },
+            //  删除的方法
+            del:function(index){
+                if(this.items[index].onoff){
+                    this.items.splice(index,1);
+                }else{
+                    alert('必须选中才能进行删除');
+                }
+
+            },
+            //  编辑的方法
+            edit:function(index){
+                for(var i=0;i<this.items.length;i++){
+                    this.items[i].isShow=false;
+                }
+                this.items[index].isShow=true;
+
+            },
+            //  键盘回车的方法
+            up:function(index){
+                this.items[index].isShow=false;
+            },
+            //  全选
+            check:function(){
+                if(!this.active){
+                    for(var i=0;i<this.items.length;i++){
+                        this.items[i].onoff=true;
+                    }
+                }else{
+                    for(var i=0;i<this.items.length;i++){
+                        this.items[i].onoff=false;
+                    }
+                }
+
+            },
+            //  全部删除
+            alldel:function(){
+                if(this.active){
+                    this.items=[];
+                    this.active=false;
+                }
+
+            }
+        }
+    })
+</script>
+</html>

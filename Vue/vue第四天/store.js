@@ -1,0 +1,35 @@
+var store=new Vuex.Store({
+    state:{
+        arr:[
+            {name:'张三',age:'12',sex:'男'},
+            {name:'李四',age:'15',sex:'女'},
+            {name:'王五',age:'18',sex:'男'}
+        ],
+        arr1:{
+            name:'',
+            age:'',
+            sex:''
+        }
+
+    },
+    mutations:{
+        add1(state,load){
+            state.arr.push(load);
+            state.arr1={
+                name:'',
+                age:'',
+                sex:''
+            }
+        },
+        del(state,index){
+            state.arr.splice(index,1)
+        },
+        rem1(state){
+            state.arr1={
+                name:'',
+                age:'',
+                sex:''
+            }
+        }
+    }
+})

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="vue.js"></script>
+    <script src="vuex.js"></script>
+    <script src="store.js"></script>
+    <style>
+        .red{
+            background: red;
+        }
+        .green{
+            background: green;
+        }
+    </style>
+</head>
+<body>
+<div id="app">
+    <zxc></zxc>
+    <zxc1></zxc1>
+</div>
+<template id="tem">
+    <div>
+        <p>姓名：<input type="text" v-model="arr1.name"></p>
+        <p>年龄：<input type="text" v-model="arr1.age"></p>
+        <p>
+            性别：
+            <select name="" id="" v-model="arr1.sex">
+                <option>男</option>
+                <option>女</option>
+            </select>
+            <button @click="rem">清空</button>
+            <button @click="add">添加</button>
+        </p>
+    </div>
+</template>
+<template id="tem1">
+    <div>
+        <table style="text-align: center" border="1" width="250px" cellpadding="0" cellspacing="0">
+            <thead>
+            <tr>
+                <th>姓名</th>
+                <th>年龄</th>
+                <th>性别</th>
+                <th>操作</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr v-for="(item,index) in arr" :class="index%2==0?'red':'green'">
+                <td>{{item.name}}</td>
+                <td>{{item.age}}</td>
+                <td>{{item.sex}}</td>
+                <td><button @click="del(index)">删除</button></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</template>
+</body>
+<script>
+
+    Vue.component('zxc',{
+        template:'#tem',
+        store,
+        computed:{
+            arr1(){
+                return this.$store.state.arr1
+            }
+        },
+        methods:{
+            add(){
+                this.$store.commit('add1',this.arr1)
+            },
+            rem(){
+                this.$store.commit('rem1')
+            }
+        }
+    });
+
+    Vue.component('zxc1',{
+        template:'#tem1',
+        computed:{
+            arr(){
+                return  this.$store.state.arr;
+            }
+        },
+
+        methods:{
+            del(index){
+                this.$store.commit('del',index)
+            }
+        }
+    });
+
+    new Vue({
+        el:'#app',
+        //注入库
+        store,
+    })
+</script>
+</html>

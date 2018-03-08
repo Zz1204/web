@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="vue.js"></script>
+    <script src="vuex.js"></script>
+    <script src="store1.js"></script>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        .tt {
+            width: 500px;
+            height: 70px;
+
+            margin: 30px auto;
+            position: relative;
+        }
+        .tt>input {
+            width: 496px;
+            height: 25px;
+        }
+        .tt>button {
+            width: 100px;
+            height: 30px;
+            background: pink;
+            position: absolute;
+            right: 0;
+            bottom: 0;
+        }
+        ul {
+            width: 500px;
+            margin: auto;
+        }
+        ul>li {
+            width: 500px;
+            height: 30px;
+            border-bottom: 2px solid blue;
+            line-height: 30px;
+        }
+
+        ul>li>span {
+            float: right;
+            color: red;
+            cursor: pointer;
+            margin-left: 10px;
+        }
+        .s1 {
+            display: none;
+        }
+        li:hover .s1 {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <top></top>
+        <bottom></bottom>
+    </div>
+
+    <template id="tab">
+        <div>
+            <div class="tt">
+                <input type="text" v-model="arr1.content">
+                <button @click="add">添加</button>
+            </div>
+        </div>
+    </template>
+    <template id="tab1">
+        <div>
+            <ul>
+                <li v-for="item in arr">
+                    <input type="checkbox" v-model="item.onoff">
+                    {{item.content}}
+                    <span class="s1">编辑</span>
+                </li>
+
+            </ul>
+            <div style="width: 500px;margin: 20px auto 0">
+                <input type="checkbox" @click="quan" v-model="arr2.onoff"> 全选
+                <button style="background: palegreen;float: right;width: 100px;height: 30px" @click="del">删除</button>
+            </div>
+        </div>
+    </template>
+</body>
+<script>
+    Vue.component("top",{
+        template:"#tab",
+        computed:{
+            arr1(){
+                return this.$store.state.arr1;
+            },
+
+        },
+        methods:{
+            add(){
+                this.$store.commit('add',this.arr1)
+            }
+        }
+
+    }),
+    Vue.component("bottom",{
+        template:"#tab1",
+        computed:{
+            arr(){
+                return this.$store.state.arr;
+            },
+            arr2(){
+                return this.$store.state.arr2;
+            }
+        },
+        methods:{
+            del(){
+                this.$store.commit('del')
+            },
+            quan(){
+                this.$store.commit('quan')
+            }
+        }
+    })
+
+
+
+    new Vue({
+        el:"#app",
+        //注入库
+        store,
+
+    });
+</script>
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="vue.js"></script>
+    <script src="vuex.js"></script>
+</head>
+<body>
+    <div id="app">
+        <ul>
+            <li v-for="item in num">{{item}}</li>
+        </ul>
+        <p>{{datas}}</p>
+        <p>{{getDatas}}</p>
+        <button @click="add">++</button>
+    </div>
+</body>
+<script>
+    //vuex 状态管理工具  数据
+    //建立vuex库
+    //请求数据的时候存在异步的时候
+    var store=new Vuex.Store({
+        //初始的数据 状态  state
+        state:{
+            arr:[1,2,3,4,5,6],
+            data:100,
+        },
+        mutations:{
+            change(state,json){
+                state.data*=(json.n+json.m);
+            }
+        },
+        actions:{
+            //处理异步请求
+            change1(context,payload){
+                setTimeout(()=>{
+                    context.commit('change',payload);
+                },1000)
+            }
+        },
+        //对state里面的数据实施特殊规则   用getters   计算属性
+        getters:{
+            getData(state){
+                return state.data>90000?90000:state.data;
+            }
+        }
+    })
+
+
+    new Vue({
+        el:'#app',
+        //新建的仓库注册到vue实例里面   关键key值 store:value
+        store,
+        //获取数据  data  处理常量   computed  处理变量
+        computed:{
+            //函数样式
+            num(){
+                //找到vue实例中的仓库获取数据
+                return this.$store.state.arr;
+            },
+            datas(){
+                return this.$store.state.data;
+            },
+            getDatas(){
+                return this.$store.getters.getData;
+            }
+        },
+        methods:{
+            //定义add函数
+            //要想改变state里面的数据，必须用mutations进行更改
+            // 触发mutation是中的函数  必须通过commit  提交进行更改
+            //commit(触发函数的名称,传入的参数)
+
+            //触发actions里面的东西，要用 dispatch 方式进行触发
+            add(){
+                // this.$store.commit('change',{n:10,m:20})
+                this.$store.dispatch('change1',{n:10,m:20})
+            }
+
+        }
+    })
+</script>
+</html>
