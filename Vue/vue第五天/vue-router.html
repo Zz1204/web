@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="vue.js"></script>
+    <script src="vue-router.js"></script>
+</head>
+<body>
+    <div id="app">
+        <!--router-link  相当于a标签-->
+        <router-link to="/index">index界面</router-link>
+        <router-link to="/shop">shop界面</router-link>
+        <router-link to="/sss">sss界面</router-link>
+
+        <!-- 容器 -->
+        <router-view></router-view>
+    </div>
+</body>
+<script>
+
+    var home={
+        //模板  data数据   methods方法
+        template:'<h1>{{text}}</h1>',
+        data(){
+            return {
+                text:'home界面的数据'
+            }
+        }
+    };
+    var shop={
+        template:'<h1>{{text}}</h1>',
+        data(){
+            return {
+                text:'shop界面的数据'
+            }
+        }
+    }
+
+
+    //创建一个vue-router对象
+    var router=new VueRouter({
+        //处理具体的路由逻辑 routes:[]  处理具体的路由跳转
+        //每跳转一个界面   就是一个json数据
+        //mode 路由模式   默认hash模式   #    history模式
+        mode:'history',
+        routes:[
+            {
+                path:'/index',
+                component:home,
+            },
+            {
+                path:'/shop',
+                component:shop,
+            },
+            {
+                path:'*',
+                component:home,
+            }
+        ],
+    });
+
+
+
+
+
+
+    new Vue({
+        el:'#app',
+        //注入路由 router
+        router,
+    })
+</script>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="vue.js"></script>
+    <script src="axios.min.js"></script>
+</head>
+<body>
+    <!--axios  插件   相当于ajax   获取数据-->
+    <!--下载   npm install -S axios-->
+    <!--规格-->
+    <!--get 方式-->
+        <!--axios({-->
+            <!--url:'',-->
+            <!--method:'get',-->
+            <!--params:{}   向后台传输数据-->
+        <!--}).then(function(res){}).catch(function(arr){})-->
+    <!--post 方式-->
+        <!--axios({-->
+            <!--url:'',-->
+            <!--method:'post',-->
+            <!--data:{}   向后台传输数据-->
+        <!--}).then(function(res){}).catch(function(arr){})-->
+    <div id="app">
+       <table cellspacing="0" cellpadding="0" border="1" width="500" style="text-align: center  ">
+           <thead>
+               <th>姓名</th>
+               <th>年龄</th>
+               <th>性别</th>
+           </thead>
+           <tbody>
+                <tr v-for="item in arr">
+                    <td>{{item.name}}</td>
+                    <td>{{item.age}}</td>
+                    <td>{{item.sex}}</td>
+                </tr>
+           </tbody>
+       </table>
+    </div>
+</body>
+<script>
+
+
+
+    new Vue({
+        el:'#app',
+        data:{
+            arr:[]
+        },
+        mounted(){
+            axios({
+                method:'get',
+                url:'https://www.easy-mock.com/mock/5aa1f1d450d6ba3eb07c4b02/example/axios',
+            }).then((res)=>{
+                this.arr=res.data;
+            }).catch((err)=>{
+                console.log(err)
+            });
+            console.log(this.arr)
+        }
+    })
+</script>
+</html>
